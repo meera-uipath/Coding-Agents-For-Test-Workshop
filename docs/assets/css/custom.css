@@ -1,0 +1,479 @@
+/* UiPath brand colors - Science Blue #0067DF, Pomegranate #FA4616, White #FFFFFF */
+:root {
+  --primary-blue: #0067DF;
+  --accent-orange: #FA4616;
+  --light-bg: #E5F0FC;
+}
+
+/* Light mode */
+[data-md-color-scheme="light"] {
+  --md-primary-fg-color: var(--primary-blue);
+  --md-accent-fg-color: var(--accent-orange);
+}
+
+/* Dark mode */
+[data-md-color-scheme="dark"] {
+  --md-primary-fg-color: #4D9DE8;
+  --md-accent-fg-color: #FF7A54;
+}
+
+/* Hide "Made with Material for MkDocs" footer credit */
+.md-footer-meta__inner .md-copyright {
+  display: none;
+}
+
+/* Consistent header hierarchy - single blue, varied sizes */
+.md-typeset h1 {
+  color: var(--primary-blue) !important;
+  font-weight: 700 !important;
+  font-size: 2.5em !important;
+}
+
+.md-typeset h2 {
+  color: var(--primary-blue) !important;
+  font-weight: 700 !important;
+  font-size: 1.75em !important;
+  margin-top: 1.5em !important;
+}
+
+.md-typeset h3 {
+  color: var(--primary-blue) !important;
+  font-weight: 600 !important;
+  font-size: 1.35em !important;
+  margin-top: 1.3em !important;
+}
+
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  color: var(--primary-blue) !important;
+  font-weight: 600 !important;
+}
+
+/* Links */
+a {
+  color: var(--primary-blue);
+}
+
+a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid var(--primary-blue);
+  padding-left: 12px;
+}
+
+/* Code blocks and inline code */
+code {
+  background-color: var(--light-bg);
+  color: var(--primary-blue);
+}
+
+[data-md-color-scheme="dark"] code {
+  background-color: rgba(0, 103, 223, 0.1);
+  color: #4D9DE8;
+}
+
+/* Buttons and interactive elements */
+.md-button {
+  background-color: var(--primary-blue);
+  color: white;
+  display: block;
+  width: 360px !important;
+  padding: 12px 24px !important;
+  text-align: center;
+  margin: 10px auto !important;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.md-button:hover {
+  opacity: 0.85;
+}
+
+/* Table styling */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  background-color: var(--primary-blue);
+  color: white;
+  font-weight: 600;
+  padding: 12px;
+  text-align: left;
+}
+
+/* Comparison table specific styling */
+.comparison-table {
+  border: 1px solid #ddd;
+}
+
+.comparison-table tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.comparison-table tbody tr:nth-child(even) {
+  background-color: #fff;
+}
+
+.comparison-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+[data-md-color-scheme="dark"] .comparison-table tbody tr:nth-child(odd) {
+  background-color: #1a1a1a;
+}
+
+[data-md-color-scheme="dark"] .comparison-table tbody tr:nth-child(even) {
+  background-color: #0d0d0d;
+}
+
+[data-md-color-scheme="dark"] th {
+  background-color: rgba(0, 103, 223, 0.1);
+  color: #4D9DE8;
+}
+
+/* Accent boxes */
+.md-typeset .admonition.info,
+.md-typeset details.info {
+  border-color: var(--primary-blue);
+}
+
+.md-typeset .admonition.info > .admonition-title,
+.md-typeset details.info > summary {
+  background-color: var(--light-bg);
+  color: var(--primary-blue);
+}
+
+[data-md-color-scheme="dark"] .md-typeset .admonition.info > .admonition-title,
+[data-md-color-scheme="dark"] .md-typeset details.info > summary {
+  background-color: rgba(0, 103, 223, 0.1);
+  color: #4D9DE8;
+}
+
+/* Image styling - clean, integrated with shadow effect */
+.md-typeset img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: block;
+  margin: 20px auto;
+}
+
+/* Dark mode image shadow adjustment */
+[data-md-color-scheme="dark"] .md-typeset img {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Flip cards */
+.flip-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin: 24px 0;
+}
+
+.flip-card {
+  background-color: transparent;
+  perspective: 1000px;
+  height: 180px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner,
+.flip-card:focus-within .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.flip-card-back {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.flip-card-back-title {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.flip-card-back ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.flip-card-back li {
+  margin-bottom: 4px;
+}
+
+.flip-card-back li::before {
+  content: "- ";
+  color: #e53935;
+  font-weight: 700;
+}
+
+.flip-card-front {
+  background-color: var(--primary-blue);
+  color: white;
+  font-weight: 600;
+  font-size: 1.05em;
+}
+
+/* Image carousel (CSS-only, radio-driven) */
+.carousel {
+  position: relative;
+  margin: 20px auto;
+  max-width: 100%;
+}
+
+.carousel-slides {
+  position: relative;
+}
+
+.carousel input[type="radio"] {
+  display: none;
+}
+
+.carousel-slide {
+  display: none;
+}
+
+.carousel-slide img {
+  margin: 0 auto !important;
+}
+
+.carousel-nav {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.carousel-nav label {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--light-bg);
+  border: 1px solid var(--primary-blue);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+[data-md-color-scheme="dark"] .carousel-nav label {
+  background-color: rgba(33, 150, 243, 0.15);
+}
+
+#carousel-slide-1:checked ~ .carousel-slides .slide-1,
+#carousel-slide-2:checked ~ .carousel-slides .slide-2,
+#carousel-slide-3:checked ~ .carousel-slides .slide-3,
+#carousel-slide-4:checked ~ .carousel-slides .slide-4 {
+  display: block;
+}
+
+#carousel-slide-1:checked ~ .carousel-nav .label-1,
+#carousel-slide-2:checked ~ .carousel-nav .label-2,
+#carousel-slide-3:checked ~ .carousel-nav .label-3,
+#carousel-slide-4:checked ~ .carousel-nav .label-4 {
+  background-color: var(--primary-blue);
+}
+
+.flip-card-back {
+  background-color: var(--light-bg);
+  color: #222;
+  transform: rotateY(180deg);
+  font-size: 0.9em;
+}
+
+[data-md-color-scheme="dark"] .flip-card-back {
+  background-color: rgba(33, 150, 243, 0.1);
+  color: #eee;
+}
+
+/* Comparison flip cards with more content */
+.comparison-flip-card {
+  height: auto;
+  min-height: auto;
+}
+
+.comparison-flip-card .flip-card-inner {
+  height: auto;
+  min-height: 420px;
+}
+
+/* Make all comparison flip cards equal height */
+.flip-card-grid:has(.comparison-flip-card) {
+  display: grid;
+  grid-auto-rows: 1fr;
+}
+
+.comparison-flip-card .flip-card-back {
+  height: 100%;
+  width: 100%;
+  white-space: normal;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* Add spacing after comparison card grid */
+.flip-card-grid:has(.comparison-flip-card) {
+  margin-bottom: 60px;
+}
+
+/* Header logo (wide wordmark) - keep proportional and vertically centered */
+.md-header__button.md-logo {
+  margin: 0.2rem 0.2rem;
+  padding: 0.2rem 0.4rem 0.2rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 1.1rem;
+  width: auto;
+  max-width: none;
+  fill: currentColor;
+  /* The source wordmark has a sparkle accent sitting above the letters, which
+     skews the image's own vertical center below the actual letter baseline.
+     Nudge up so the lettering (not the sparkle) lines up with the title text. */
+  transform: translateY(-0.15rem);
+}
+
+/* Subtle divider between the logo and the site title */
+.md-header__button.md-logo {
+  border-right: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+/* Pill-shaped search box, matching a rounded always-visible search field */
+.md-search__form {
+  border-radius: 1.2rem !important;
+}
+
+@media screen and (min-width: 60em) {
+  .md-search__inner {
+    width: 14rem;
+  }
+
+  [data-md-toggle="search"]:checked ~ .md-header .md-search__inner {
+    width: 22rem;
+  }
+}
+
+[data-md-toggle="search"]:checked ~ .md-header .md-search__form {
+  border-radius: 1.2rem 1.2rem 0 0 !important;
+}
+
+.md-search__output {
+  border-radius: 0 0 0.6rem 0.6rem;
+  overflow: hidden;
+}
+
+/* Site title next to the logo - match the logo wordmark's visual text size */
+.md-header__title {
+  font-size: 1.05rem;
+}
+
+/* Search results proportionate sizing */
+.md-search-result__list {
+  font-size: 0.8rem;
+}
+
+.md-search-result__article h1 {
+  font-size: 0.95rem !important;
+  margin: 0.5rem 0 !important;
+  overflow-wrap: break-word;
+}
+
+.md-search-result__article h2,
+.md-search-result__article h3 {
+  font-size: 0.85rem !important;
+  margin: 0.3rem 0 !important;
+  overflow-wrap: break-word;
+}
+
+.md-search-result__article p {
+  font-size: 0.75rem;
+  margin: 0.25rem 0;
+}
+
+.md-search-result__teaser {
+  font-size: 0.7rem;
+  line-height: 1.4;
+}
+
+/* Sidebar collapse toggle (desktop only, matches Material's own sidebar breakpoint)
+   Lives as the leading icon in the header bar itself (before the logo/title),
+   the same convention GitHub/GitLab/Docusaurus use for their nav toggles. The
+   header is part of the normal page chrome, so this never scrolls with content
+   and never needs to track sidebar geometry. */
+.sidebar-toggle-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin: 0 0.8rem 0 0;
+  padding: 0;
+  border: none;
+  border-radius: 4px;
+  background-color: transparent;
+  color: var(--md-primary-bg-color, #fff);
+  cursor: pointer;
+}
+
+.sidebar-toggle-btn:hover {
+  opacity: 0.7;
+}
+
+.sidebar-toggle-btn svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: currentColor;
+}
+
+@media screen and (min-width: 76.25em) {
+  .sidebar-toggle-btn {
+    display: flex;
+  }
+
+  body.sidebar-collapsed .md-sidebar--primary {
+    display: none !important;
+  }
+}

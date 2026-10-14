@@ -1,0 +1,38 @@
+docs/assets/MHTML files/
+
+# Local scripts
+Mine.bat
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Dependencies
+node_modules/
+*.egg-info/
+__pycache__/
+*.pyc
+
+# Build outputs
+dist/
+build/
+site/
+*.o
+
+# Environment files
+.env
+.env.local
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Python virtual environment
+.venv/
