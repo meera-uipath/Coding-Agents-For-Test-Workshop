@@ -12,7 +12,7 @@ Today you:
 
 ✅ Evaluated requirements and generated test cases with Autopilot for Testers
 
-✅ Connected Studio to Test Manager and automated your test cases with Autopilot or a coding agent
+✅ Connected Studio to Test Manager, built the Object Repository from the Terminal, and automated your test cases with Autopilot for Testers
 
 ✅ Generated test data that checks the loan rules at their boundaries
 
@@ -20,9 +20,9 @@ Today you:
 
 ✅ Grouped the automated test cases into a smoke or regression test set
 
-✅ Asked a coding agent to run the test set and write a go/no-go release report
+✅ Asked the Terminal to run the test set and write a go/no-go release report
 
-To keep going, explore **[Troubleshooting & Next Steps](../module-3-troubleshooting-and-next-steps/index.md)**: more prompts to try with your coding agent, and fixes for common problems.
+To keep going, explore **[Troubleshooting & Next Steps](../module-3-troubleshooting-and-next-steps/index.md)**: more prompts to try in your Terminal, and fixes for common problems.
 
 ---
 

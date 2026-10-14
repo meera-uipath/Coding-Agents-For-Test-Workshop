@@ -34,7 +34,11 @@ A quick orientation before we get hands-on. Ten minutes of reading, then we buil
 
     ### Automation
 
+    ✅ The **Terminal** captures the application's UI elements into Studio's Object Repository.
+
     ✅ In Studio, **Autopilot** automates the test cases, which stay linked to their Test Manager designs.
+
+    ✅ **Autopilot** or the **Terminal** generates test data from the acceptance criteria.
 
     ✅ The automations are published to Orchestrator.
 
@@ -42,7 +46,7 @@ A quick orientation before we get hands-on. Ten minutes of reading, then we buil
 
     ✅ Test sets group test cases and run them on a robot.
 
-    ✅ A **coding agent** triggers the run, analyzes the results, and writes the release report.
+    ✅ The **Terminal** triggers the run, analyzes the results, and writes the release report.
 
 ## Autopilot for Testers
 
@@ -52,7 +56,7 @@ A quick orientation before we get hands-on. Ten minutes of reading, then we buil
 
 ✅ **Test Case Generation Agent** — generates test cases from requirements
 
-✅ **Autopilot for Developers** (in Studio) — turns a manual test case into an automated one
+✅ **Autopilot for Testers in Studio** — turns a manual test case into an automated one, low-code or coded (C#)
 
 ![Agent Type OOTB](../assets/images/Agent%20type%20OOTB.png)
 
@@ -76,7 +80,7 @@ It works as a three-layer pipeline:
 | **CLI tool** (`uip tm`) | Hand-crafted commands built on the SDK |
 | **`uipath-test` skill** | A `SKILL.md` that teaches the agent when and how to use the CLI |
 
-!!! example "What you'll ask a coding agent at the end of today"
+!!! example "What you'll ask in the Terminal at the end of today"
     *"Trigger the Regression Test Set of my project in Test Manager and wait for it to finish. Then create a release manager report in PDF. I need a go/no-go summary before tonight's sign-off meeting. Highlight the failures blocking the release."*
 
 That's enough theory — let's build.

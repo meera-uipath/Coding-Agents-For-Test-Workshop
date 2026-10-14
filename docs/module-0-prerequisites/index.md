@@ -15,7 +15,11 @@ Before the workshop, confirm that you can:
 
 ✅ Use **Autopilot** in Test Manager and Studio (enabled on the workshop tenant)
 
-✅ See a **machine with an App Test Robot runtime** you can add to your folder (we set this up together in step 8)
+✅ See a **machine with an App Test Robot runtime** you can add to your folder (we set this up together in step 9)
+
+✅ Have an **App Test Developer** license — you need it to create Test Automation projects
+
+✅ Have **permission to create Data Fabric entities** — you need it for test data in step 7
 
 ## What's a coding agent?
 
@@ -23,6 +27,14 @@ A coding agent is an AI assistant that understands a goal described in plain Eng
 
 Popular coding agents include **Claude Code** (Anthropic), **Codex CLI** (OpenAI), Cursor, Gemini CLI, and GitHub Copilot Agent.
 
+!!! success "UiPath Delegate — join the workshop without a coding agent license"
+    **UiPath Delegate** is UiPath's own desktop assistant. Like a coding agent, it understands goals described in plain English and gets the work done — and its tools are built to work across your **whole desktop**, not just a terminal or an IDE.
+
+    ✅ **No Claude, OpenAI, or other coding agent license needed.** **Delegate for Testing** runs on your **Test Cloud** license (App Test Developer or App Tester), so you don't have to buy or set up a third-party AI subscription to attend the workshop.
+
+    ✅ **Easy to start** — no separate AI tool, sign-in, or plugin to set up.
+
+    
 ### Core concepts
 
 | Concept | What it is |
@@ -36,43 +48,117 @@ Popular coding agents include **Claude Code** (Anthropic), **Codex CLI** (OpenAI
 
 A **skill** is a folder containing a `SKILL.md` file. It describes when the skill applies, step-by-step instructions, and references to supporting documentation. The agent reads it only when it needs it.
 
-## Choose your coding agent
+## Choose your Terminal
 
-This workshop supports **Claude Code** and **OpenAI Codex**. Pick one: the workshop is the same with both, and only a few commands differ. Select your agent's tab below.
+In this workshop, the **Terminal** is where you type requests in plain English and an AI agent does the work for you: it captures UI elements, creates test data, runs test sets, and writes reports. Pick one option below. For the rest of the guide, your choice is simply **the Terminal**.
 
 === "Claude Code"
 
-    **Claude Code** is Anthropic's coding agent for the terminal.
+    **Claude Code** is Anthropic's coding agent.
 
-    ✅ **You need:** a Claude subscription or an Anthropic API key, to sign in
+    ✅ **You need:** a Claude subscription or an Anthropic API key
 
-    ✅ **You start it with:** `claude`
+    ✅ **You install:** Node.js, the UiPath CLI, Claude Code, and the UiPath skills — see the [Installation Guide](01-installation-guide.md)
 
-    ✅ **It reads:** `CLAUDE.md` — the instructions file UiPath adds to your Studio projects
+    ✅ **It runs in:** Studio's **Terminal** tab, or any other terminal or IDE
 
 === "OpenAI Codex"
 
-    **Codex CLI** is OpenAI's coding agent for the terminal.
+    **Codex CLI** is OpenAI's coding agent.
 
-    ✅ **You need:** a ChatGPT plan or an OpenAI API key, to sign in
+    ✅ **You need:** a ChatGPT plan or an OpenAI API key
 
-    ✅ **You start it with:** `codex`
+    ✅ **You install:** Node.js, the UiPath CLI, Codex, and the UiPath skills — see the [Installation Guide](01-installation-guide.md)
 
-    ✅ **It reads:** `AGENTS.md` — the instructions file UiPath adds to your Studio projects
+    ✅ **It runs in:** Studio's **Terminal** tab, or any other terminal or IDE
+
+=== "UiPath Delegate"
+
+    **UiPath Delegate** is UiPath's desktop assistant. With the **QA/Testing** profile, it becomes **Delegate for Testing**.
+
+    ✅ **You need:** your **Test Cloud** license (App Test Developer or App Tester) — no third-party AI license
+
+    ✅ **You install:** UiPath Assistant with Delegate, and the UiPath CLI — see the [Installation Guide](01-installation-guide.md)
+
+    ✅ **It runs in:** its own window, opened from UiPath Assistant
 
 !!! tip "Your choice follows you"
-    Once you select a tab, every page in this guide shows the steps for that agent. You can switch at any time by selecting the other tab.
+    Once you select a tab, every page in this guide shows the steps for that option. You can switch at any time by selecting another tab.
 
-!!! info "Run your agent inside Studio"
-    In the workshop, you'll start your coding agent in **Studio's Terminal panel**, at the bottom of the Studio window. It opens in your project folder, so the agent works on the right project from the start. The Terminal panel needs a **Short Term Support (STS)** version of Studio — see the [Installation Guide](01-installation-guide.md#step-3-uipath-studio-and-the-browser-extension).
+### Open your Terminal
+
+Whenever a step says **open your Terminal**, do this:
+
+=== "Claude Code"
+
+    1. In Studio, select the **Terminal** tab in the bottom panel. It opens in your project folder.
+
+        ![Terminal tab in Studio](../assets/images/Terminal%20in%20Studio%20STS.png)
+
+    2. Start Claude Code:
+
+        ```powershell
+        claude
+        ```
+
+        The first time you start Claude Code in a folder, it asks whether you trust it. Select **Yes, I trust this folder** and press **Enter**.
+
+        ![Claude Code folder trust prompt in Studio's Terminal](../assets/images/claude%20access%20permission%20in%20Studio.png)
+
+    ✅ **New session:** type `/clear`.
+
+    ✅ **Approvals:** Claude Code asks before running commands. **Auto mode** (press **Shift+Tab** to cycle modes) runs them without asking — leave it off if you'd rather read each command first.
+
+    ??? tip "Using another terminal or IDE?"
+        Open your Studio project folder first, then start `claude` there:
+
+        ```powershell
+        cd "$HOME\Documents\UiPath\<project name>"
+        ```
+
+=== "OpenAI Codex"
+
+    1. In Studio, select the **Terminal** tab in the bottom panel. It opens in your project folder.
+
+        ![Terminal tab in Studio](../assets/images/Terminal%20in%20Studio%20STS.png)
+
+    2. Start Codex:
+
+        ```powershell
+        codex
+        ```
+
+    ✅ **New session:** type `/clear`, or close Codex and start it again.
+
+    ✅ **Approvals:** Codex may ask before running commands. Read and approve each `uip` command as it comes.
+
+    ??? tip "Using another terminal or IDE?"
+        Open your Studio project folder first, then start `codex` there:
+
+        ```powershell
+        cd "$HOME\Documents\UiPath\<project name>"
+        ```
+
+=== "UiPath Delegate"
+
+    1. Open **UiPath Assistant**, and use the switcher next to the UiPath logo to open **Delegate**.
+    2. Press **Ctrl+N** to start a new task.
+
+    ✅ **New session:** press **Ctrl+N**.
+
+    ✅ **Approvals:** with **Adaptive** approval mode, Delegate asks before high-impact actions, such as triggering a test run. Read each approval card before you approve it.
 
 ## Coding agents and UiPath
 
-UiPath provides a **plugin** for coding agents with 20+ skills for UiPath products. In this workshop you'll use one of them:
+UiPath provides a **plugin** for coding agents with 20+ skills for UiPath products. In this workshop you'll use three of them:
 
-✅ **`uipath-test`** — teaches the agent how to work with Test Manager: read test cases and results, trigger test sets, monitor executions, and report on them.
+✅ **`uipath-test`** — works with Test Manager: reads test cases and results, triggers test sets, monitors executions, and reports on them
 
-Other skills in the plugin include `uipath-rpa` (Studio workflows), `uipath-agents` (low-code and coded agents), `uipath-platform` (Orchestrator and authentication), and `uipath-maestro-flow` (Flow projects).
+✅ **`uipath-rpa`** — works with your Studio project: captures UI elements into the Object Repository and links test data to test cases
+
+✅ **`uipath-platform`** — works with UiPath Cloud services, including Data Fabric for test data
+
+Other skills in the plugin include `uipath-agents` (low-code and coded agents) and `uipath-maestro-flow` (Flow projects).
 
 ### The `uip` CLI
 
@@ -84,7 +170,7 @@ The **UiPath CLI** (`uip`) is the bridge between your machine and your UiPath or
 
 ```mermaid
 flowchart LR
-    You([You]) -- plain English --> Agent[Coding agent<br/>Claude Code / Codex]
+    You([You]) -- plain English --> Agent[Your Terminal<br/>Claude Code / Codex / Delegate]
     Agent -- loads --> Skill[uipath-test skill]
     Agent -- runs --> CLI["uip tm commands<br/>(UiPath CLI + Test Manager tool)"]
     CLI -- API calls --> TM[(Test Manager<br/>in Test Cloud)]

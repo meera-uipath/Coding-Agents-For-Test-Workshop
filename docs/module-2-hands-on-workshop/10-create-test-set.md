@@ -1,8 +1,8 @@
-# 09. Create a Test Set
+# 10. Create a Test Set
 
 ## What's a test set?
 
-A **test set** is a group of test cases that run together. You choose the test cases, then run the whole set with one click — or, in step 10, with one prompt to a coding agent.
+A **test set** is a group of test cases that run together. You choose the test cases, then run the whole set with one click — or, in step 11, with one prompt in your Terminal.
 
 Two kinds of test set are common:
 
@@ -13,7 +13,7 @@ Two kinds of test set are common:
 | **Run time** | Minutes | Can take hours |
 | **When it runs** | After every build or deployment | Before a release |
 
-For the workshop, either works. Your set will hold the **2 or more automated test cases** from step 5.
+For the workshop, either works. Your set will hold the **2 or more automated test cases** from step 6.
 
 ## Create it
 
@@ -21,7 +21,7 @@ For the workshop, either works. Your set will hold the **2 or more automated tes
     1. In your Test Manager project, go to **Planning → Test Sets**.
     2. Click **Create Test Set**.
     3. Name it **Smoke Test Set** or **Regression Test Set**, and click **Create**.
-    4. Assign your **automated** test cases to it (static assignment — select them manually). Include the data-driven test case from step 6.
+    4. Assign your **automated** test cases to it (static assignment — select them manually). Include the data-driven test case from step 7.
 
 !!! note "Conditions"
     ✅ An automated run needs at least one **automated** test case in the test set.
@@ -32,11 +32,11 @@ For the workshop, either works. Your set will hold the **2 or more automated tes
 
 ✅ The test set lists your automated test cases.
 
-✅ You've noted the **exact name** of the test set — you'll use it in the prompt in step 10.
+✅ You've noted the **exact name** of the test set — you'll use it in the prompt in step 11.
 
 ## Do a test run (optional)
 
-Make sure everything works before you hand over to the coding agent:
+Make sure everything works before step 11:
 
 1. Open your test set, click **Execute**, and choose **Automated**.
 2. Go to **Execution** and wait for the run to finish.
@@ -45,10 +45,10 @@ Make sure everything works before you hand over to the coding agent:
 
 ## Nice work!
 
-Your automated test cases are grouped and ready to run. Everything is in place for the coding agent.
+Your automated test cases are grouped and ready to run. Everything is in place for step 11.
 
 ---
 
-[Next → 10. Run and Report with a Coding Agent](10-run-and-report.md){: .md-button .md-button--primary}
+[Next → 11. Run and Report](11-run-and-report.md){: .md-button .md-button--primary}
 
 ---

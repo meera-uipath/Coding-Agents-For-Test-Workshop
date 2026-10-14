@@ -4,8 +4,9 @@ You've built the full flow, from requirements to a go/no-go report. This section
 
 ## What's inside
 
-- **[More Agent Prompts](01-more-agent-prompts.md)** — other everyday tasks you can hand to a coding agent: standup summaries, coverage checks, targeted runs, and more.
-- **[Troubleshooting](02-troubleshooting.md)** — fixes for the most common problems with setup, login, execution, and the PDF report.
+✅ **[More Prompts to Try](01-more-agent-prompts.md)** — other everyday tasks you can hand to the Terminal: standup summaries, coverage checks, targeted runs, and more.
+
+✅ **[Troubleshooting](02-troubleshooting.md)** — fixes for the most common problems with setup, login, execution, and the PDF report.
 
 ## Learn more
 
@@ -17,6 +18,6 @@ You've built the full flow, from requirements to a go/no-go report. This section
 
 ---
 
-[Next → More Agent Prompts](01-more-agent-prompts.md){: .md-button .md-button--primary}
+[Next → More Prompts to Try](01-more-agent-prompts.md){: .md-button .md-button--primary}
 
 ---

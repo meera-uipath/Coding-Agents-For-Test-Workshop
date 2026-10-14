@@ -4,14 +4,14 @@
 
 **Thank you for joining the UiPath Coding Agents for Test Workshop!**
 
-This **Learner's Handbook** is your hands-on guide for the workshop. We keep the theory short and get you building fast: in a few hours you'll take a set of requirements all the way to an automated test run, and finish by asking a coding agent for a **go/no-go release report** in plain English.
+This **Learner's Handbook** is your hands-on guide for the workshop. We keep the theory short and get you building fast: in a few hours you'll take a set of requirements all the way to an automated test run, and finish by asking an AI agent for a **go/no-go release report** in plain English.
 
 !!! info "Before the workshop"
     Complete the **[Prerequisites](module-0-prerequisites/index.md)** before the session starts. Installing the tools takes about 30–45 minutes, and the hands-on steps depend on them.
 
     Your **trainer will share the organization and tenant** you'll use during the workshop.
 
-## What You'll Build
+## What you'll build
 
 You'll walk through the full testing lifecycle in UiPath Test Cloud, with AI at every step:
 
@@ -36,11 +36,12 @@ You'll walk through the full testing lifecycle in UiPath Test Cloud, with AI at 
     </div>
     <div class="wf-steps">
       <a class="wf-step" href="module-2-hands-on-workshop/04-connect-studio-to-tm/"><span class="wf-num">4</span>Connect Studio to TM</a>
-      <a class="wf-step" href="module-2-hands-on-workshop/05-automate-test-cases/"><span class="wf-num">5</span>Automate test cases</a>
-      <a class="wf-step" href="module-2-hands-on-workshop/06-generate-test-data/"><span class="wf-num">6</span>Generate test data</a>
-      <a class="wf-step" href="module-2-hands-on-workshop/07-publish-test-cases/"><span class="wf-num">7</span>Publish test cases</a>
+      <a class="wf-step" href="module-2-hands-on-workshop/05-build-object-repository/"><span class="wf-num">5</span>Build Object Repository</a>
+      <a class="wf-step" href="module-2-hands-on-workshop/06-automate-test-cases/"><span class="wf-num">6</span>Automate test cases</a>
+      <a class="wf-step" href="module-2-hands-on-workshop/07-generate-test-data/"><span class="wf-num">7</span>Generate test data</a>
+      <a class="wf-step" href="module-2-hands-on-workshop/08-publish-test-cases/"><span class="wf-num">8</span>Publish test cases</a>
     </div>
-    <div class="wf-phase-foot">Assisted by <strong>Autopilot</strong> or a <strong>coding agent</strong></div>
+    <div class="wf-phase-foot"><strong>Autopilot</strong>, plus the <strong>Terminal</strong> for the Object Repository and test data</div>
   </div>
   <div class="wf-arrow" aria-hidden="true"></div>
   <div class="wf-phase">
@@ -49,8 +50,8 @@ You'll walk through the full testing lifecycle in UiPath Test Cloud, with AI at 
       <span class="wf-phase-title">Orchestrator + TM</span>
     </div>
     <div class="wf-steps">
-      <a class="wf-step" href="module-2-hands-on-workshop/08-configure-tm-folder/"><span class="wf-num">8</span>Configure the folder</a>
-      <a class="wf-step" href="module-2-hands-on-workshop/09-create-test-set/"><span class="wf-num">9</span>Create a test set</a>
+      <a class="wf-step" href="module-2-hands-on-workshop/09-configure-tm-folder/"><span class="wf-num">9</span>Configure the folder</a>
+      <a class="wf-step" href="module-2-hands-on-workshop/10-create-test-set/"><span class="wf-num">10</span>Create a test set</a>
     </div>
     <div class="wf-phase-foot">Folder, robot, and a <strong>smoke or regression</strong> set</div>
   </div>
@@ -58,12 +59,12 @@ You'll walk through the full testing lifecycle in UiPath Test Cloud, with AI at 
   <div class="wf-phase wf-phase--outcome">
     <div class="wf-phase-head">
       <span class="wf-phase-kicker">Phase 4 · Run &amp; report</span>
-      <span class="wf-phase-title">Coding agent</span>
+      <span class="wf-phase-title">Terminal</span>
     </div>
     <div class="wf-steps">
-      <a class="wf-step" href="module-2-hands-on-workshop/10-run-and-report/"><span class="wf-num">10</span>Run and report</a>
+      <a class="wf-step" href="module-2-hands-on-workshop/11-run-and-report/"><span class="wf-num">11</span>Run and report</a>
     </div>
-    <div class="wf-phase-foot"><strong>Claude Code</strong> or <strong>Codex</strong> → go/no-go PDF</div>
+    <div class="wf-phase-foot">Run the test set → <strong>go/no-go PDF</strong></div>
   </div>
 </div>
 
@@ -73,14 +74,15 @@ You'll walk through the full testing lifecycle in UiPath Test Cloud, with AI at 
 2. **Evaluate requirements** — let Autopilot check them for clarity, completeness, and testability.
 3. **Generate test cases** — let Autopilot design test cases from the requirements.
 4. **Connect Studio to Test Manager** — see your manual test cases in Studio.
-5. **Automate test cases** — with Autopilot in Studio or a coding agent.
-6. **Generate test data** — with Autopilot, or with a coding agent that stores it in Data Fabric.
-7. **Publish** — send the automations to Orchestrator so Test Manager can run them.
-8. **Configure the Test Manager folder** — give the project a folder and a robot to execute on.
-9. **Create a test set** — group your automated test cases into a smoke or regression set.
-10. **Run and report** — ask a coding agent to run the test set and produce a go/no-go PDF report.
+5. **Build the Object Repository** — the Terminal captures the UiBank elements your tests need.
+6. **Automate test cases** — with Autopilot for Testers in Studio.
+7. **Generate test data** — with Autopilot, or from the Terminal, which stores it in Data Fabric.
+8. **Publish** — send the automations to Orchestrator so Test Manager can run them.
+9. **Configure the Test Manager folder** — give the project a folder and a robot to execute on.
+10. **Create a test set** — group your automated test cases into a smoke or regression set.
+11. **Run and report** — ask the Terminal to run the test set and produce a go/no-go PDF report.
 
-## Learning Objectives
+## Learning objectives
 
 By the end of this workshop, you will:
 
@@ -88,25 +90,25 @@ By the end of this workshop, you will:
 
 ✅ Use Autopilot for Testers to evaluate requirements and generate test cases
 
-✅ Automate test cases in Studio with Autopilot for Developers or a coding agent, and publish them to Orchestrator
+✅ Automate test cases in Studio with Autopilot for Testers, and publish them to Orchestrator
 
-✅ Generate test data with Autopilot, or with a coding agent that stores it in Data Fabric
+✅ Generate test data with Autopilot, or from the Terminal, which stores it in Data Fabric
 
 ✅ Configure a Test Manager project and a test set so they can run automatically
 
-✅ Set up a coding agent (Claude Code or OpenAI Codex) with the UiPath CLI and skills
+✅ Set up your Terminal — Claude Code, OpenAI Codex, or UiPath Delegate — with the UiPath CLI and skills
 
-✅ Ask a coding agent to trigger a test set, analyze the results, and produce a go/no-go release report
+✅ Ask the Terminal to trigger a test set, analyze the results, and produce a go/no-go release report
 
-**Real deliverable:** By the end of the workshop, you'll have a **PDF release report** with a go/no-go recommendation, generated by a coding agent from a real test run in your own Test Manager project.
+**Real deliverable:** By the end of the workshop, you'll have a **PDF release report** with a go/no-go recommendation, generated in the Terminal from a real test run in your own Test Manager project.
 
-## How This Guide Is Organized
+## How this guide is organized
 
 | Section | What's inside |
 |---|---|
-| **[Prerequisites](module-0-prerequisites/index.md)** | Accounts, coding agent concepts, and step-by-step installation |
+| **[Prerequisites](module-0-prerequisites/index.md)** | Accounts, choosing your Terminal, and step-by-step installation |
 | **[Introduction](module-1-introduction/index.md)** | A short tour of Test Cloud, Test Manager, and Coding Agents for Test |
-| **[Hands-On Workshop](module-2-hands-on-workshop/index.md)** | The ten hands-on steps, from import to the go/no-go report |
+| **[Hands-On Workshop](module-2-hands-on-workshop/index.md)** | The eleven hands-on steps, from import to the go/no-go report |
 | **[Troubleshooting & Next Steps](module-3-troubleshooting-and-next-steps/index.md)** | More prompts to try and fixes for common problems |
 
 ---

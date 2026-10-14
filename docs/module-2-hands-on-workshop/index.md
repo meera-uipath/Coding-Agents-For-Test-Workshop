@@ -1,6 +1,6 @@
 # Hands-On Workshop
 
-This is the core of the day. You'll take a project from requirements to a published, automated test set — then hand over to a coding agent to run it and write the release report.
+This is the core of the day. You'll take a project from requirements to a published, automated test set — then ask the Terminal to run it and write the release report.
 
 ## What you'll do
 
@@ -10,15 +10,17 @@ This is the core of the day. You'll take a project from requirements to a publis
 
 ✅ Connect Studio to Test Manager and view your manual test cases
 
-✅ Automate at least 2 test cases — with Autopilot in Studio or a coding agent (Claude Code or Codex)
+✅ Build the Object Repository for UiBank from the Terminal
 
-✅ Generate test data with Autopilot or a coding agent
+✅ Automate at least 2 test cases with Autopilot for Testers in Studio
+
+✅ Generate test data with Autopilot or from the Terminal
 
 ✅ Publish the automations to Orchestrator and configure the project's folder and robot
 
 ✅ Group the automated test cases into a smoke or regression test set
 
-✅ Ask a coding agent to run the test set and produce a go/no-go PDF report
+✅ Ask the Terminal to run the test set and produce a go/no-go PDF report
 
 ## How the day flows
 
@@ -43,11 +45,12 @@ This is the core of the day. You'll take a project from requirements to a publis
     </div>
     <div class="wf-steps">
       <a class="wf-step" href="04-connect-studio-to-tm/"><span class="wf-num">4</span>Connect Studio to TM</a>
-      <a class="wf-step" href="05-automate-test-cases/"><span class="wf-num">5</span>Automate test cases</a>
-      <a class="wf-step" href="06-generate-test-data/"><span class="wf-num">6</span>Generate test data</a>
-      <a class="wf-step" href="07-publish-test-cases/"><span class="wf-num">7</span>Publish test cases</a>
+      <a class="wf-step" href="05-build-object-repository/"><span class="wf-num">5</span>Build Object Repository</a>
+      <a class="wf-step" href="06-automate-test-cases/"><span class="wf-num">6</span>Automate test cases</a>
+      <a class="wf-step" href="07-generate-test-data/"><span class="wf-num">7</span>Generate test data</a>
+      <a class="wf-step" href="08-publish-test-cases/"><span class="wf-num">8</span>Publish test cases</a>
     </div>
-    <div class="wf-phase-foot">Assisted by <strong>Autopilot</strong> or a <strong>coding agent</strong></div>
+    <div class="wf-phase-foot"><strong>Autopilot</strong>, plus the <strong>Terminal</strong> for the Object Repository and test data</div>
   </div>
   <div class="wf-arrow" aria-hidden="true"></div>
   <div class="wf-phase">
@@ -56,8 +59,8 @@ This is the core of the day. You'll take a project from requirements to a publis
       <span class="wf-phase-title">Orchestrator + TM</span>
     </div>
     <div class="wf-steps">
-      <a class="wf-step" href="08-configure-tm-folder/"><span class="wf-num">8</span>Configure the folder</a>
-      <a class="wf-step" href="09-create-test-set/"><span class="wf-num">9</span>Create a test set</a>
+      <a class="wf-step" href="09-configure-tm-folder/"><span class="wf-num">9</span>Configure the folder</a>
+      <a class="wf-step" href="10-create-test-set/"><span class="wf-num">10</span>Create a test set</a>
     </div>
     <div class="wf-phase-foot">Folder, robot, and a <strong>smoke or regression</strong> set</div>
   </div>
@@ -65,12 +68,12 @@ This is the core of the day. You'll take a project from requirements to a publis
   <div class="wf-phase wf-phase--outcome">
     <div class="wf-phase-head">
       <span class="wf-phase-kicker">Phase 4 · Run &amp; report</span>
-      <span class="wf-phase-title">Coding agent</span>
+      <span class="wf-phase-title">Terminal</span>
     </div>
     <div class="wf-steps">
-      <a class="wf-step" href="10-run-and-report/"><span class="wf-num">10</span>Run and report</a>
+      <a class="wf-step" href="11-run-and-report/"><span class="wf-num">11</span>Run and report</a>
     </div>
-    <div class="wf-phase-foot"><strong>Claude Code</strong> or <strong>Codex</strong> → go/no-go PDF</div>
+    <div class="wf-phase-foot">Run the test set → <strong>go/no-go PDF</strong></div>
   </div>
 </div>
 
@@ -81,17 +84,29 @@ This is the core of the day. You'll take a project from requirements to a publis
 
 ## Steps
 
-- [01. Import the Test Manager Project](01-import-tm-project.md)
-- [02. Evaluate Requirements](02-evaluate-requirements.md)
-- [03. Generate Test Cases](03-generate-test-cases.md)
-- [04. Connect Studio to Test Manager](04-connect-studio-to-tm.md)
-- [05. Automate Test Cases](05-automate-test-cases.md)
-- [06. Generate Test Data](06-generate-test-data.md)
-- [07. Publish Test Cases](07-publish-test-cases.md)
-- [08. Configure the Test Manager Folder](08-configure-tm-folder.md)
-- [09. Create a Test Set](09-create-test-set.md)
-- [10. Run and Report with a Coding Agent](10-run-and-report.md)
-- [You Did It!](you-did-it.md)
+✅ [01. Import the Test Manager Project](01-import-tm-project.md)
+
+✅ [02. Evaluate Requirements](02-evaluate-requirements.md)
+
+✅ [03. Generate Test Cases](03-generate-test-cases.md)
+
+✅ [04. Connect Studio to Test Manager](04-connect-studio-to-tm.md)
+
+✅ [05. Build the Object Repository](05-build-object-repository.md)
+
+✅ [06. Automate Test Cases](06-automate-test-cases.md)
+
+✅ [07. Generate Test Data](07-generate-test-data.md)
+
+✅ [08. Publish Test Cases](08-publish-test-cases.md)
+
+✅ [09. Configure the Test Manager Folder](09-configure-tm-folder.md)
+
+✅ [10. Create a Test Set](10-create-test-set.md)
+
+✅ [11. Run and Report](11-run-and-report.md)
+
+✅ [You did it!](you-did-it.md)
 
 ---
 

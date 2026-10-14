@@ -1,4 +1,4 @@
-# 07. Publish Test Cases
+# 08. Publish Test Cases
 
 To run your test cases from Test Manager, publish them to Orchestrator. Test cases and data-driven test cases are created as **drafts** by default, so you first need to set them as **publishable**.
 
@@ -29,15 +29,12 @@ When you publish a Test Automation package, Orchestrator automatically creates a
 
     ![Publish Test Case Window](../assets/images/Studio%20Publish%20TC%20Window.png)
 
-!!! tip "Automated with a coding agent?"
-    You can publish from Studio as shown above, or ask the agent in the same session: *"Publish this project to Orchestrator and link each coded test case to its Test Manager test case."* It packs and uploads the project, then links each automation with the `uipath-test` skill.
-
 **Check it:**
 
 ✅ In Test Manager, open each automated test case: it now shows a linked **automation**.
 
-!!! info "Why this matters for step 10"
-    The coding agent can only trigger test cases that are **automated** — linked to a published automation. Manual test cases are skipped when a test set runs automatically.
+!!! info "Why this matters for step 11"
+    The Terminal can only trigger test cases that are **automated** — linked to a published automation. Manual test cases are skipped when a test set runs automatically.
 
 ## Nice work!
 
@@ -45,6 +42,6 @@ Your test cases are published and ready to run from Test Manager.
 
 ---
 
-[Next → 08. Configure the Test Manager Folder](08-configure-tm-folder.md){: .md-button .md-button--primary}
+[Next → 09. Configure the Test Manager Folder](09-configure-tm-folder.md){: .md-button .md-button--primary}
 
 ---

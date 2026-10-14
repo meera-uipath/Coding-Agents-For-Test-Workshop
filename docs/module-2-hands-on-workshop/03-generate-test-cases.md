@@ -7,7 +7,7 @@ Designing test cases by hand is slow, and it's easy to miss edge cases. The **Te
 You stay in control: you review the proposals, keep the ones you want, and edit them before they're saved.
 
 !!! info "Why manual steps matter"
-    The manual steps Autopilot generates here are what Autopilot in Studio — or a coding agent — will turn into automation in step 5. Clear **Given / When / Then** steps lead to cleaner automated test cases.
+    The manual steps Autopilot generates here are what Autopilot in Studio will turn into automation in step 6. Clear **Given / When / Then** steps lead to cleaner automated test cases.
 
     ✅ **GIVEN** — set up the conditions for the test (data, starting page, application state)
 
@@ -30,10 +30,10 @@ You stay in control: you review the proposals, keep the ones you want, and edit 
 
 ✅ Each test case has manual steps.
 
-✅ Note the **test case keys** (for example `UIBMK:5`) — you'll see them again in the report.
+✅ Note the **test case keys** (for example `UIBMK:5`) — you'll use them in your Terminal prompts in steps 5 and 7, and see them again in the report.
 
 !!! tip "Keep one failing test case"
-    The go/no-go report in step 10 is most interesting when something fails. Your trainer may ask you to keep one test case whose expected result **doesn't** match the application, so the report has a real failure to explain.
+    The go/no-go report in step 11 is most interesting when something fails. Your trainer may ask you to keep one test case whose expected result **doesn't** match the application, so the report has a real failure to explain.
 
 ## Nice work!
 

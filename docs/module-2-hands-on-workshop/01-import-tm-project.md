@@ -30,7 +30,7 @@ Today, the import gives you a ready-made project with requirements to work from,
     This is the project you'll work in for the rest of the workshop.
 
 !!! tip "Write down your project key"
-    The **prefix** you chose is your **project key** (for example `UIBMK`). You'll need it in steps 5 and 10, when you talk to the coding agent.
+    The **prefix** you chose is your **project key** (for example `UIBMK`). You'll need it in your Terminal prompts in steps 5, 7 and 11.
 
 ## Check it from the CLI (optional)
 
