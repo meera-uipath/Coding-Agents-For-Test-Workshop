@@ -48,7 +48,7 @@ Give test data to your automated test cases from step 5. With Autopilot, start w
     !!! warning "Check these first"
         ✅ **You're logged in** to the right tenant: `uip login status --output json`
 
-        ✅ The **starter project is open in Studio** — `uip rpa` commands work through the running Studio instance.
+        ✅ Your **Test Automation project is open in Studio** — `uip rpa` commands work through the running Studio instance.
 
         ✅ `uip df --help` and `uip rpa --help` work (Installation Guide, step 7).
 
@@ -56,7 +56,7 @@ Give test data to your automated test cases from step 5. With Autopilot, start w
 
     ### Part 1 — Generate the data and upload it to Data Fabric
 
-    1. In the same terminal and session as step 5 (or a new session started in the starter project folder), replace the placeholders and paste the prompt:
+    1. In the same agent session as step 5 (or a new one started in Studio's **Terminal** panel), replace the placeholders and paste the prompt:
 
         ```text
         Read the loan application requirement in Test Manager project <YOUR_PROJECT_KEY> and generate 12 rows of test data from its acceptance criteria: Scenario, Email, LoanAmount, LoanTerm (1, 3, 5 or 10), YearlyIncome, Age, and ExpectedResult (the exact message from the acceptance criteria). Cover the age and loan amount boundaries. Then create a Data Fabric entity named LoanTestData<YOUR_INITIALS> at tenant level and import the rows into it. Show me the schema and the rows before you create anything.

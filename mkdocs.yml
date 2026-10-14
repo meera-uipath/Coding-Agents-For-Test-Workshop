@@ -19,6 +19,7 @@ theme:
     - search.suggest
     - toc.integrate
     - content.code.copy
+    - content.tabs.link
 
 extra:
   generator: false

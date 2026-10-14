@@ -12,8 +12,21 @@ Work through these steps in order. Each one ends with a quick check so you know 
 
 The UiPath CLI and the coding agents are installed with **npm**, which comes with Node.js.
 
-1. Download and install the **LTS** version from <a href="https://nodejs.org" target="_blank">nodejs.org</a>.
-2. Upgrade npm to version 11:
+1. Install the **LTS** version of Node.js:
+
+    === "Method 1 — winget (quickest)"
+
+        ```powershell
+        winget install --id OpenJS.NodeJS.LTS -e --source winget
+        ```
+
+        If prompted, type `Y` and press **Enter**.
+
+    === "Method 2 — installer"
+
+        Download and run the **LTS** installer from <a href="https://nodejs.org" target="_blank">nodejs.org</a>, accepting the default options.
+
+2. Open a **new** terminal, then upgrade npm to version 11:
 
     ```powershell
     npm install --global npm@11
@@ -55,15 +68,22 @@ git --version
 
 ## Step 3 — UiPath Studio and the browser extension
 
-You'll automate test cases in Studio (with Autopilot or a coding agent), and the robot runs them in the browser.
+You'll automate test cases in Studio (with Autopilot or a coding agent), and the robot runs them in the browser. You'll also run your coding agent in Studio's **Terminal panel**.
 
-1. Download Studio from <a href="https://www.uipath.com/start-trial" target="_blank">uipath.com/start-trial</a> and install it.
+!!! warning "Install a Studio STS version"
+    The **Terminal panel** is only available in **Short Term Support (STS)** versions of Studio. Install Studio from the STS download link below.
+
+1. Download the Studio STS installer, <a href="https://download.uipath.com/UiPathStudioCloud.msi" target="_blank">UiPathStudioCloud.msi</a> (about 760 MB), then run it and follow the steps.
 2. Launch Studio and **sign in** to the workshop organization and tenant shared by your trainer.
 3. Install the **UiPath browser extension** for Edge or Chrome: in Studio, go to **Home → Tools → UiPath Extensions** and select your browser.
 
 **Check it:**
 
 ✅ Studio launches and shows you as signed in.
+
+✅ Studio shows a **Terminal** tab in the panel at the bottom of the window, next to **Output** and **Errors**.
+
+![Terminal tab in Studio](../assets/images/Terminal%20in%20Studio%20STS.png)
 
 ✅ The UiPath extension is enabled in your browser.
 
@@ -108,7 +128,14 @@ Install **Claude Code**, **Codex CLI**, or both.
     codex --version
     ```
 
-    Then run `codex` once and sign in when prompted.
+    Then sign in with your OpenAI account:
+
+    ```powershell
+    codex login
+    ```
+
+    !!! note "Codex runs commands in a sandbox"
+        Codex can run commands in a sandbox that doesn't share your `uip` login. If the agent says you aren't logged in when `uip login status` says you are, ask it to run UiPath CLI commands with escalated permissions.
 
 ## Step 5 — UiPath CLI
 
@@ -150,10 +177,14 @@ This adds the UiPath skills, including **`uipath-test`**, to your coding agent.
 
 **Check it:**
 
-✅ The output of `uip skills install` lists **`uipath-test`** among the installed skills (along with `uipath-rpa`, `uipath-platform`, and others).
+```powershell
+uip skills list
+```
+
+✅ The list includes **`uipath-test`**, **`uipath-rpa`**, and **`uipath-platform`** — the three skills this workshop uses.
 
 !!! info "Skills load automatically"
-    You don't need to call a skill by name. When you ask the agent about Test Manager, it loads `uipath-test` on its own.
+    You don't need to call a skill by name. When you ask the agent about Test Manager, it loads `uipath-test` on its own. If the agent doesn't recognize UiPath tasks, close it and start it again so it reloads its plugins.
 
 ## Step 7 — UiPath CLI tools
 
@@ -227,19 +258,48 @@ Get comfortable with the CLI before the agent starts driving it for you. These c
 
 ✅ You see a list of Test Manager projects in your tenant (it may be short or empty before step 1 of the workshop).
 
+4. **Ask your coding agent.** Start your agent (`claude` or `codex`), and ask for an outcome in plain English:
+
+    ```text
+    Which UiPath skills can I use? List the Test Manager projects in the tenant I'm logged in to.
+    ```
+
+    ✅ The agent runs `uip` commands on its own and answers both questions.
+
+!!! warning "Your agent acts as you"
+    ✅ The agent uses **your** `uip login` session, with your permissions. Anything it does in Test Manager or Orchestrator is done in your name.
+
+    ✅ **Don't approve a blanket rule for all `uip` commands** — that would include commands that change or delete data. Approve read and list commands as they come up.
+
+
+## Keep everything up to date
+
+Coding Agents for Test is in **Public Preview**, and the CLI, tools, and skills are updated often. Update them **before the workshop**, and again whenever something behaves unexpectedly:
+
+```powershell
+npm install -g @uipath/cli@latest
+uip tools update
+uip skills update
+```
+
+Then restart your coding agent so it picks up the new skills.
+
 ## Setup checklist
 
 Before the workshop, confirm every item:
 
 - [ ] `npm --version` shows 11.x.x
 - [ ] `git --version` works
-- [ ] Studio launches and is signed in; the UiPath browser extension is enabled
+- [ ] Studio (an STS version) launches and is signed in, and shows the **Terminal** panel
+- [ ] The UiPath browser extension is enabled
 - [ ] Edge or Chrome is installed
 - [ ] `claude --version` or `codex --version` works, and you've signed in once
 - [ ] `uip --version` shows 1.195.1 or later
-- [ ] `uip skills install` lists `uipath-test`
+- [ ] `uip skills list` includes `uipath-test`, `uipath-rpa`, and `uipath-platform`
 - [ ] `uip tm --help`, `uip rpa --help`, and `uip df --help` work
 - [ ] `uip login status --output json` shows the workshop organization and tenant
+- [ ] Your coding agent answers *"Which UiPath skills can I use?"*
+- [ ] You ran the update commands in **Keep everything up to date**
 
 ---
 

@@ -21,15 +21,7 @@ Before the workshop, confirm that you can:
 
 A coding agent is an AI assistant that understands a goal described in plain English, explores your files and tools, and gets the work done — not just autocomplete.
 
-Examples of coding agents:
-
-✅ **Claude Code** (Anthropic)
-
-✅ **Codex CLI** (OpenAI)
-
-✅ Cursor, Gemini CLI, GitHub Copilot Agent
-
-This workshop supports **Claude Code** and **OpenAI Codex**. Install one of them, or both.
+Popular coding agents include **Claude Code** (Anthropic), **Codex CLI** (OpenAI), Cursor, Gemini CLI, and GitHub Copilot Agent.
 
 ### Core concepts
 
@@ -43,6 +35,36 @@ This workshop supports **Claude Code** and **OpenAI Codex**. Install one of them
 | **Plugin** | A package that bundles skills, commands, hooks, and subagents together |
 
 A **skill** is a folder containing a `SKILL.md` file. It describes when the skill applies, step-by-step instructions, and references to supporting documentation. The agent reads it only when it needs it.
+
+## Choose your coding agent
+
+This workshop supports **Claude Code** and **OpenAI Codex**. Pick one: the workshop is the same with both, and only a few commands differ. Select your agent's tab below.
+
+=== "Claude Code"
+
+    **Claude Code** is Anthropic's coding agent for the terminal.
+
+    ✅ **You need:** a Claude subscription or an Anthropic API key, to sign in
+
+    ✅ **You start it with:** `claude`
+
+    ✅ **It reads:** `CLAUDE.md` — the instructions file UiPath adds to your Studio projects
+
+=== "OpenAI Codex"
+
+    **Codex CLI** is OpenAI's coding agent for the terminal.
+
+    ✅ **You need:** a ChatGPT plan or an OpenAI API key, to sign in
+
+    ✅ **You start it with:** `codex`
+
+    ✅ **It reads:** `AGENTS.md` — the instructions file UiPath adds to your Studio projects
+
+!!! tip "Your choice follows you"
+    Once you select a tab, every page in this guide shows the steps for that agent. You can switch at any time by selecting the other tab.
+
+!!! info "Run your agent inside Studio"
+    In the workshop, you'll start your coding agent in **Studio's Terminal panel**, at the bottom of the Studio window. It opens in your project folder, so the agent works on the right project from the start. The Terminal panel needs a **Short Term Support (STS)** version of Studio — see the [Installation Guide](01-installation-guide.md#step-3-uipath-studio-and-the-browser-extension).
 
 ## Coding agents and UiPath
 

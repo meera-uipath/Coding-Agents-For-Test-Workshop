@@ -7,20 +7,21 @@ Your test cases live in Test Manager, but automation is built in **UiPath Studio
 !!! warning "Access required"
     Only **App Test Developer** users can create and publish Test Automation projects. Check with your trainer if you can't create one.
 
-## Part 1 — Open the starter project
+## Part 1 — Create a Test Automation project
 
-The starter project is a **Test Automation** project with an **Object Repository** for the UiBank application already set up. The Object Repository stores the UI elements of the application (buttons, fields, labels), so that automations can find and interact with them reliably.
+A **Test Automation** project is a Studio project built for testing: its files are **test cases**, not processes, and it can be linked to a Test Manager project.
 
-:material-folder-zip: [**Application Testing ILT - Students.zip**](../assets/Files/Application%20Testing%20ILT%20-%20Students.zip) (302.7 KB) — starter Studio project
+!!! example "It's your turn now!"
+    1. Launch **UiPath Studio**.
+    2. On the **Home** screen, under **New Project**, select **Test Automation** — *"Start with a blank project to create a new test project"*.
 
-1. Download and extract the zip file.
-2. Launch **UiPath Studio**.
-3. Select **Open Local Project**.
-4. Browse to the extracted folder and select the `project.json` file.
-5. Click **Open**.
+        ![New Test Automation project in Studio](../assets/images/New%20Test%20Automation%20Project.png)
 
-!!! tip "Remember the folder"
-    Note where you extracted the project. If you automate with a coding agent in step 5, you'll start the agent in this folder.
+    3. Enter a **Name**, for example `UiBank Loan Tests`.
+    4. Click **Create**. Studio opens the new project.
+
+!!! tip "Where your project is saved"
+    Studio saves the project in `Documents\UiPath\<project name>`. Studio's **Terminal** panel opens in this folder, so a coding agent you start there in steps 5 and 6 works on this project.
 
 ## Part 2 — Link Studio to your Test Manager project
 

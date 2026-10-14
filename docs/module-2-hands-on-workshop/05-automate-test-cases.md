@@ -4,7 +4,7 @@ In this step, you'll turn your manual test cases into **automated test cases**. 
 
 | | Autopilot in Studio | Coding agent (Claude Code or Codex) |
 |---|---|---|
-| **Where you work** | Inside Studio, from Test Explorer | In a terminal, in the starter project folder |
+| **Where you work** | Inside Studio, from Test Explorer | In Studio's **Terminal** panel |
 | **What it creates** | Low-code test cases | **Coded** test cases (C#) |
 | **Best for** | Developers who like visual design | Developers who prefer code and plain-English prompts |
 
@@ -13,18 +13,18 @@ Pick one, or try both on different test cases. Either way, automate **at least 2
 !!! info "Before you start"
     ✅ Studio is connected to Test Manager, and your manual test cases appear in Test Explorer (step 4).
 
-    ✅ The starter project is open in Studio.
+    ✅ Your Test Automation project from step 4 is open in Studio.
 
 ## Generate the automated test cases
 
 === "Autopilot in Studio"
 
-    **Autopilot for Developers** helps you build and test automations faster in Studio. It creates workflows, coded workflows, and **test cases** from natural-language instructions, and it uses the project's Object Repository to find UI elements.
+    **Autopilot for Developers** helps you build and test automations faster in Studio. It creates workflows, coded workflows, and **test cases** from natural-language instructions.
 
     !!! example "It's your turn now!"
         1. Open the **Test Explorer** panel and go to **Overview**.
         2. Right-click a manual test case and select **Generate Test Case with Autopilot**.
-        3. Review what Autopilot builds. Check that it uses elements from the Object Repository and that the verification steps match the expected results.
+        3. Review what Autopilot builds. Check that the steps interact with the right UiBank screens and that the verification steps match the expected results.
         4. Adjust it if needed, then **run** it locally.
         5. Repeat for at least one more test case.
 
@@ -42,24 +42,44 @@ Pick one, or try both on different test cases. Either way, automate **at least 2
         ✅ **You're logged in** to the right tenant: `uip login status --output json`
 
     !!! example "It's your turn now!"
-        1. Open a **new terminal** in the folder where you extracted the starter project, and start your agent (`claude` or `codex`).
+        1. In Studio, select the **Terminal** tab in the bottom panel. It opens in your project folder.
+
+            ![Terminal tab in Studio](../assets/images/Terminal%20in%20Studio%20STS.png)
+
+            Start your agent:
+
+            === "Claude Code"
+
+                ```powershell
+                claude
+                ```
+
+                The first time you start Claude Code in a folder, it asks whether you trust it. This is your own project, so select **Yes, I trust this folder** and press **Enter**.
+
+                ![Claude Code folder trust prompt in Studio's Terminal](../assets/images/claude%20access%20permission%20in%20Studio.png)
+
+            === "OpenAI Codex"
+
+                ```powershell
+                codex
+                ```
         2. Replace `<YOUR_PROJECT_KEY>` and the test case keys, then paste the prompt:
 
             ```text
-            In this UiPath project, write one coded test case for each of the Test Manager test cases <KEY_1> and <KEY_2> in project <YOUR_PROJECT_KEY>. Follow their manual steps, use the Object Repository for UI elements (capture any that are missing), build the project, and run the tests locally. Don't publish anything yet.
+            In this UiPath project, write one coded test case for each of the Test Manager test cases <KEY_1> and <KEY_2> in project <YOUR_PROJECT_KEY>. Follow their manual steps, capture the UiBank UI elements into the Object Repository, build the project, and run the tests locally. Don't publish anything yet.
             ```
 
-        3. Watch the agent work. Expect it to read the manual steps, capture any missing UI elements screen by screen, write `[TestCase]` classes in **Arrange / Act / Assert** form, and run `uip rpa build` until there are **0 errors**.
+        3. Watch the agent work. Expect it to read the manual steps, open UiBank and capture its UI elements screen by screen, write `[TestCase]` classes in **Arrange / Act / Assert** form, and run `uip rpa build` until there are **0 errors**.
         4. Back in Studio, reload the project and open the new test case files.
 
     !!! tip "Why manual steps matter here"
-        The agent turns each **Click / Enter / Verify** step into an Object Repository element and a line of test code. Clear steps from step 3 give you cleaner tests.
+        The agent turns each **Click / Enter / Verify** step into an **Object Repository** element and a line of test code. The Object Repository stores the application's UI elements (buttons, fields, labels), so tests can find them reliably. Clear steps from step 3 give you cleaner tests.
+
+    **Check it:** the project's **Object Repository** lists the UiBank screens and elements, and each test case uses them instead of raw selectors.
 
 **Check it:**
 
 ✅ At least **2** automated test cases run locally, and you can see their results in **Test Explorer** (or in the agent's output).
-
-✅ Each automated test case uses elements from the **Object Repository**, not raw selectors.
 
 !!! note "Test Explorer is session-based"
     Results in Test Explorer are cleared when you close Studio. That's fine — Test Manager keeps the results of published runs.
