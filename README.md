@@ -36,7 +36,7 @@ Learners complete their own [Prerequisites](docs/module-0-prerequisites/index.md
 
 ### Users and group
 
-- [ ] Create a **group** for the workshop, for example `Workshop Learners`.
+- [ ] Create a **group** for the workshop.
 - [ ] Invite each learner to the organization, and add them to the group.
 - [ ] Give permissions to the **group**, not to individual users, so late joiners get everything at once.
 
