@@ -1,8 +1,8 @@
-# 04. Connect Studio to Test Manager
+# 05. Connect Studio to Test Manager
 
 ## Why connect Studio?
 
-Your test cases live in Test Manager, but automation is built in **UiPath Studio**. Connecting the two lets you see your **manual test cases** inside Studio, automate them, and keep every automation **linked** to its test case. That link is what lets Test Manager — and later your Terminal — run the tests and report on them.
+Your test cases live in Test Manager, but automation is built in **UiPath Studio**. Connecting the two lets you see your **manual test cases** inside Studio, automate them, and keep every automation **linked** to its test case. That link is what lets Test Manager — and later Delegate — run the tests and report on them.
 
 !!! warning "Access required"
     Only **App Test Developer** users can create and publish Test Automation projects. Check with your trainer if you can't create one.
@@ -21,7 +21,7 @@ A **Test Automation** project is a Studio project built for testing: its files a
     4. Click **Create**. Studio opens the new project.
 
 !!! tip "Where your project is saved"
-    Studio saves the project in `Documents\UiPath\<project name>`. You'll use this path in your Terminal prompts from step 5 on.
+    Studio saves the project in `Documents\UiPath\<project name>`. You'll use this path in your Delegate prompts from step 6 on.
 
 ## Part 2 — Install the UI Automation package
 
@@ -59,7 +59,7 @@ Open the **Test Explorer** panel. The test cases you generated in step 3 appear 
 
 ✅ The connection icon in Studio is green.
 
-✅ Your test cases from step 3 appear in **Test Explorer**, with the same keys you noted (for example `UIBMK:5`).
+✅ Your test cases from step 3 appear in **Test Explorer**, with the same keys as in Test Manager (for example `UIBMK:5`).
 
 ## Nice work!
 
@@ -67,6 +67,6 @@ Your project has the UI Automation package, Studio and Test Manager are connecte
 
 ---
 
-[Next → 05. Build the Object Repository](05-build-object-repository.md){: .md-button .md-button--primary}
+[Next → 06. Build the Object Repository](06-build-object-repository.md){: .md-button .md-button--primary}
 
 ---

@@ -1,12 +1,12 @@
-# 11. Run and Report
+# 12. Run and Report
 
 It's release night. The sign-off meeting is in a few hours, and the release manager wants one thing: **can we ship?**
 
-Instead of running the test set, waiting, exporting results, and writing a summary by hand, you'll ask the Terminal to do it all — in one prompt.
+Instead of running the test set, waiting, exporting results, and writing a summary by hand, you'll ask Delegate to do it all — in one prompt.
 
 ## See it in action
 
-Watch the demo first (about 1 min 45 s). The presenter types one prompt, and the Terminal does the rest.
+Watch the demo first (about 1 min 45 s). The presenter types one prompt, and the agent does the rest. The demo was recorded with a coding agent in a terminal — Delegate follows the same steps.
 
 <video width="100%" controls style="border-radius: 6px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.08); margin: 20px 0;">
   <source src="../../assets/Videos/coding-agent-go-no-go-demo.mp4" type="video/mp4">
@@ -16,27 +16,21 @@ Watch the demo first (about 1 min 45 s). The presenter types one prompt, and the
 ## Before you start
 
 !!! info "Check these first"
-    ✅ **You're logged in** to the right tenant — login tokens expire, so check every time:
-
-    ```powershell
-    uip login status --output json
-    ```
-
-    If the session expired, run the `uip login` command from the [Installation Guide](../module-0-prerequisites/01-installation-guide.md#step-8-log-in-to-your-tenant) again.
+    ✅ **Delegate is signed in** to the workshop organization and tenant your trainer shared.
 
     ✅ **Your robot is available** — in Orchestrator, open your folder and check the machine is connected and not busy.
 
     ✅ **Close any open Edge or Chrome windows** — PDF rendering can fail if the browser is already running.
 
-    ✅ You know your **project key** (step 1) and the exact **name of your test set** (step 10).
+    ✅ You know your **project key** (step 1) and the exact **name of your test set** (step 11).
 
-## Part 1 — Open your Terminal
+## Part 1 — Open Delegate
 
-[Open your Terminal](../module-0-prerequisites/index.md#open-your-terminal) and start a **new session**, so it starts clean.
+[Open Delegate](../module-0-prerequisites/01-installation-guide.md#step-2-meet-delegate) and start a **new session**, so it starts clean.
 
 ## Part 2 — Type the prompt
 
-Replace `<YOUR_TEST_SET_NAME>` and `<YOUR_PROJECT_KEY>`, then paste the prompt into your Terminal:
+Replace `<YOUR_TEST_SET_NAME>` and `<YOUR_PROJECT_KEY>`, then paste the prompt into Delegate:
 
 ```text
 Trigger the <YOUR_TEST_SET_NAME> test set of project <YOUR_PROJECT_KEY> in Test Manager and wait for it to finish. Once finished, create a release manager report in PDF for that test set, and save it in Documents\UiPath\Reports. I need a go/no-go summary before tonight's sign-off meeting. Highlight the failures blocking the release.
@@ -51,28 +45,24 @@ Trigger the <YOUR_TEST_SET_NAME> test set of project <YOUR_PROJECT_KEY> in Test 
 
 ## Part 3 — Watch it work
 
-The Terminal works on its own. Expect roughly this sequence:
+Delegate works on its own. Expect roughly this sequence:
 
-| # | What happens | Command you'll see |
-|---|---|---|
-| 1 | Loads the Test Manager skill | `uipath-test` skill |
-| 2 | Checks your login and the available commands | `uip login status`, `uip tm … --help` |
-| 3 | Finds your project, then the test set | `uip tm project list`, `uip tm testsets list` |
-| 4 | **Triggers the run** on your robot | `uip tm testsets run --test-set-key <KEY>` |
-| 5 | Waits for the run to finish (several minutes) | polling the execution status |
-| 6 | Pulls the result of each test case | `uip tm executions testcaselogs list …` |
-| 7 | Checks past runs of each failure, to tell **new regressions** from **recurring failures** | `uip tm testcases list-result-history …` |
-| 8 | Writes the PDF and prints its path | |
+1. Finds your project, then the test set.
+2. Asks you to approve, then **triggers the run** on your robot.
+3. Waits for the run to finish (several minutes).
+4. Pulls the result of each test case.
+5. Checks past runs of each failure, to tell **new regressions** from **recurring failures**.
+6. Writes the PDF and shows its path.
 
-!!! warning "Only one command changes anything"
-    `uip tm testsets run` starts a **real execution** on your robot. Every other command only reads data. If you're approving commands one by one, read each one before you approve it.
+!!! warning "Only one action changes anything"
+    Triggering the test set starts a **real execution** on your robot. Every other action only reads data. Read the request before you approve it.
 
 !!! tip "Use the waiting time"
-    The run takes a few minutes. Use the time to look at what's on screen: the skill loading, the JSON output, the commands it chose — and how it recovers when something goes wrong.
+    While the run finishes, look at what's on screen: the steps it chose, the data it read — and how it recovers when something goes wrong.
 
 ## Part 4 — Check the report
 
-When it finishes, the Terminal shows a summary (for example **NO-GO — 5 passed / 4 failed**) and the path to the PDF.
+When it finishes, Delegate shows a summary (for example **NO-GO — 5 passed / 4 failed**) and the path to the PDF.
 
 1. Open the PDF.
 2. Compare it with Test Manager → your project → **Execution**. The pass/fail counts and the failing test case keys should match.
@@ -106,6 +96,8 @@ A good release report includes:
     ✅ *"Summarize the failures in three bullet points I can paste into Slack."*
 
     ✅ *"Add a section to the report with recommended next steps for the developers."*
+
+    ✅ **Save it as a routine.** Ask Delegate to save this run-and-report task as a **routine**, so you — or your team — can re-run it at the next release with one prompt.
 
     More ideas in **[More Prompts to Try](../module-3-troubleshooting-and-next-steps/01-more-agent-prompts.md)**.
 

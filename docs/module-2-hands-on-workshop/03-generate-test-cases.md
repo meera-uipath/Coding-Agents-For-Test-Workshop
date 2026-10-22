@@ -6,23 +6,32 @@ Designing test cases by hand is slow, and it's easy to miss edge cases. The **Te
 
 You stay in control: you review the proposals, keep the ones you want, and edit them before they're saved.
 
-!!! info "Why manual steps matter"
-    The manual steps Autopilot generates here are what Autopilot in Studio will turn into automation in step 6. Clear **Given / When / Then** steps lead to cleaner automated test cases.
+## Generate them with UiPath Agent
 
-    ✅ **GIVEN** — set up the conditions for the test (data, starting page, application state)
+1. Open the loan application requirement you evaluated in step 2.
+2. Use **Autopilot** to **generate test cases** for it.
+3. Open **Provide additional context**.
 
-    ✅ **WHEN** — perform the action being tested
+    With the project documents, the agent's test cases check the security and accessibility rules too. For test case generation, there are two ways to add them:
 
-    ✅ **THEN** — verify the expected result
+    | | Add documents | Leverage RAG |
+    |---|---|---|
+    | **What Autopilot reads** | The documents you select, **in full** | Only the **relevant passages** from a Context Grounding index |
+    | **Best for** | A few specific documents | Large document sets |
+    | **In this workshop** | ✅ **Yes** | NA |
 
-## Generate them with Autopilot
+    In **Add documents**, include:
 
-!!! example "It's your turn now!"
-    1. Open the loan application requirement you evaluated in step 2.
-    2. Use **Autopilot** to **generate test cases** for it. You can add extra instructions, for example *"Focus on the age and income rules in the acceptance criteria."*
-    3. Review the proposed test cases. Check that the steps are clear and the expected results match the acceptance criteria.
-    4. Keep **3 or 4** test cases for the workshop (you'll automate at least 2 of them) — for example one approval, one rejection due to age, one rejection due to income, and one missing mandatory field.
-    5. Create the test cases. They're saved in **Test Cases** and **linked to the requirement**.
+    ✅ **UiBank Regression Tests.xlsx** — existing loan tests, so Autopilot matches their step style and avoids duplicates
+
+    ✅ **UiBank Security Guidelines.pdf** — adds negative tests, such as invalid input in the form fields
+
+    ✅ **UiBank Accessibility Guidelines.docx** — adds tests for form labels, error messages, and keyboard navigation
+
+4. Add extra instructions if you like, for example *"Focus on the age and income rules in the acceptance criteria, and apply the security guidelines."*
+5. Review the proposed test cases. Check that the steps are clear, the expected results match the acceptance criteria, and the rules from the documents are covered.
+6. Identify and keep **3 or 4** test cases for the workshop
+7. Create the test cases. They're saved in **Test Cases** and **linked to the requirement**.
 
 **Check it:**
 
@@ -30,10 +39,8 @@ You stay in control: you review the proposals, keep the ones you want, and edit 
 
 ✅ Each test case has manual steps.
 
-✅ Note the **test case keys** (for example `UIBMK:5`) — you'll use them in your Terminal prompts in steps 5 and 7, and see them again in the report.
-
 !!! tip "Keep one failing test case"
-    The go/no-go report in step 11 is most interesting when something fails. Your trainer may ask you to keep one test case whose expected result **doesn't** match the application, so the report has a real failure to explain.
+    The go/no-go report in step 12 is most interesting when something fails. Your trainer may ask you to keep one test case whose expected result **doesn't** match the application, so the report has a real failure to explain.
 
 ## Nice work!
 
@@ -41,6 +48,6 @@ You've gone from a requirement to a set of reviewed, linked test cases in minute
 
 ---
 
-[Next → 04. Connect Studio to Test Manager](04-connect-studio-to-tm.md){: .md-button .md-button--primary}
+[Next → 04. Run Manual Tests](04-run-manual-tests.md){: .md-button .md-button--primary}
 
 ---

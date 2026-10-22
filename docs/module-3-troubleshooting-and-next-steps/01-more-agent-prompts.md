@@ -1,9 +1,9 @@
 # More Prompts to Try
 
-The go/no-go report is one example. With the `uipath-test` skill, your Terminal can **read**, **write**, and **run** across Test Manager. Try these prompts in your project — replace `<YOUR_PROJECT_KEY>` with your project key and `<YOUR_TEST_SET_NAME>` with the test set from step 10.
+The go/no-go report is one example. Delegate can **read**, **write**, and **run** across Test Manager. Try these prompts in your project — replace `<YOUR_PROJECT_KEY>` with your project key and `<YOUR_TEST_SET_NAME>` with the test set from step 11.
 
 !!! tip "Ask for outcomes, not commands"
-    You don't need to know the `uip tm` syntax. Describe what you want, and let the Terminal pick the commands. If you're curious, ask it: *"Which commands did you run, and why?"*
+    Describe what you want, and let Delegate work out the steps. If you're curious, ask it: *"What did you do, and why?"*
 
 ## Morning standup brief
 
@@ -43,14 +43,14 @@ It compares each failure with its result history.
 List the test sets in project <YOUR_PROJECT_KEY> and the test cases in each one. Don't change anything.
 ```
 
-A safe way to see how the Terminal finds its way around your project.
+A safe way to see how Delegate finds its way around your project.
 
 !!! warning "Prompts that write"
-    Some prompts change data in Test Manager — for example triggering a run, creating defects, or updating test cases. Depending on your approval settings, the Terminal asks before running them. Read these commands carefully before you approve them.
+    Some prompts change data in Test Manager — for example triggering a run, creating defects, or updating test cases. With the **Smart** security setting, Delegate asks before running them. Read each approval request carefully before you approve it.
 
 ## Send feedback
 
-Found a problem or have an idea? Ask in your Terminal:
+Found a problem or have an idea? Ask in Delegate:
 
 ```text
 Send UiPath feedback: <describe the issue or improvement>

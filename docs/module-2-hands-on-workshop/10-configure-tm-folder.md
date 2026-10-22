@@ -1,12 +1,12 @@
-# 09. Configure the Test Manager Folder
+# 10. Configure the Test Manager Folder
 
-Before Test Manager — or your Terminal — can run your test cases automatically, two things need to be in place:
+Before Test Manager — or Delegate — can run your test cases automatically, two things need to be in place:
 
 ✅ An **Orchestrator folder** you can run in, with a **machine and robot** that can execute tests
 
 ✅ Your Test Manager project **linked to that folder**
 
-In step 10, you'll add the third: a **test set** that groups your automated test cases.
+In step 11, you'll add the third: a **test set** that groups your automated test cases.
 
 ## Orchestrator folders in a nutshell
 
@@ -59,7 +59,7 @@ Folders in Orchestrator organize automation resources — packages, processes, a
     </div>
 
 !!! tip "Publish to this folder"
-    If you published in step 8 before creating this folder, make sure the package is available in your folder (republish from Studio and choose your folder, or deploy the process to it in Orchestrator).
+    If you published in step 9 before creating this folder, make sure the package is available in your folder (republish from Studio and choose your folder, or deploy the process to it in Orchestrator).
 
 ## Part 2 — Link the project to the folder
 
@@ -79,6 +79,6 @@ Your project has a folder and a robot to run its tests. Next, you'll group your 
 
 ---
 
-[Next → 10. Create a Test Set](10-create-test-set.md){: .md-button .md-button--primary}
+[Next → 11. Create a Test Set](11-create-test-set.md){: .md-button .md-button--primary}
 
 ---

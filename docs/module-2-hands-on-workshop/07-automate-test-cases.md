@@ -1,20 +1,17 @@
-# 06. Automate Test Cases
+# 07. Automate Test Cases
 
-In this step, you'll use **Autopilot for Testers** in Studio to turn your manual test cases into **automated test cases**. Automate **at least 2** test cases: you'll group them into a test set in step 10.
+In this step, you'll use **Autopilot for Testers** in Studio to turn your manual test cases into **automated test cases**. Automate **at least 2** test cases: you'll group them into a test set in step 11.
 
 !!! info "Before you start"
-    ✅ Studio is connected to Test Manager, and your manual test cases appear in Test Explorer (step 4).
+    ✅ Studio is connected to Test Manager, and your manual test cases appear in Test Explorer (step 5).
 
-    ✅ Your Test Automation project from step 4 is open in Studio.
+    ✅ Your Test Automation project from step 5 is open in Studio.
 
-    ✅ The project's **Object Repository** lists the UiBank screens and elements (step 5).
+    ✅ The project's **Object Repository** lists the UiBank screens and elements (step 6).
 
 ## Autopilot for Testers in Studio
 
-Autopilot for Testers reads the manual steps of a test case and builds the automation for you. It can generate both **low-code** and **coded** (C#) test cases.
-
-!!! tip "Why manual steps matter"
-    Autopilot builds the automation from the manual steps you created in step 3. Clear **Given / When / Then** steps give you cleaner automated test cases.
+Autopilot for Testers reads the manual steps you created in step 3 and builds the automation for you. It can generate both **low-code** and **coded** (C#) test cases. Clear **Given / When / Then** steps give you cleaner automated test cases.
 
 ## Generate the automated test cases
 
@@ -40,6 +37,6 @@ Your manual test cases now have automations behind them. Next, you'll give them 
 
 ---
 
-[Next → 07. Generate Test Data](07-generate-test-data.md){: .md-button .md-button--primary}
+[Next → 08. Generate Test Data](08-generate-test-data.md){: .md-button .md-button--primary}
 
 ---

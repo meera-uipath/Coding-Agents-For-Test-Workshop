@@ -60,20 +60,23 @@ nav:
   - Introduction:
     - Test Cloud & Test Manager: module-1-introduction/index.md
   - Hands-On Workshop:
-    - Overview: module-2-hands-on-workshop/index.md
     - Import the Test Manager Project: module-2-hands-on-workshop/01-import-tm-project.md
     - Evaluate Requirements: module-2-hands-on-workshop/02-evaluate-requirements.md
     - Generate Test Cases: module-2-hands-on-workshop/03-generate-test-cases.md
-    - Connect Studio to Test Manager: module-2-hands-on-workshop/04-connect-studio-to-tm.md
-    - Build the Object Repository: module-2-hands-on-workshop/05-build-object-repository.md
-    - Automate Test Cases: module-2-hands-on-workshop/06-automate-test-cases.md
-    - Generate Test Data: module-2-hands-on-workshop/07-generate-test-data.md
-    - Publish Test Cases: module-2-hands-on-workshop/08-publish-test-cases.md
-    - Configure the Test Manager Folder: module-2-hands-on-workshop/09-configure-tm-folder.md
-    - Create a Test Set: module-2-hands-on-workshop/10-create-test-set.md
-    - Run and Report: module-2-hands-on-workshop/11-run-and-report.md
+    - Run Manual Tests: module-2-hands-on-workshop/04-run-manual-tests.md
+    - Connect Studio to Test Manager: module-2-hands-on-workshop/05-connect-studio-to-tm.md
+    - Build the Object Repository: module-2-hands-on-workshop/06-build-object-repository.md
+    - Automate Test Cases: module-2-hands-on-workshop/07-automate-test-cases.md
+    - Generate Test Data: module-2-hands-on-workshop/08-generate-test-data.md
+    - Publish Test Cases: module-2-hands-on-workshop/09-publish-test-cases.md
+    - Configure the Test Manager Folder: module-2-hands-on-workshop/10-configure-tm-folder.md
+    - Create a Test Set: module-2-hands-on-workshop/11-create-test-set.md
+    - Run and Report: module-2-hands-on-workshop/12-run-and-report.md
     - You did it!: module-2-hands-on-workshop/you-did-it.md
   - Troubleshooting & Next Steps:
     - Overview: module-3-troubleshooting-and-next-steps/index.md
     - More Prompts to Try: module-3-troubleshooting-and-next-steps/01-more-agent-prompts.md
     - Troubleshooting: module-3-troubleshooting-and-next-steps/02-troubleshooting.md
+  - "Optional: Your Own Coding Agent":
+    - Overview: optional-coding-agents/index.md
+    - Setup: optional-coding-agents/01-setup.md

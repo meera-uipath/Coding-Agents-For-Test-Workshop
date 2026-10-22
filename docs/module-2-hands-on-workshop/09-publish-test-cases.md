@@ -1,4 +1,4 @@
-# 08. Publish Test Cases
+# 09. Publish Test Cases
 
 To run your test cases from Test Manager, publish them to Orchestrator. Test cases and data-driven test cases are created as **drafts** by default, so you first need to set them as **publishable**.
 
@@ -33,8 +33,8 @@ When you publish a Test Automation package, Orchestrator automatically creates a
 
 ✅ In Test Manager, open each automated test case: it now shows a linked **automation**.
 
-!!! info "Why this matters for step 11"
-    The Terminal can only trigger test cases that are **automated** — linked to a published automation. Manual test cases are skipped when a test set runs automatically.
+!!! info "Why this matters for step 12"
+    Delegate can only trigger test cases that are **automated** — linked to a published automation. Manual test cases are skipped when a test set runs automatically.
 
 ## Nice work!
 
@@ -42,6 +42,6 @@ Your test cases are published and ready to run from Test Manager.
 
 ---
 
-[Next → 09. Configure the Test Manager Folder](09-configure-tm-folder.md){: .md-button .md-button--primary}
+[Next → 10. Configure the Test Manager Folder](10-configure-tm-folder.md){: .md-button .md-button--primary}
 
 ---

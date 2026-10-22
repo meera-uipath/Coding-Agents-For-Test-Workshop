@@ -169,6 +169,12 @@ th {
   margin: 20px auto;
 }
 
+/* Equal-height screenshots: add { .img-equal } after an image */
+.md-typeset img.img-equal {
+  width: auto;
+  max-height: 300px;
+}
+
 /* Dark mode image shadow adjustment */
 [data-md-color-scheme="dark"] .md-typeset img {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3);

@@ -4,7 +4,7 @@ You've built the full flow, from requirements to a go/no-go report. This section
 
 ## What's inside
 
-✅ **[More Prompts to Try](01-more-agent-prompts.md)** — other everyday tasks you can hand to the Terminal: standup summaries, coverage checks, targeted runs, and more.
+✅ **[More Prompts to Try](01-more-agent-prompts.md)** — other everyday tasks you can hand to Delegate: standup summaries, coverage checks, targeted runs, and more.
 
 ✅ **[Troubleshooting](02-troubleshooting.md)** — fixes for the most common problems with setup, login, execution, and the PDF report.
 

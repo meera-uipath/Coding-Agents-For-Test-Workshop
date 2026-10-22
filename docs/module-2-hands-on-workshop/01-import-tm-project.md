@@ -2,9 +2,7 @@
 
 ## Why import a project?
 
-You can import projects into Test Manager from external sources, including other Application Lifecycle Management (ALM) systems. An import brings across the project's requirements, test cases, test sets, test results, labels, custom fields, and attachments.
-
-The import file follows a schema that Test Manager can read, and the import runs **asynchronously** — it can take a minute to finish.
+An import brings across the project's requirements, test cases, test sets, test results, labels, custom fields, and attachments. The import file follows a schema that Test Manager can read, and the import runs **asynchronously** — it can take a minute to finish.
 
 Today, the import gives you a ready-made project with requirements to work from, so you can get straight to the hands-on steps.
 
@@ -20,30 +18,39 @@ Today, the import gives you a ready-made project with requirements to work from,
 
 ## Import it into Test Manager
 
-!!! example "It's your turn now!"
-    1. Open **Test Manager** in the workshop tenant your trainer shared.
-    2. From the **Projects** page, choose to **import** a project and select the `.tmh` file you downloaded.
-    3. Change the **Name** and **Prefix** by adding your name, for example `UiBank_{your name}` and `UIB{initials}`. This keeps your project separate from everyone else's.
-    4. Start the import and wait for it to finish.
-    5. Open the project and look around: **Requirements**, **Test Cases**, **Test Sets**, and **Execution**.
+✅ Open **Test Manager** in the workshop tenant your trainer shared.
 
-    This is the project you'll work in for the rest of the workshop.
+✅ From the **Projects** page, choose to **import** a project and select the `.tmh` file you downloaded.
 
-!!! tip "Write down your project key"
-    The **prefix** you chose is your **project key** (for example `UIBMK`). You'll need it in your Terminal prompts in steps 5, 7 and 11.
+✅ Change the **Name** and **Prefix** (the project key) by adding your name, for example `UiBank_AlexS` and `UIBAS`. Everyone imports the same file into the same tenant, so this keeps your project separate from everyone else's.
 
-## Check it from the CLI (optional)
+✅ Start the import and wait for it to finish.
 
-Your project should now be visible to the UiPath CLI too:
+✅ Open the project and look around: **Requirements**, **Test Cases**, **Test Sets**, and **Execution**.
 
-```powershell
-uip tm project list --filter <YOUR_PROJECT_KEY> --output json
+This is the project you'll work in for the rest of the workshop.
+
+## Check it with Delegate
+
+Your project should now be visible to Delegate too. [Open Delegate](../module-0-prerequisites/01-installation-guide.md#step-2-meet-delegate) and ask a few questions that only **read** from Test Manager, one at a time, to see how it finds its way around:
+
+```text
+Can you identify the Test Manager project created by me. Provide details.
 ```
 
-✅ Your project appears in the output.
+```text
+List the requirements in project <YOUR_PROJECT_KEY>, with the test cases linked to each.
+```
 
-!!! note
-    `--filter` matches the **start** of the project name or key, not text anywhere inside it.
+```text
+Which requirements in project <YOUR_PROJECT_KEY> don't have any test cases linked yet?
+```
+
+```text
+Pick one test case in project <YOUR_PROJECT_KEY> and show me its manual steps and expected results.
+```
+
+✅ Delegate finds your project and answers each question from your real Test Manager data, without changing anything.
 
 ---
 

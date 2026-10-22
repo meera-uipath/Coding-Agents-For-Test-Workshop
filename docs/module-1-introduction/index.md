@@ -1,6 +1,6 @@
 # Test Cloud & Test Manager
 
-A quick orientation before we get hands-on. Ten minutes of reading, then we build.
+A quick orientation before we get hands-on. 
 
 ## What is Test Cloud?
 
@@ -12,7 +12,9 @@ A quick orientation before we get hands-on. Ten minutes of reading, then we buil
 
 ✅ **Orchestrator** — execute and manage test automation at scale
 
-✅ **Agentic Testing** — AI agents (Autopilot for Testers, custom agents, and coding agents) that accelerate every step
+✅ **App Test Robot** — the robot that runs your automated test cases
+
+✅ **Agentic Testing** — AI agents (Autopilot for Testers, Delegate, custom agents, and coding agents) that accelerate every step
 
 ![Test Cloud Ecosystem](../assets/images/Test%20Cloud%20ecosystem.png)
 
@@ -22,31 +24,6 @@ A quick orientation before we get hands-on. Ten minutes of reading, then we buil
 
 ![Test Manager](../assets/images/Test%20Manager_Full.png)
 
-### The testing flow you'll follow today
-
-!!! note "Your testing journey"
-
-    ### Planning & Design
-
-    ✅ Requirements live in Test Manager (created there or imported from tools such as Jira).
-
-    ✅ **Autopilot** evaluates the requirements and generates test cases from them.
-
-    ### Automation
-
-    ✅ The **Terminal** captures the application's UI elements into Studio's Object Repository.
-
-    ✅ In Studio, **Autopilot** automates the test cases, which stay linked to their Test Manager designs.
-
-    ✅ **Autopilot** or the **Terminal** generates test data from the acceptance criteria.
-
-    ✅ The automations are published to Orchestrator.
-
-    ### Execution & Reporting
-
-    ✅ Test sets group test cases and run them on a robot.
-
-    ✅ The **Terminal** triggers the run, analyzes the results, and writes the release report.
 
 ## Autopilot for Testers
 
@@ -60,11 +37,11 @@ A quick orientation before we get hands-on. Ten minutes of reading, then we buil
 
 ![Agent Type OOTB](../assets/images/Agent%20type%20OOTB.png)
 
-## Coding Agents for Test
+## Delegate for Test
 
 Coding agents can already read code and drive developer tools — but test management used to be a blind spot. Agents couldn't see what was tested, what was failing, or what coverage looked like.
 
-**Coding Agents for Test** closes that gap. Through the `uip tm` CLI and the `uipath-test` skill, any coding agent (Claude Code, Codex, Cursor, GitHub Copilot Agent) can:
+**Coding Agents for Test** closes that gap. Through the `uip tm` CLI and the `uipath-test` skill, **Delegate** — or any coding agent, such as Claude Code, Codex, Cursor, or GitHub Copilot Agent — can:
 
 ✅ **Read** test cases, execution results, and requirement coverage from Test Manager
 
@@ -80,13 +57,11 @@ It works as a three-layer pipeline:
 | **CLI tool** (`uip tm`) | Hand-crafted commands built on the SDK |
 | **`uipath-test` skill** | A `SKILL.md` that teaches the agent when and how to use the CLI |
 
-!!! example "What you'll ask in the Terminal at the end of today"
-    *"Trigger the Regression Test Set of my project in Test Manager and wait for it to finish. Then create a release manager report in PDF. I need a go/no-go summary before tonight's sign-off meeting. Highlight the failures blocking the release."*
 
 That's enough theory — let's build.
 
 ---
 
-[Next → Hands-On Workshop](../module-2-hands-on-workshop/index.md){: .md-button .md-button--primary}
+[Next → 01. Import the Test Manager Project](../module-2-hands-on-workshop/01-import-tm-project.md){: .md-button .md-button--primary}
 
 ---

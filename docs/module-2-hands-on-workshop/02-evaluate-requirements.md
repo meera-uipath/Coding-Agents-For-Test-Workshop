@@ -4,69 +4,36 @@
 
 Good test cases start with good requirements. A requirement that's vague, incomplete, or contradictory leads to gaps in testing — and gaps in testing lead to defects in production.
 
-The **Evaluation Agent** in Autopilot for Testers analyzes a requirement and tells you how to improve it. It checks for:
+The **Evaluation Agent** in Test Manager analyzes a requirement for quality aspects such as clarity, completeness, and consistency, and generates a list of suggestions that you can review and implement directly.
 
-✅ **Clarity** — is it unambiguous?
+## Evaluate it with UiPath Agent
 
-✅ **Completeness** — are the user flow, inputs, and expected outcomes all covered?
+1. In your project, go to **Requirements** and open the loan application requirement.
+2. Use **Autopilot** to **evaluate the quality** of the requirement.
+3. Open **Provide additional context → Add documents**.
 
-✅ **Testability** — can each statement be verified with a test?
+    Rules about security, accessibility, and terminology often live outside the requirement, in **other documents**. When Autopilot reads them too, it can check the requirement against those rules as well.
 
-## The requirement you'll work with
+    Your project's documents are already listed, marked **P** (project-level document). Select the ones that set the rules the requirement should meet:
 
-Your imported project contains requirements for the **UiBank** loan application. If your project doesn't include it, create a new requirement in **Requirements** and paste in the text below.
+    ✅ **UiBank Glossary of Terms.txt** — flags banking terms the requirement uses without defining them
 
-```text
-As a potential UiBank customer, I want to apply for a loan via the UiPath Banking Application, so that I can quickly secure the funds I need.
+    ✅ **UiBank Security Guidelines.pdf** — flags missing input validation, data masking, and session rules
 
-## User Flow
+    ✅ **UiBank Accessibility Guidelines.docx** — flags missing form labels, error messages, and keyboard support
 
-* The applicant starts the loan application in the 'Loans' screen
-* The applicant clicks 'Apply For A Loan'
-* The system redirects to https://uibank.uipath.com/loans/apply
-* The applicant provides an 'Email Address'.
-  * This field requires an email address in a valid format.
-* The applicant enters a 'Loan Amount'.
-  * This field accepts only positive integer values.
-* The applicant selects a 'Loan Term'.
-  * This field provides the options '1', '3', '5', and '10' years.
-* The applicant enters their 'Yearly Income'.
-  * This field accepts only positive integer values.
-* The applicant enters their 'Age'.
-  * This field accepts only positive integer values.
-* The applicant then clicks the 'Submit Loan Application'
-* The applicant is notified whether the loan application is approved or rejected on the next page
+    ![Add documents tab in Provide additional context](../assets/images/Add%20Docs%20TC%20creation.png){ .img-equal }
 
-## Acceptance Criteria
+    ??? tip "Where do these documents come from?"
+        They're the project's attachments, stored in Test Manager under **Dashboard → Attachments**:
 
-* Applicants under 18 and over 65 years of age:
-  * Reject with "Not approved due to age."
-* Missing at least one mandatory field on submission:
-  * No error, no action, applicant remains on the same page.
-* Applicants 18-65 years old, requesting >$100,000 without income >3x loan amount:
-  * Reject with "Not approved over $100,000 without sufficient income."
-* Applicants 18-65 years old, requesting <=$100,000, any term, with income >= loan amount:
-  * Approve with "Congrats! You've been approved for a loan with UiBank!"
-* Applicants 18-65, requesting over $50,000 for a term >5 years, with income >3x loan amount:
-  * Approve with "Congrats! You've been approved for a loan with UiBank!"
-* Applicants 18-65, requesting >$20,000 for 1 year, with income >=2x loan amount:
-  * Approve with "Congrats! You've been approved for a loan with UiBank!"
-* Applicants 18-65, loan <=$50,000, term <=5 years, income >= loan amount:
-  * Approve with "Congrats! You've been approved for a loan with UiBank!"
-* Applicants 18-65, requesting <=$10,000, any term, without specific income ratio requirements:
-  * Approve with "Congrats! You've been approved for a loan with UiBank!"
-```
+        ![Attachments tab of the Test Manager project](../assets/images/Attachments%20in%20TM.png){ .img-equal }
 
-## Evaluate it with Autopilot
-
-!!! example "It's your turn now!"
-    1. In your project, go to **Requirements** and open the loan application requirement.
-    2. Use **Autopilot** to **evaluate the quality** of the requirement.
-    3. Read the results. Autopilot gives a quality assessment and specific suggestions for improvement.
-    4. Apply the suggestions you agree with and update the requirement.
+4. Read the results. Autopilot gives a quality assessment and specific suggestions for improvement.
+5. Apply the suggestions you agree with and update the requirement.
 
 !!! question "Think about it"
-    Look at the acceptance criteria above. Can you spot overlaps or gaps — for example, an applicant who is exactly 18 or 65, or a loan amount that matches more than one approval rule? Did Autopilot find them too?
+    Look at the acceptance criteria in the requirement. Can you spot overlaps or gaps — for example, an applicant who is exactly 18 or 65, or a loan amount that matches more than one approval rule? Did Autopilot find them too?
 
 ## Nice work!
 
