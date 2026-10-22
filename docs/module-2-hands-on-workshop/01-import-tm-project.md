@@ -1,10 +1,6 @@
 # 01. Import the Test Manager Project
 
-## Why import a project?
-
-An import brings across the project's requirements, test cases, test sets, test results, labels, custom fields, and attachments. The import file follows a schema that Test Manager can read, and the import runs **asynchronously** — it can take a minute to finish.
-
-Today, the import gives you a ready-made project with requirements to work from, so you can get straight to the hands-on steps.
+You start from a ready-made **UiBank** project: requirements, test cases, test sets, results, and attachments.
 
 ## Download the project file
 
@@ -18,21 +14,14 @@ Today, the import gives you a ready-made project with requirements to work from,
 
 ## Import it into Test Manager
 
-✅ Open **Test Manager** in the workshop tenant your trainer shared.
-
-✅ From the **Projects** page, choose to **import** a project and select the `.tmh` file you downloaded.
-
-✅ Change the **Name** and **Prefix** (the project key) by adding your name, for example `UiBank_AlexS` and `UIBAS`. Everyone imports the same file into the same tenant, so this keeps your project separate from everyone else's.
-
-✅ Start the import and wait for it to finish.
-
-✅ Open the project and look around: **Requirements**, **Test Cases**, **Test Sets**, and **Execution**.
-
-This is the project you'll work in for the rest of the workshop.
+1. Open **Test Manager** in the workshop tenant.
+2. On **Projects**, select **import** and choose the `.tmh` file.
+3. Add your name to the **Name** and **Prefix** (project key), for example `UiBank_AlexS` and `UIBAS`, so your project is unique on the shared tenant.
+4. Start the import. It takes about a minute.
 
 ## Check it with Delegate
 
-Your project should now be visible to Delegate too. [Open Delegate](../module-0-prerequisites/01-installation-guide.md#step-2-meet-delegate) and ask a few questions that only **read** from Test Manager, one at a time, to see how it finds its way around:
+[Open Delegate](../module-0-prerequisites/01-installation-guide.md#step-2-meet-delegate) and ask, one at a time:
 
 ```text
 Can you identify the Test Manager project created by me. Provide details.
@@ -50,7 +39,7 @@ Which requirements in project <YOUR_PROJECT_KEY> don't have any test cases linke
 Pick one test case in project <YOUR_PROJECT_KEY> and show me its manual steps and expected results.
 ```
 
-✅ Delegate finds your project and answers each question from your real Test Manager data, without changing anything.
+✅ Delegate finds your project and answers from your Test Manager data.
 
 ---
 

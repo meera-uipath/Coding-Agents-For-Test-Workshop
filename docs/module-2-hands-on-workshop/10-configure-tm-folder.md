@@ -1,25 +1,14 @@
 # 10. Configure the Test Manager Folder
 
-Before Test Manager — or Delegate — can run your test cases automatically, two things need to be in place:
-
-✅ An **Orchestrator folder** you can run in, with a **machine and robot** that can execute tests
-
-✅ Your Test Manager project **linked to that folder**
-
-In step 11, you'll add the third: a **test set** that groups your automated test cases.
-
-## Orchestrator folders in a nutshell
-
-Folders in Orchestrator organize automation resources — packages, processes, assets, and robots — and control who can access them. Roles assigned at folder level apply only to that folder and its subfolders.
-
-**App Test Robot** runtimes determine how many test cases can run at the same time on a machine.
+To run tests automatically, your project needs an **Orchestrator folder** with a **machine and App Test Robot**, linked to the project.
 
 ## Part 1 — Set up your folder and robot
 
 !!! example "Exercise 1 — Create your folder"
-    Create your own folder under the workshop folder your trainer points you to.
-
-    Enable your user for **Personal Automation + Personal workspace**, give it the **Automation Developer** role, and — in the Enterprise setup — use **Custom Windows credentials**, specifying your `domain\username` without the password. Then add your user to your folder.
+    1. Create your own folder under the workshop folder.
+    2. Enable your user for **Personal Automation + Personal workspace**, with the **Automation Developer** role.
+    3. In the Enterprise setup, use **Custom Windows credentials**: your `domain\username`, no password.
+    4. Add your user to your folder.
 
     <div class="carousel">
       <input type="radio" name="oc-settings-carousel" id="carousel-slide-1" checked>
@@ -39,7 +28,7 @@ Folders in Orchestrator organize automation resources — packages, processes, a
     </div>
 
 !!! example "Exercise 2 — Add a machine with an App Test Robot license"
-    Add an **App Test Robot** license to your machine, then add the machine to the folder you just created.
+    Add an **App Test Robot** license to your machine, then add the machine to your folder.
 
     <div class="carousel">
       <input type="radio" name="oc-exercise2-carousel" id="carousel-slide-3" checked>
@@ -58,24 +47,20 @@ Folders in Orchestrator organize automation resources — packages, processes, a
       </div>
     </div>
 
-!!! tip "Publish to this folder"
-    If you published in step 9 before creating this folder, make sure the package is available in your folder (republish from Studio and choose your folder, or deploy the process to it in Orchestrator).
+!!! tip "Published before creating the folder?"
+    Republish from Studio to your folder, or deploy the process to it in Orchestrator.
 
 ## Part 2 — Link the project to the folder
 
 !!! example "It's your turn now!"
-    1. Open your project in **Test Manager**.
-    2. Open the **project settings** and set your Orchestrator folder as the project's **default execution folder**.
-    3. Save.
+    In your Test Manager **project settings**, set your folder as the **default execution folder**, and save.
 
 !!! failure "Skipped this step?"
-    Running a test set without a project-level folder fails with:
-
-    `HTTP 400: Please assign folder to project level before executing testcases.`
+    Runs fail with `HTTP 400: Please assign folder to project level before executing testcases.`
 
 ## Nice work!
 
-Your project has a folder and a robot to run its tests. Next, you'll group your automated test cases into a test set.
+Your project has a folder and a robot to run its tests.
 
 ---
 

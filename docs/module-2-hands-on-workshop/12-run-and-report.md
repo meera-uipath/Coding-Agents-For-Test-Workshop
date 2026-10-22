@@ -1,94 +1,58 @@
 # 12. Run and Report
 
-It's release night. The sign-off meeting is in a few hours, and the release manager wants one thing: **can we ship?**
-
-Instead of running the test set, waiting, exporting results, and writing a summary by hand, you'll ask Delegate to do it all — in one prompt.
-
-## Before you start
+It's release night, and the release manager wants to know: **can we ship?** Ask Delegate to run the test set and write the go/no-go report — in one prompt.
 
 !!! info "Check these first"
-    ✅ **Delegate is signed in** to the workshop organization and tenant your trainer shared.
+    ✅ **Your robot is available** — connected and not busy, in your Orchestrator folder.
 
-    ✅ **Your robot is available** — in Orchestrator, open your folder and check the machine is connected and not busy.
+    ✅ **Edge and Chrome are closed** — PDF rendering can fail if the browser is already running.
 
-    ✅ **Close any open Edge or Chrome windows** — PDF rendering can fail if the browser is already running.
+    ✅ You know your **project key** and the exact **test set name** (step 11).
 
-    ✅ You know your **project key** (step 1) and the exact **name of your test set** (step 11).
+## Run it
 
-## Part 1 — Open Delegate
+!!! example "It's your turn now!"
+    1. [Open Delegate](../module-0-prerequisites/01-installation-guide.md#step-2-meet-delegate) and start a **new session**.
+    2. Replace the placeholders, then paste:
 
-[Open Delegate](../module-0-prerequisites/01-installation-guide.md#step-2-meet-delegate) and start a **new session**, so it starts clean.
+        ```text
+        Trigger the <YOUR_TEST_SET_NAME> test set of project <YOUR_PROJECT_KEY> in Test Manager and wait for it to finish. Once finished, create a release manager report in PDF for that test set, and save it in Documents\UiPath\Reports. I need a go/no-go summary before tonight's sign-off meeting. Highlight the failures blocking the release.
+        ```
 
-## Part 2 — Type the prompt
-
-Replace `<YOUR_TEST_SET_NAME>` and `<YOUR_PROJECT_KEY>`, then paste the prompt into Delegate:
-
-```text
-Trigger the <YOUR_TEST_SET_NAME> test set of project <YOUR_PROJECT_KEY> in Test Manager and wait for it to finish. Once finished, create a release manager report in PDF for that test set, and save it in Documents\UiPath\Reports. I need a go/no-go summary before tonight's sign-off meeting. Highlight the failures blocking the release.
-```
+    3. Approve the run when Delegate asks. It's the only action that changes anything — a **real execution** on your robot.
+    4. Wait a few minutes while it runs the set, pulls the results, and checks past runs of each failure.
 
 ??? tip "Run a single test case instead"
-    To check one fix quickly, without running the whole set, ask for a single test case:
-
     ```text
     Run test case <KEY_1> in project <YOUR_PROJECT_KEY> in Test Manager, wait for it to finish, and tell me whether it passed. If it failed, explain why.
     ```
 
-## Part 3 — Watch it work
+## Check the report
 
-Delegate works on its own. Expect roughly this sequence:
+Open the PDF and compare it with **Execution** in Test Manager: the counts and failing keys should match. The report includes:
 
-1. Finds your project, then the test set.
-2. Asks you to approve, then **triggers the run** on your robot.
-3. Waits for the run to finish (several minutes).
-4. Pulls the result of each test case.
-5. Checks past runs of each failure, to tell **new regressions** from **recurring failures**.
-6. Writes the PDF and shows its path.
+✅ A **GO / NO-GO** recommendation, and KPI tiles
 
-!!! warning "Only one action changes anything"
-    Triggering the test set starts a **real execution** on your robot. Every other action only reads data. Read the request before you approve it.
+✅ **Failures blocking the release**, with run history
 
-!!! tip "Use the waiting time"
-    While the run finishes, look at what's on screen: the steps it chose, the data it read — and how it recovers when something goes wrong.
-
-## Part 4 — Check the report
-
-When it finishes, Delegate shows a summary (for example **NO-GO — 5 passed / 4 failed**) and the path to the PDF.
-
-1. Open the PDF.
-2. Compare it with Test Manager → your project → **Execution**. The pass/fail counts and the failing test case keys should match.
-
-A good release report includes:
-
-✅ A **recommendation banner** — GO, NO-GO, or conditional
-
-✅ **KPI tiles** — total, passed, failed, pass rate, blocking failures
-
-✅ A **Failures Blocking the Release** table, with failure details and run history
-
-✅ A table of **all results**
-
-✅ A **Risk Assessment**
-
-✅ **Conditions to Reach GO**
+✅ All results, a **risk assessment**, and **conditions to reach GO**
 
 !!! question "Think about it"
-    Every run is real, so your result depends on your tests. If all of them pass, the report recommends **GO**. Which failures were called *blocking*, and do you agree? How did it decide between a new regression and a recurring failure?
+    Which failures were called *blocking*, and do you agree? How did it tell a new regression from a recurring failure?
 
-## It's your turn now!
+## Go further
 
-!!! example "Go further"
-    Stay in the same session and ask follow-up questions — it remembers the run:
+Stay in the same session — it remembers the run:
 
-    ✅ *"Which requirement is at the highest risk based on this run?"*
+✅ *"Which requirement is at the highest risk based on this run?"*
 
-    ✅ *"Summarize the failures in three bullet points I can paste into Slack."*
+✅ *"Summarize the failures in three bullet points I can paste into Slack."*
 
-    ✅ *"Add a section to the report with recommended next steps for the developers."*
+✅ *"Add a section to the report with recommended next steps for the developers."*
 
-    ✅ **Save it as a routine.** Ask Delegate to save this run-and-report task as a **routine**, so you — or your team — can re-run it at the next release with one prompt.
+✅ *"Save this run-and-report task as a routine."* — rerun it at the next release with one prompt.
 
-    More ideas in **[More Prompts to Try](../module-3-troubleshooting-and-next-steps/01-more-agent-prompts.md)**.
+More ideas in **[More Prompts to Try](../module-3-troubleshooting-and-next-steps/01-more-agent-prompts.md)**.
 
 ---
 
