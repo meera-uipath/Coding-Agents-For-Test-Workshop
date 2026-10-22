@@ -16,8 +16,8 @@ An MkDocs (Material) site for the hands-on **Coding Agents for Test** workshop. 
 | Home | `docs/index.md` | Old guide's home page |
 | 0 - Prerequisites | Overview, Installation Guide | <a href="https://uipath-practice.github.io/AgenticCodingAgents/prerequisites/installation-guides/" target="_blank">AgenticCodingAgents</a> + `raw-content/coding-agent-test-reporting-demo.md` |
 | 1 - Introduction | Test Cloud & Test Manager | Old guide pages 00, 01 and 02 + the Public Preview announcement |
-| 2 - Hands-On Workshop | 01 Import → 02 Evaluate → 03 Generate → 04 Connect Studio → 05 Object Repository → 06 Automate → 07 Test data → 08 Publish → 09 Folder → 10 Test set → 11 Run and report, You Did It! | Old guide pages 01, 02, 06, 07, 09, 10 and 11 + the demo README |
-| 3 - Troubleshooting & Next Steps | Overview, More Agent Prompts, Troubleshooting | Announcement's example workflows + demo README |
+| 2 - Hands-On Workshop | 01 Import → 02 Evaluate → 03 Generate → 04 Connect Studio → 05 Object Repository → 06 Automate → 07 Test data → 08 Publish → 09 Folder → 10 Test set → 11 Run and report, You Did It! | Old guide pages 01, 02, 06, 07, 09, 10 and 11 + `raw-content/coding-agent-test-reporting-demo.md` |
+| 3 - Troubleshooting & Next Steps | Overview, More Agent Prompts, Troubleshooting | Announcement's example workflows + `raw-content/coding-agent-test-reporting-demo.md` |
 
 ## Decisions
 
@@ -48,7 +48,7 @@ An MkDocs (Material) site for the hands-on **Coding Agents for Test** workshop. 
 - [ ] Rehearse the new prompts: "save as a routine" (step 12 Go further) and the new step 4 (Delegate runs manual test cases and pushes results to Test Manager) — confirm the result upload and what the Execution page shows
 - [ ] **Rehearse steps 6, 8 and 12 with Delegate:** Object Repository capture, Data Fabric test data, and run and report. Delegate's docs list only the `uipath-testcloud` skill in its Test Cloud plugin, so confirm it handles steps 6 and 8
 - [ ] Check the Studio **New Project → Test Automation** and **Manage Packages → Save** wording (step 5)
-- [ ] Decide whether the root `README.md` (the original demo walkthrough) should stay as the repo README or be replaced with a short guide README. A copy is in `raw-content/`
+- [x] Root `README.md` replaced with a guide README (what the workshop covers, trainer setup, preview, contributing)
 - [ ] Commit and push to `main` to publish, and enable GitHub Pages (`gh-pages` branch) in the repo settings after the first deploy
 
 ## Log

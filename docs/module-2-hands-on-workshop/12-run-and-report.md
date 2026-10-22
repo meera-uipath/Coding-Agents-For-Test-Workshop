@@ -4,15 +4,6 @@ It's release night. The sign-off meeting is in a few hours, and the release mana
 
 Instead of running the test set, waiting, exporting results, and writing a summary by hand, you'll ask Delegate to do it all — in one prompt.
 
-## See it in action
-
-Watch the demo first (about 1 min 45 s). The presenter types one prompt, and the agent does the rest. The demo was recorded with a coding agent in a terminal — Delegate follows the same steps.
-
-<video width="100%" controls style="border-radius: 6px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.08); margin: 20px 0;">
-  <source src="../../assets/Videos/coding-agent-go-no-go-demo.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
 ## Before you start
 
 !!! info "Check these first"
@@ -81,10 +72,8 @@ A good release report includes:
 
 ✅ **Conditions to Reach GO**
 
-:material-file-pdf-box: [**Sample release test report (PDF)**](../assets/Files/sample-release-test-report.pdf) — see the report from the demo
-
 !!! question "Think about it"
-    Every run is real, so your result will differ from the demo. If all your tests pass, the report recommends **GO**. Which failures were called *blocking*, and do you agree? How did it decide between a new regression and a recurring failure?
+    Every run is real, so your result depends on your tests. If all of them pass, the report recommends **GO**. Which failures were called *blocking*, and do you agree? How did it decide between a new regression and a recurring failure?
 
 ## It's your turn now!
 

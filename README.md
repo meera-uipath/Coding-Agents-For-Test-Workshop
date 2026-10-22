@@ -1,193 +1,113 @@
-# Replicating the "Coding Agent for Test Reporting" Demo
+# Coding Agents for Test — Hands-On Workshop Guide
 
-A step-by-step guide for re-creating the demo in `Test Cloud- Coding Agent for Test Reporting.mp4` against your own Test Manager project. You run every step yourself; nothing is automated for you.
+The learner's handbook for the UiPath **Coding Agents for Test** instructor-led workshop. It's an MkDocs site that walks testers through UiPath Test Cloud, from requirements to a go/no-go release report, using AI agents at every stage.
 
-Background reading: [Coding Agents fo Testing.md](Coding%20Agents%20fo%20Testing.md) (the Public Preview announcement, Example Workflow #4).
+## What the workshop covers
 
----
+Learners work on a ready-made **UiBank** Test Manager project. In about twelve hands-on steps, they take a loan application requirement all the way to an automated test run. Then they ask an agent for a release report in plain English.
 
-## What the video shows (~1 min 45 s)
+| Phase | Steps | What learners do | Tools |
+|---|---|---|---|
+| **1 · Plan & test** | 1–4 | Import the project, evaluate the requirement, generate test cases, and run them manually | Test Manager, Autopilot for Testers, Delegate |
+| **2 · Build** | 5–9 | Connect Studio, build the Object Repository, automate the test cases, generate test data, and publish | Studio, Autopilot, Delegate, Data Fabric |
+| **3 · Prepare** | 10–11 | Configure the Orchestrator folder and robot, and create a test set | Orchestrator, Test Manager |
+| **4 · Run & report** | 12 | Trigger the test set and get a go/no-go PDF in one prompt | Delegate |
 
-1. **Starting point:** the Test Manager dashboard for project **UIB** ("UiBank Web Application").
-2. **A fresh Claude Code session in a terminal**, with *auto mode* on. The presenter types one prompt:
-   > *"Trigger the UiBank Smoke Test Set test set of Project UIB in Test Manager and wait for it to finish. Once finished, create a release manager report in pdf for that test set. I need a go/no-go summary before tonight's sign-off meeting. Highlight the failures blocking the release."*
-3. **The agent then works on its own:**
-   - It loads the `uipath:uipath-test` skill.
-   - It checks login and the available CLI commands (`uip tm testcases --help --output json`).
-   - It finds project UIB and then the test set.
-   - It triggers the run: `uip tm testsets run --test-set-key UIB:9 --output json`.
-   - It waits for the run to finish, then pulls results: `uip tm executions testcaselogs list --execution-id … --project-key UIB`.
-   - For each failing test it checks past runs (`uip tm testcases list-result-history … --limit 10`) to tell new regressions apart from failures that keep recurring.
-   - It renders a PDF. The first attempt failed because Edge was already running, so it retried.
-4. **Result:** a summary in the terminal ("NO-GO", 5 passed / 4 failed) and a PDF titled *"Release Test Report — UiBank Smoke Test Set."* The PDF has:
-   - a recommendation banner (NO-GO, conditional)
-   - KPI tiles: total, passed, failed, pass rate, blocking failures
-   - a "Failures Blocking the Release" table with failure details and run history
-   - a table of all results
-   - a Risk Assessment
-   - "Conditions to Reach GO"
+By the end, learners have:
 
-**In your version:** **Regression Test Set** takes the place of *UiBank Smoke Test Set*, and your project takes the place of *UIB*.
+✅ Used the agentic features in Test Manager: requirement evaluation, test case generation, autonomous execution, and exploration
 
----
+✅ Used **Delegate** at different stages of testing, from running manual tests to building release reports
 
-## Prerequisite
+✅ Turned manual test cases into automations with **Autopilot for Testers** in Studio
 
-The `run` step only works if the test cases in **Regression Test Set** are **automated**. That means each one is linked to a published Studio automation (or a Playwright package), and the project has a folder with a robot available. Manual test cases can't be triggered. Step 3 checks this.
+**Delegate** is the main agent throughout. An optional section shows how to run the same steps with your own coding agent, such as Claude Code or OpenAI Codex, through the `uip` CLI and the `uipath-test` skill.
 
----
+## Trainer setup
 
-## Steps at a glance
+Learners complete their own [Prerequisites](docs/module-0-prerequisites/index.md), but those rely on setup only an organization or tenant admin can do. Complete this checklist **before the workshop**, ideally a few days ahead, and do a dry run with a test user.
 
-| # | Step | Purpose |
-|---|---|---|
-| 1 | Check that the CLI is installed and you're logged in | The skill's first rule |
-| 2 | Find your project key and the test set key | You'll need both for the prompt |
-| 3 | Confirm the test set's cases are automated and a robot is available | Otherwise the run fails |
-| 4 | Open a new terminal and start `claude` | Same setup as the video |
-| 5 | Type the prompt, adapted to your project | The demo itself |
-| 6 | Watch the agent work, approving commands if asked | |
-| 7 | Open the PDF and compare it with the Test Manager UI | Check the report against the source |
+### Organization and tenant
 
----
+- [ ] Create the workshop **tenant** in an organization delivered through **Test Cloud**. Autonomous Test Execution and Autonomous Exploration (step 4) are only available in Test Cloud.
+- [ ] Make sure the tenant has **Test Manager**, **Orchestrator**, and **Data Fabric** enabled.
+- [ ] Make sure **Autopilot for Testers** is allowed for the tenant, in Test Manager and in Studio. Check that no AI Trust Layer or governance policy blocks it.
+- [ ] Make sure learners can use **Delegate** in the organization.
 
-## Step 1: Check the CLI and your login
+### Users and group
 
-```bash
-uip login status --output json
-```
+- [ ] Create a **group** for the workshop, for example `Workshop Learners`.
+- [ ] Invite each learner to the organization, and add them to the group.
+- [ ] Give permissions to the **group**, not to individual users, so late joiners get everything at once.
 
-**What to look for:** the output should show you're logged in, plus the organization and tenant where you created the project.
+### Licenses and runtimes
 
-- **Not logged in?** Run `uip login` and finish the browser sign-in.
-- **Wrong tenant?** Run `uip login tenant set <TENANT_NAME> --output json`.
+- [ ] Assign an **App Test Developer** user license to the group or to each learner. Learners need it to create and publish Test Automation projects in Studio (steps 5 and 9).
+- [ ] Allocate enough **App Test Robot** runtimes to the tenant: at least one per learner machine (step 10).
+- [ ] For **Run autonomously** and **Autonomous Exploration**, make sure a supported, non-serverless robot is available in each project's default folder. The robot machine must run Windows, and its UiPath browser extension must have **Allow in Incognito** turned on.
 
----
+### Test Manager
 
-## Step 2: Find your project key and test set key
+- [ ] Give the group a Test Manager role that can **import projects**, **edit requirements and test cases**, and **execute tests**. Autopilot's requirement evaluation needs requirement create and edit permissions, and Autonomous Exploration needs **Execute Automated Tests**.
+- [ ] Share the **project file** (`.tmh`) that learners import in step 1. Step 1 still has a placeholder for it.
 
-Look up the project. Use its name, or the start of its key:
+### Orchestrator
 
-```bash
-uip tm project list --filter <PROJECT_NAME_OR_KEY> --output json
-```
+- [ ] Create a parent **workshop folder**. In step 10, each learner creates their own subfolder under it.
+- [ ] Give the group the roles it needs in step 10. At tenant level, learners must be able to set up their own user: **Personal Automation + Personal workspace**, the **Automation Developer** role, and **Custom Windows credentials**. On the workshop folder, they need **Folder Administrator** rights, to create subfolders and add machines and users. If you'd rather not grant these, do this part of step 10 for each learner before the session.
+- [ ] If learners use credential assets in test cases, give them the **View** permission on **Assets**.
 
-Write down the project **key** (for example, `UIB` in the video).
+### Data Fabric
 
-Then find the test set:
+- [ ] Give the group **read-write access** to Data Fabric at **tenant level**: permission to **create entities**, and to create, read, and update **records** (step 8).
+- [ ] Learners name their entity `LoanTestData<INITIALS>`, so names don't clash on the shared tenant.
 
-```bash
-uip tm testsets list --project-key UAPMEERA --filter "Regression" --output json
-```
+### Learner machines and network
 
-Write down the test set **key** (the format is `PROJECT:N`, like `UIB:9` in the video).
+- [ ] Learners need **local admin rights** to install the Studio STS installer (about 760 MB) and the UiPath browser extension for Edge or Chrome.
+- [ ] Learners can reach `cloud.uipath.com` and the UiBank app at `https://uibank.uipath.com`, without a proxy or firewall blocking them.
+- [ ] For the optional [Use Your Own Coding Agent](docs/optional-coding-agents/index.md) section, learners also need to install npm packages and sign in to their coding agent.
 
-> Note: `--filter` matches the **start** of the name or key, not text anywhere inside it.
+### On the day
 
----
+- [ ] Share the **organization name**, **tenant name**, and **workshop folder name** with learners.
+- [ ] Do a dry run of steps 1, 4, 8, and 12 with a test user in the learner group. These are the steps that depend most on permissions.
 
-## Step 3: Confirm the test cases are automated
+### After the workshop
 
-List the test cases in the test set:
+- [ ] Clean up the imported projects, learner folders, Data Fabric entities, and robot runtime assignments. Remove learners from the group, or delete the tenant.
 
-```bash
-uip tm testsets list-testcases --project-key UAPMEERA --test-set-key UAPMEERA:226 --output json
-```
+## How the guide is organized
 
-**What to look for:** each test case should have an automation linked to it. If they're all manual, the automated run in step 5 won't work. Fix that in Studio / Test Manager first, or ask for help linking automations.
-
-Also confirm that the Orchestrator folder linked to the project has a robot that can run the tests. In the video, two tests failed only because the robot's browser extension wasn't working.
-
----
-
-## Step 4: Open a new terminal and start Claude Code
-
-Open a new terminal window and go to a folder where the PDF can be saved (this folder works). Then start Claude Code:
-
-```bash
-claude
-```
-
-The UiPath plugin is installed at user scope, so the `uipath-test` skill is already available. You'll see it activate in step 6.
-
-> Optional: the video uses **auto mode** (press Shift+Tab to cycle modes), which lets commands run without asking each time. Leave it off if you want to approve each `uip` command and learn what the agent is doing.
-
----
-
-## Step 5: Type the prompt
-
-Fill in your own values:
-
-> Trigger the **Regression Test Set** test set of Project **UAPMEERA** in Test Manager and wait for it to finish. Once finished, create a release manager report in pdf for that test set. I need a go/no-go summary before tonight's sign-off meeting. Highlight the failures blocking the release.
-
----
-
-## Step 6: Watch the agent work
-
-Expect roughly this sequence, matching the video:
-
-1. `Skill(uipath:uipath-test)` loads.
-2. Login check and a look at the CLI's commands (`--help`).
-3. Project lookup → test set lookup.
-4. `uip tm testsets run --test-set-key <KEY>`. **This starts a real execution on your robot.**
-5. A wait or polling step until the execution finishes (several minutes, depending on the test set).
-6. `uip tm executions testcaselogs list …`, the per-test results.
-7. `uip tm testcases list-result-history …` for each failure, to classify it as a regression or a recurring failure.
-8. A PDF is written to disk, and its path is printed.
-
-If you're approving commands one by one, read each one before approving it. The only command that writes anything is the `run`; the rest only read data.
-
----
-
-## Step 7: Check the report
-
-1. Open the PDF path the agent printed.
-2. Check it against Test Manager → your project → **Execution**. The pass/fail counts and failing test keys should match.
-3. Compare the layout with the video's report: recommendation banner, KPI tiles, blocking-failures table, all results, risk assessment, conditions to reach GO.
-
----
-
-## Repeating the demo
-
-### Done once, no need to repeat
-
-| Step | Why it stays done |
+| Folder | Section |
 |---|---|
-| Installing the CLI, tool and plugin | Already installed |
-| Step 2: project and test set keys | Keys don't change: `UAPMEERA` / `UAPMEERA:226` |
-| Step 3: automation check | Still valid as long as nobody edits the test cases or packages |
+| [`docs/module-0-prerequisites/`](docs/module-0-prerequisites/) | Accounts, access, and installing Studio and Delegate |
+| [`docs/module-1-introduction/`](docs/module-1-introduction/) | A short tour of Test Cloud, Test Manager, and the agents |
+| [`docs/module-2-hands-on-workshop/`](docs/module-2-hands-on-workshop/) | The twelve hands-on steps |
+| [`docs/module-3-troubleshooting-and-next-steps/`](docs/module-3-troubleshooting-and-next-steps/) | More prompts to try, and fixes for common problems |
+| [`docs/optional-coding-agents/`](docs/optional-coding-agents/) | Setting up your own coding agent instead of Delegate |
+| [`docs/assets/`](docs/assets/) | Images, CSS, scripts, and downloadable files |
 
-### Before each demo (about 2 minutes, ideally an hour ahead)
+The navigation is defined in [`mkdocs.yml`](mkdocs.yml).
 
-- [ ] **Check login.** Login tokens expire, so check this every time.
-  ```bash
-  uip login status --output json
-  ```
-  Confirm the org and tenant are right. If the session has expired, run `uip login --organization <orgName> --tenant <tenantName>` again (add `--authority https://<host>` if not on cloud.uipath.com).
-- [ ] **Check that the robot is available** (Orchestrator → the folder → Machines/Robots). A busy or disconnected robot is the most likely thing to make the run hang during the demo.
-- [ ] **Move or rename the earlier PDF**, so the new report clearly comes from the live run.
-- [ ] **Close any Edge windows the agent may have opened.** The PDF step can fail if the browser is already running.
-- [ ] **Open the Test Manager dashboard for UAPMEERA in a browser tab.** The video starts from that view.
+## Preview the guide locally
 
-### During the demo
+On Windows, double-click [`start-guide.bat`](start-guide.bat). On first run, it creates a Python virtual environment and installs `mkdocs-material`. Then it opens the guide at <http://127.0.0.1:8000>.
 
-1. **Step 4:** a new terminal, `cd` to this folder, then `claude`. Use a **new session** each time (or type `/clear`), so it starts clean like the video.
-2. **Step 5:** paste the prompt.
-3. **Step 6:** let it run. **Auto mode** (Shift+Tab) keeps the demo moving, because you don't have to stop and approve each command.
-4. **Step 7:** open the PDF and compare it with the Test Manager UI.
+On any other system, with Python 3 installed:
 
-### Two things to plan for
+```bash
+pip install mkdocs-material
+mkdocs serve
+```
 
-- **Waiting:** the run takes a few minutes. Use that time to talk through what's on screen: the skill loading, the JSON output, the run command. Or show a recording of the wait and skip ahead.
-- **Results will vary:** every demo is a real run. If all 4 tests pass, the report recommends **GO**, not NO-GO. To make sure you get a failure to talk about, like the video does, keep one test that fails on purpose.
+The preview reloads automatically when you save a page.
 
----
+## Publishing
 
-## Troubleshooting
+Every push to `main` publishes the site to GitHub Pages through [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml).
 
-| Symptom | Likely cause / fix |
-|---|---|
-| `HTTP 400: Please assign folder to project level before executing testcases.` | The project has no default folder. The skill knows how to recover from this exact error. |
-| Run starts but tests fail with "Cannot communicate with the browser" | A robot-side problem (the browser extension). It isn't a product defect. |
-| PDF generation fails on the first try | Seen in the video too: the browser was already running. The agent retries. |
-| `401 Unauthorized` | Run `uip login` again. |
+## Contributing
+
+- **Branches:** never commit directly to `main` or `dev`. Create a `feature/*`, `bugfix/*`, `enhancement/*`, or `hotfix/*` branch from `dev`, and open a pull request to `dev`. `dev` is merged to `main` when it's stable.
+- **Content standards:** every page is reviewed against the standards in [`CLAUDE.md`](CLAUDE.md): completeness, accuracy, styling, learning flow, clarity, and compliance, scored out of 15.
