@@ -1,4 +1,4 @@
-# 10. Configure the Test Manager Folder
+# 06. Configure the Test Manager Folder
 
 To run tests automatically, your project needs an **Orchestrator folder** with a **machine and App Test Robot**, linked to the project.
 
@@ -64,6 +64,6 @@ Your project has a folder and a robot to run its tests.
 
 ---
 
-[Next → 11. Create a Test Set](11-create-test-set.md){: .md-button .md-button--primary}
+[Next → 07. Create a Test Set](07-create-test-set.md){: .md-button .md-button--primary}
 
 ---

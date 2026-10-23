@@ -1,4 +1,4 @@
-# 12. Run and Report
+# 08. Run and Report
 
 It's release night, and the release manager wants to know: **can we ship?** Ask Delegate to run the test set and write the go/no-go report — in one prompt.
 
@@ -7,7 +7,7 @@ It's release night, and the release manager wants to know: **can we ship?** Ask 
 
     ✅ **Edge and Chrome are closed** — PDF rendering can fail if the browser is already running.
 
-    ✅ You know your **project key** and the exact **test set name** (step 11).
+    ✅ You know your **project key** and the exact **test set name** (step 7).
 
 ## Run it
 

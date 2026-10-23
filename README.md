@@ -4,7 +4,7 @@ The learner's handbook for the UiPath **Coding Agents for Test** instructor-led 
 
 ## What the workshop covers
 
-Learners work on a ready-made **UiBank** Test Manager project. In about twelve hands-on steps, they take a loan application requirement all the way to an automated test run. Then they ask an agent for a release report in plain English.
+Learners work on a ready-made **UiBank** Test Manager project. In eight hands-on steps, they take a loan application requirement all the way to an automated test run. Then they ask an agent for a release report in plain English.
 
 | Phase | Steps | What learners do | Tools |
 |---|---|---|---|
@@ -42,8 +42,8 @@ Learners complete their own [Prerequisites](docs/module-0-prerequisites/index.md
 
 ### Licenses and runtimes
 
-- [ ] Assign an **App Test Developer** user license to the group or to each learner. Learners need it to create and publish Test Automation projects in Studio (steps 5 and 9).
-- [ ] Allocate enough **App Test Robot** runtimes to the tenant: at least one per learner machine (step 10).
+- [ ] Assign an **App Test Developer** user license to the group or to each learner. Learners need it to create and publish Test Automation projects in Studio (step 5).
+- [ ] Allocate enough **App Test Robot** runtimes to the tenant: at least one per learner machine (step 6).
 - [ ] For **Run autonomously** and **Autonomous Exploration**, make sure a supported, non-serverless robot is available in each project's default folder. The robot machine must run Windows, and its UiPath browser extension must have **Allow in Incognito** turned on.
 
 ### Test Manager
@@ -53,13 +53,13 @@ Learners complete their own [Prerequisites](docs/module-0-prerequisites/index.md
 
 ### Orchestrator
 
-- [ ] Create a parent **workshop folder**. In step 10, each learner creates their own subfolder under it.
-- [ ] Give the group the roles it needs in step 10. At tenant level, learners must be able to set up their own user: **Personal Automation + Personal workspace**, the **Automation Developer** role, and **Custom Windows credentials**. On the workshop folder, they need **Folder Administrator** rights, to create subfolders and add machines and users. If you'd rather not grant these, do this part of step 10 for each learner before the session.
+- [ ] Create a parent **workshop folder**. In step 6, each learner creates their own subfolder under it.
+- [ ] Give the group the roles it needs in step 6. At tenant level, learners must be able to set up their own user: **Personal Automation + Personal workspace**, the **Automation Developer** role, and **Custom Windows credentials**. On the workshop folder, they need **Folder Administrator** rights, to create subfolders and add machines and users. If you'd rather not grant these, do this part of step 6 for each learner before the session.
 - [ ] If learners use credential assets in test cases, give them the **View** permission on **Assets**.
 
 ### Data Fabric
 
-- [ ] Give the group **read-write access** to Data Fabric at **tenant level**: permission to **create entities**, and to create, read, and update **records** (step 8).
+- [ ] Give the group **read-write access** to Data Fabric at **tenant level**: permission to **create entities**, and to create, read, and update **records** (step 5).
 - [ ] Learners name their entity `LoanTestData<INITIALS>`, so names don't clash on the shared tenant.
 
 ### Learner machines and network
@@ -71,7 +71,7 @@ Learners complete their own [Prerequisites](docs/module-0-prerequisites/index.md
 ### On the day
 
 - [ ] Share the **organization name**, **tenant name**, and **workshop folder name** with learners.
-- [ ] Do a dry run of steps 1, 4, 8, and 12 with a test user in the learner group. These are the steps that depend most on permissions.
+- [ ] Do a dry run of steps 1, 4, 5, and 8 with a test user in the learner group. These are the steps that depend most on permissions.
 
 ### After the workshop
 
@@ -83,7 +83,7 @@ Learners complete their own [Prerequisites](docs/module-0-prerequisites/index.md
 |---|---|
 | [`docs/module-0-prerequisites/`](docs/module-0-prerequisites/) | Accounts, access, and installing Studio and Delegate |
 | [`docs/module-1-introduction/`](docs/module-1-introduction/) | A short tour of Test Cloud, Test Manager, and the agents |
-| [`docs/module-2-hands-on-workshop/`](docs/module-2-hands-on-workshop/) | The twelve hands-on steps |
+| [`docs/module-2-hands-on-workshop/`](docs/module-2-hands-on-workshop/) | The eight hands-on steps |
 | [`docs/module-3-troubleshooting-and-next-steps/`](docs/module-3-troubleshooting-and-next-steps/) | More prompts to try, and fixes for common problems |
 | [`docs/optional-coding-agents/`](docs/optional-coding-agents/) | Setting up your own coding agent instead of Delegate |
 | [`docs/assets/`](docs/assets/) | Images, CSS, scripts, and downloadable files |

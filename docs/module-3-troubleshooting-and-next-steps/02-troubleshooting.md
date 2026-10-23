@@ -14,8 +14,8 @@ Using Claude Code or Codex instead? See the troubleshooting table in [Set Up You
 
 | Symptom | Likely cause / fix |
 |---|---|
-| `HTTP 400: Please assign folder to project level before executing testcases.` | The project has no default folder. Complete [Part 2 of step 10](../module-2-hands-on-workshop/10-configure-tm-folder.md#part-2-link-the-project-to-the-folder). The `uipath-test` skill also knows how to recover from this error. |
-| Test cases are skipped with no result | They're manual — not linked to a published automation. Complete [step 9](../module-2-hands-on-workshop/09-publish-test-cases.md) and check each test case shows an automation. |
+| `HTTP 400: Please assign folder to project level before executing testcases.` | The project has no default folder. Complete [Part 2 of step 6](../module-2-hands-on-workshop/06-configure-tm-folder.md#part-2-link-the-project-to-the-folder). The `uipath-test` skill also knows how to recover from this error. |
+| Test cases are skipped with no result | They're manual — not linked to a published automation. Complete [step 5, Part 7](../module-2-hands-on-workshop/05-automate-with-studio-and-delegate.md#part-7-publish-the-test-cases) and check each test case shows an automation. |
 | The run stays pending or hangs | The robot is busy or disconnected. In Orchestrator, check the machine in your folder is connected and has an **App Test Robot** runtime. |
 | Tests fail with "Cannot communicate with the browser" | A robot-side problem with the UiPath browser extension, not a product defect. Check the extension is installed and enabled on the robot machine. |
 
@@ -24,7 +24,7 @@ Using Claude Code or Codex instead? See the troubleshooting table in [Set Up You
 | Symptom | Likely cause / fix |
 |---|---|
 | PDF generation fails on the first try | The browser was already running. Delegate usually retries on its own; if not, close Edge and Chrome and ask it to try again. |
-| You can't find the PDF | Delegate shows the path when it finishes. The step 12 prompt saves it in `Documents\UiPath\Reports`. |
+| You can't find the PDF | Delegate shows the path when it finishes. The step 8 prompt saves it in `Documents\UiPath\Reports`. |
 | The report numbers don't match Test Manager | Make sure you're comparing the **same execution**. Ask Delegate which execution ID it used. |
 
 !!! info "Still stuck?"

@@ -10,11 +10,11 @@ Confirm that you can:
 
 ✅ Open **Test Manager** and **Orchestrator** in that tenant
 
-✅ See a **machine with an App Test Robot runtime** (you'll add it to your folder in step 10)
+✅ See a **machine with an App Test Robot runtime** (you'll add it to your folder in step 6)
 
 ✅ Use an **App Test Developer** license, to create Test Automation projects
 
-✅ **Create Data Fabric entities**, for test data in step 8
+✅ **Create Data Fabric entities**, for test data in step 5
 
 ✅ Connect **UiPath Assistant** to your Cloud account
 

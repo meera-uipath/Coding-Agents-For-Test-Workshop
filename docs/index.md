@@ -33,16 +33,12 @@ You'll walk through the full testing lifecycle in UiPath Test Cloud, with AI at 
   <div class="wf-phase">
     <div class="wf-phase-head">
       <span class="wf-phase-kicker">Phase 2 · Build</span>
-      <span class="wf-phase-title">Studio + Data Fabric</span>
+      <span class="wf-phase-title">Studio + Delegate</span>
     </div>
     <div class="wf-steps">
-      <a class="wf-step" href="module-2-hands-on-workshop/05-connect-studio-to-tm/"><span class="wf-num">5</span>Connect Studio to TM</a>
-      <a class="wf-step" href="module-2-hands-on-workshop/06-build-object-repository/"><span class="wf-num">6</span>Build Object Repository</a>
-      <a class="wf-step" href="module-2-hands-on-workshop/07-automate-test-cases/"><span class="wf-num">7</span>Automate test cases</a>
-      <a class="wf-step" href="module-2-hands-on-workshop/08-generate-test-data/"><span class="wf-num">8</span>Generate test data</a>
-      <a class="wf-step" href="module-2-hands-on-workshop/09-publish-test-cases/"><span class="wf-num">9</span>Publish test cases</a>
+      <a class="wf-step" href="module-2-hands-on-workshop/05-automate-with-studio-and-delegate/"><span class="wf-num">5</span>Automate test cases</a>
     </div>
-    <div class="wf-phase-foot"><strong>Autopilot</strong>, plus <strong>Delegate</strong> for the Object Repository and test data</div>
+    <div class="wf-phase-foot">Project, Object Repository, automation, test data, and publishing</div>
   </div>
   <div class="wf-arrow" aria-hidden="true"></div>
   <div class="wf-phase">
@@ -51,8 +47,8 @@ You'll walk through the full testing lifecycle in UiPath Test Cloud, with AI at 
       <span class="wf-phase-title">Orchestrator + TM</span>
     </div>
     <div class="wf-steps">
-      <a class="wf-step" href="module-2-hands-on-workshop/10-configure-tm-folder/"><span class="wf-num">10</span>Configure the folder</a>
-      <a class="wf-step" href="module-2-hands-on-workshop/11-create-test-set/"><span class="wf-num">11</span>Create a test set</a>
+      <a class="wf-step" href="module-2-hands-on-workshop/06-configure-tm-folder/"><span class="wf-num">6</span>Configure the folder</a>
+      <a class="wf-step" href="module-2-hands-on-workshop/07-create-test-set/"><span class="wf-num">7</span>Create a test set</a>
     </div>
     <div class="wf-phase-foot">Folder, robot, and a <strong>smoke or regression</strong> set</div>
   </div>
@@ -63,7 +59,7 @@ You'll walk through the full testing lifecycle in UiPath Test Cloud, with AI at 
       <span class="wf-phase-title">Delegate</span>
     </div>
     <div class="wf-steps">
-      <a class="wf-step" href="module-2-hands-on-workshop/12-run-and-report/"><span class="wf-num">12</span>Run and report</a>
+      <a class="wf-step" href="module-2-hands-on-workshop/08-run-and-report/"><span class="wf-num">8</span>Run and report</a>
     </div>
     <div class="wf-phase-foot">Run the test set → <strong>go/no-go PDF</strong></div>
   </div>
@@ -89,7 +85,7 @@ By the end of this workshop, you will:
 |---|---|
 | **[Prerequisites](module-0-prerequisites/index.md)** | Accounts, Delegate, and installation |
 | **[Introduction](module-1-introduction/index.md)** | A short tour of Test Cloud, Test Manager, and Coding Agents for Test |
-| **[Hands-On Workshop](module-2-hands-on-workshop/01-import-tm-project.md)** | The twelve hands-on steps, from import to the go/no-go report |
+| **[Hands-On Workshop](module-2-hands-on-workshop/01-import-tm-project.md)** | The eight hands-on steps, from import to the go/no-go report |
 | **[Troubleshooting & Next Steps](module-3-troubleshooting-and-next-steps/index.md)** | More prompts to try and fixes for common problems |
 | **[Use Your Own Coding Agent](optional-coding-agents/index.md)** *(optional)* | Run the same steps with Claude Code or OpenAI Codex instead of Delegate |
 

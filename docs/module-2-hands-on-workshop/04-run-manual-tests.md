@@ -5,7 +5,7 @@ There are three ways to run a manual test case. Each records its results in Test
 | | Who runs the steps | Apps it can test | Setup needed |
 |---|---|---|---|
 | **Manual execution assistant** | You | Any | None |
-| **Run autonomously** | Autopilot, on a robot | Web apps | A robot in the project's default folder (step 10) |
+| **Run autonomously** | Autopilot, on a robot | Web apps | A robot in the project's default folder (step 6) |
 | **Delegate** | Delegate, on your machine | Web and desktop apps | None |
 
 ??? tip "Manual execution assistant"
@@ -35,13 +35,12 @@ There are three ways to run a manual test case. Each records its results in Test
     2. Enter the app URL, set a **time-box**, and select an AI model.
     3. Select **Start**. When it's **Completed**, select **Show report**.
 
-    Needs a Windows robot in the project's default folder (step 10), with the UiPath browser extension set to **Allow in Incognito**. See <a href="https://docs.uipath.com/test-manager/automation-cloud/latest/user-guide/running-autonomous-exploration" target="_blank">Running Autonomous Exploration</a>.
+    Needs a Windows robot in the project's default folder (step 6), with the UiPath browser extension set to **Allow in Incognito**. See <a href="https://docs.uipath.com/test-manager/automation-cloud/latest/user-guide/running-autonomous-exploration" target="_blank">Running Autonomous Exploration</a>.
 
-## Run them with Delegate
 
 [Open Delegate](../module-0-prerequisites/01-installation-guide.md#step-2-meet-delegate) and start a **new session**.
 
-### Part 1 — Run a test case
+### 1 — Run a test case
 
 !!! example "It's your turn now!"
     1. Replace `<YOUR_TEST_CASE_KEY>` with a test case from step 3, then paste:
@@ -63,13 +62,13 @@ There are three ways to run a manual test case. Each records its results in Test
 **Check it:** **Execution** → open the new execution → select your test case key. It shows the result, with the screenshot under **Assertions**.
 
 !!! question "Think about it"
-    Did Delegate stumble on a step? Autopilot automates these same steps in step 7, so fix them now:
+    Did Delegate stumble on a step? Autopilot automates these same steps in step 5, so fix them now:
 
     ```text
     Rewrite the steps of test case <YOUR_TEST_CASE_KEY> that were unclear during this run, so each one has a single clear action and expected result. Show me the changes before you save them to Test Manager.
     ```
 
-### Part 2 — Add steps to an empty test case
+### 2 — Add steps to an empty test case
 
 Your project has a test case, **Request Loan**, with no steps.
 
@@ -111,38 +110,52 @@ Your project has a test case, **Request Loan**, with no steps.
 
 **Check it:** **Request Loan** has manual steps, is linked to the requirement, and has a new result in **Execution**.
 
+### 3 — Create a new Requirement and Testcase
+
+The business has documented a new process, **Loan lookup**, that isn't in your requirements yet.
+
+!!! example "It's your turn now!"
+    1. Download <a href="../../assets/Files/Loan%20lookup%20process%20to%20be%20tested.docx" target="_blank">Loan lookup process to be tested.docx</a>.
+    2. Attach it in Delegate, then paste:
+
+        ```text
+        The attached Word document describes the UiBank loan lookup process. It isn't covered by any requirement in my Test Manager project yet.
+
+        1. Create a new requirement for this process.
+        2. Create a manual test case from the steps and screenshots in the document, and link it to the new requirement.
+        3. Use loan ID 6adae567758a48004816b1cc.
+        4. The document ends at Retrieve Loan Details. Add a final step that checks the loan details page shows the same loan ID, along with the rest of the loan's details.
+
+        Show me the requirement and the test case before you save them to Test Manager.
+        ```
+
+    3. Review, give permission to save, and ask Delegate to run it with loan ID `6adae567758a48004816b1cc`.
+
+**Check it:** a new **Loan lookup** requirement, with a linked test case that has manual steps and a result in **Execution**.
+
+!!! example "Not quite right? Talk to Delegate"
+    Open the new requirement and test case in Test Manager. Check the title, description, acceptance criteria, steps, and expected results.
+
+    Then tell Delegate what to fix, in your own words, just as you'd tell a colleague. For example:
+
+    ✅ *"The testcase must verify if loan ID is same and also if associated data is displayed"*
+
+    ✅ *"Don't use the data from PDD in the testcase"*
+
+    ✅ *"add label 'Delegate' to this testcase and requirement"*
+
+    Keep going until you're happy with both.
+
 ??? info "Beyond running tests — Delegate across the whole manual testing cycle"
-    Try these on your own project:
+    Ideas to try on your own project, in your own words:
 
-    === "1. Find test ideas"
+    ✅ **Find test ideas** — from a requirement's acceptance criteria, or from a screenshot of a screen, including boundary and negative cases.
 
-        ```text
-        Read the loan application requirement in Test Manager project <YOUR_PROJECT_KEY> and suggest test ideas that cover its acceptance criteria, including boundary and negative cases.
-        ```
+    ✅ **Write the steps** — turn those ideas into manual test cases and link them to the requirement.
 
-        Or attach a screenshot:
+    ✅ **Run them with you** — Delegate runs the steps and stops to ask when it needs input you have, such as login details.
 
-        ```text
-        Here's a screenshot of the UiBank loan application form. Suggest test ideas for it, including boundary and negative cases.
-        ```
-
-    === "2. Write the steps"
-
-        ```text
-        Turn these test ideas into manual test cases, with clear steps and an expected result for each step. Upload them to Test Manager project <YOUR_PROJECT_KEY> and link them to the loan application requirement.
-        ```
-
-    === "3. Run them with you"
-
-        ```text
-        Run test case <KEY_1> of project <YOUR_PROJECT_KEY> in the browser. Whenever a step needs input you don't have, such as login details, stop and ask me.
-        ```
-
-    === "4. Record the results"
-
-        ```text
-        Create the test results for the test cases you just ran, with a screenshot of each failed step, and upload them to Test Manager project <YOUR_PROJECT_KEY>.
-        ```
+    ✅ **Record the results** — create test results with screenshots of failed steps, and upload them to Test Manager.
 
 ## Nice work!
 
@@ -150,6 +163,6 @@ Your test cases are proven against the real application, with results in Test Ma
 
 ---
 
-[Next → 05. Connect Studio to Test Manager](05-connect-studio-to-tm.md){: .md-button .md-button--primary}
+[Next → 05. Automate Test Cases with Studio Desktop and Delegate](05-automate-with-studio-and-delegate.md){: .md-button .md-button--primary}
 
 ---
