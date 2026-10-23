@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;700&display=swap');
+
 /* UiPath brand colors - Science Blue #0067DF, Pomegranate #FA4616, White #FFFFFF */
 :root {
   --primary-blue: #0067DF;
@@ -22,32 +24,14 @@
   display: none;
 }
 
-/* Consistent header hierarchy - single blue, varied sizes */
-.md-typeset h1 {
-  color: var(--primary-blue) !important;
-  font-weight: 700 !important;
-  font-size: 2.5em !important;
-}
-
-.md-typeset h2 {
-  color: var(--primary-blue) !important;
-  font-weight: 700 !important;
-  font-size: 1.75em !important;
-  margin-top: 1.5em !important;
-}
-
-.md-typeset h3 {
-  color: var(--primary-blue) !important;
-  font-weight: 600 !important;
-  font-size: 1.35em !important;
-  margin-top: 1.3em !important;
-}
-
+/* Headings - UiPath Nunito, theme default color and sizes */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
 .md-typeset h4,
 .md-typeset h5,
 .md-typeset h6 {
-  color: var(--primary-blue) !important;
-  font-weight: 600 !important;
+  font-family: 'Nunito', sans-serif;
 }
 
 /* Links */
@@ -651,4 +635,101 @@ th {
   white-space: pre-wrap;
   word-break: break-word;
   padding-right: 3em;
+}
+
+/* Page flow strip: <div class="flow"> with a.flow-step boxes joined by
+   span.flow-arrow. Each step links to its section. Stacks on narrow screens. */
+.md-typeset .flow {
+  display: flex;
+  align-items: stretch;
+  gap: 0.3rem;
+  margin: 1.6em 0;
+}
+
+.md-typeset a.flow-step {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.6rem;
+  padding: 0.45rem 0.4rem;
+  border: 1.5px solid #F7A541;
+  border-radius: 2px;
+  background: #FFF3E3;
+  color: #37474F;
+  font-size: 0.66rem;
+  line-height: 1.3;
+  text-align: center;
+  transition: background-color 0.15s, border-color 0.15s;
+}
+
+.md-typeset a.flow-step:hover,
+.md-typeset a.flow-step:focus-visible {
+  background: #FFE4C2;
+  border-color: var(--accent-orange);
+  color: #37474F;
+  text-decoration: none;
+  opacity: 1;
+}
+
+.md-typeset .flow-arrow {
+  flex: none;
+  align-self: center;
+  position: relative;
+  width: 1rem;
+  height: 2px;
+  background: #37474F;
+}
+
+.md-typeset .flow-arrow::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: -4px;
+  border-left: 7px solid #37474F;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+
+[data-md-color-scheme="dark"] .md-typeset a.flow-step {
+  background: rgba(247, 165, 65, 0.12);
+  color: var(--md-default-fg-color);
+}
+
+[data-md-color-scheme="dark"] .md-typeset .flow-arrow,
+[data-md-color-scheme="dark"] .md-typeset .flow-arrow::after {
+  background-color: var(--md-default-fg-color--light);
+  border-left-color: var(--md-default-fg-color--light);
+}
+
+[data-md-color-scheme="dark"] .md-typeset .flow-arrow::after {
+  background-color: transparent;
+}
+
+@media screen and (max-width: 59.9375em) {
+  .md-typeset .flow {
+    flex-direction: column;
+  }
+
+  .md-typeset a.flow-step {
+    flex: none;
+    min-height: 0;
+    font-size: 0.75rem;
+  }
+
+  .md-typeset .flow-arrow {
+    width: 2px;
+    height: 1rem;
+  }
+
+  .md-typeset .flow-arrow::after {
+    right: auto;
+    left: -4px;
+    top: auto;
+    bottom: -1px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid #37474F;
+    border-bottom: none;
+  }
 }

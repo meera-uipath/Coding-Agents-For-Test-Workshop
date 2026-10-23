@@ -1,162 +1,187 @@
 # 05. Automate Test Cases with Studio Desktop and Delegate
 
-Turn your manual test cases into automated ones in Studio, with Delegate doing most of the work. Each automation stays **linked** to its test case in Test Manager.
+Automate your manual test cases in Studio with Delegate. Each automation stays **linked** to its test case in Test Manager.
 
 !!! warning "Access required"
     You need an **App Test Developer** license to create and publish Test Automation projects.
 
-Paste the prompts in [Delegate](../module-0-prerequisites/01-installation-guide.md#step-2-meet-delegate).
+## What you'll do
 
-## Part 1 — Create a Test Automation project
+Seven steps take you from an empty Studio project to automated test cases, published and ready to run. Click a step to jump to it.
 
-!!! example ""
-    Paste:
+Remember - Paste the prompts in Delegate, wait and watch Delegate build it in Studio
 
-    ```text
-    Create a new Test Automation project in Studio desktop. Name it UiBank Tests.
-    ```
+<div class="flow">
+  <a class="flow-step" href="#create-a-test-automation-project">Create a Test Automation project</a>
+  <span class="flow-arrow"></span>
+  <a class="flow-step" href="#install-the-ui-automation-package">Install the UI Automation package</a>
+  <span class="flow-arrow"></span>
+  <a class="flow-step" href="#link-studio-to-your-test-manager-project">Link Studio to your Test Manager project</a>
+  <span class="flow-arrow"></span>
+  <a class="flow-step" href="#build-the-object-repository">Build the Object Repository</a>
+  <span class="flow-arrow"></span>
+  <a class="flow-step" href="#automate-the-test-cases">Automate the test cases</a>
+  <span class="flow-arrow"></span>
+  <a class="flow-step" href="#generate-test-data">Generate test data</a>
+  <span class="flow-arrow"></span>
+  <a class="flow-step" href="#publish-the-test-cases">Publish the test cases</a>
+</div>
 
-**Check it:** **UiBank Tests** opens in Studio, saved in default folder `Documents\UiPath\UiBank Tests`.
 
-## Part 2 — Install the UI Automation package
 
-!!! example ""
-    Paste:
+## Create a Test Automation project
 
-    ```text
-    Install the latest stable UI Automation activities package in this project so the workflow can interact with web pages and desktop apps.
-    ```
+```text
+Create a Studio Test Automation project named UiBank Tests.
+```
+
+**Check it:** **UiBank Tests** opens in Studio, in `Documents\UiPath\UiBank Tests`.
+
+## Install the UI Automation package
+
+```text
+Install the latest stable UI Automation activities package in UiBank Tests.
+```
 
 **Check it:** **Manage Packages → Project Dependencies** lists **UiPath.UIAutomation.Activities**.
 
-## Part 3 — Link Studio to your Test Manager project
+## Link Studio to your Test Manager project
+
+```text
+Connect this project to the Test Manager project we've worked with so far.
+```
+
+Delegate then opens **Test Explorer** to show the project's test cases.
+
+**Check it:** the connection icon is green, and **Test Explorer** lists your test cases from previous step.
+## Build the Object Repository
+
+The **Object Repository** stores the app's screens and UI elements for every test case to reuse. Tell Delegate what to capture, and it builds the repository for you. To cover every screen and element the test cases need, use the prompt below.
+
+
+!!! example "Continue in Delegate.."
+    1. Paste:
+
+        ```text
+        Create an Object Repository in UiPath Studio Desktop for the UiBank web app running in Chrome.
+
+        Application
+        - Name: UiBankORForChrome
+        - Browser: Chrome
+        - Capture each element live in the browser
+        - Prefer stable selectors (id, name, aria-label, visible text) over index-based ones
+        - Avoid dynamic values in selectors
+        - Name each element exactly as listed below
+
+        Screens and elements
+
+        1. Screen: Welcome (https://uibank.uipath.com/welcome)
+           - Username (input)
+           - Password (input)
+           - Sign In (button)
+           - Products (dropdown menu)
+           - Loans (menu item in the Products dropdown; open Products first so Loans is visible when you capture it)
+
+        2. Screen: Loans (https://uibank.uipath.com/loans)
+           - Apply For Loan (button)
+           - Already Have A Loan (button)
+
+        3. Screen: Loan Application (https://uibank.uipath.com/loans/apply)
+           - Email Address of Requester (input)
+           - Loan Amount Requested (input)
+           - Loan Term (dropdown)
+           - Current Yearly Income Before Taxes (input)
+           - Age (input)
+           - Submit Loan Application (button)
+
+        4. Screen: Loan Result (the results view shown after you submit the loan application)
+           - Result Text: the full text block of the response
+           - Rate: only the number shown below "With a fantastic rate of:", without the "%" sign
+           - Loan ID: the value shown below "Your new loan ID is:"
+           Anchor these elements to their label text, not to the changing values, so the selectors work for any result.
+           To reach this screen, submit the form with sample valid values. Save the Loan ID for screen 6.
+
+        5. Screen: Loan Lookup (https://uibank.uipath.com/loans/lookup)
+           - Loan ID (input)
+           - Retrieve Loan Details (button)
+
+        6. Screen: Loan Lookup Result (the results view shown after you look up a Loan ID)
+           - Result Text: the full text block of the response
+           - Loan ID: the value shown beside its label, anchored to the label text
+           To reach this screen, look up the Loan ID you saved from screen 4.
+
+        Acceptance criteria
+        - All 6 screens and 20 elements exist under UiBankORForChrome, named as above
+        - Every selector validates (highlights the correct element) on its live screen
+        - Report any element you could not capture reliably, and why
+        ```
+
+    2. Don't use your desktop or browser while it captures.
+
+!!! tip "Write your own Object Repository prompt"
+    Describe what you need in plain language, such as the app, its screens, and the elements to capture. Delegate can also review and fine-tune your prompt, or fix it when something's missed.
+
+**Check it:**
+
+1. In Studio's **Object Repository** panel, expand **UiBankORForChrome**. It lists all 6 screens and their elements. If it's empty, reload the project.
+
+    ![Object Repository panel](../assets/images/Object%20Repo.png){ width="300" }
+
+2. Open UiBank in Chrome on the Welcome screen. Right-click an element, such as **Username**, and select **Highlight**.
+
+    ![Highlight an element](../assets/images/Studio%20OR%20Highlight.png){ width="300" }
+
+3. In the browser, the element is outlined in **green**, and its label anchor in **blue**. Repeat for a few elements on each screen.
+
+    ![Highlighted element in UiBank](../assets/images/UiBank%20Highlight.png)
+
+If an element doesn't highlight, ask Delegate to recapture it.
+
+!!! warning "Complete this step before you continue"
+    **Autopilot for Testers** builds your test cases from the Object Repository elements. Without them, it can't automate the test cases in the next step.
+
+
+## Automate the test cases
 
 !!! example "It's your turn now!"
-    1. **Design** ribbon → **Test Manager → Test Manager Settings**.
-    2. Enter your Test Manager URL, click **Connect**, and sign in.
-    3. In **Default Project**, select your project from step 1, and click **OK**.
-
-![Connect to Test Manager](../assets/images/test-manager-connect.png)
-
-**Check it:** the connection icon is green, and **Test Explorer** lists your test cases from step 3 as manual test cases.
+    1. In **Test Explorer**, right-click a manual test case → **Generate Test Case with Autopilot**.
+    2. Check it uses **Object Repository** elements and the expected results. If not, ask Delegate to fix it.
+    3. Check the **Use Application/Browser** cards. The data-driven test in the next section must open and close the app once per row, and your requirement and test case may not say so.
+        - **First card:** set **Open** to **Always**.
+        - **Last card:** set **Close** to **Always**.
+        - **Cards in between:** keep **Open** and **Close** as **Never**.
+    4. **Run** it locally.
 
 ![Test Explorer](../assets/images/testExplorer.png)
 
-## Part 4 — Build the Object Repository
+**Check it:** at least **2** automated test cases pass locally.
 
-An **Object Repository** stores an app's screens and UI elements, so every test case reuses the same reliable elements. Delegate captures them, and Autopilot uses them in Part 5.
+??? example "Optional: Fix the activity display names"
+    Autopilot names each activity after its manual step, including the test data, which makes long, hard-to-read display names.
 
-!!! example "It's your turn now!"
-    1. Replace the placeholders, using the test cases you'll automate in Part 5, then paste:
-
-        ```text
-        My UiPath Studio project is in Documents\UiPath\UiBank Tests, and it's open in Studio. Open the UiBank application at https://uibank.uipath.com and capture the UI elements needed for the manual steps of the Test Manager test cases <KEY_1> and <KEY_2> in project <YOUR_PROJECT_KEY>. Add them to my project's Object Repository, screen by screen. Don't create any test cases or workflows.
-        ```
-
-    2. Keep your desktop unlocked, and don't use the browser while it captures.
-
-**Check it:** Studio's **Object Repository** panel lists the UiBank screens and elements, such as **Email Address** and **Loan Amount**. If it's empty, reload the project.
-
-## Part 5 — Automate the test cases
-
-**Autopilot for Testers** in Studio turns a manual test case into an automated one, low-code or coded (C#). Automate **at least 2** — you'll group them into a test set in step 7.
-
-!!! example "It's your turn now!"
-    1. In **Test Explorer**, right-click a manual test case and select **Generate Test Case with Autopilot**.
-    2. Check that it uses **Object Repository** elements and that the checks match the expected results.
-    3. **Run** it locally.
-    4. Repeat for at least one more test case.
-
-![Test Explorer Listing](../assets/images/TExpl%20listing.png)
-
-**Check it:** at least **2** automated test cases run locally, with results in **Test Explorer**. Test Explorer clears them when you close Studio.
-
-## Part 6 — Generate test data
-
-Most loan defects hide at the edges, such as an applicant aged exactly 18 or 65. A **data-driven test case** runs once per row of test data, each with its own inputs and expected result.
-
-Good test data covers:
-
-✅ **Valid values** — applicants who should be approved
-
-✅ **Boundaries** — ages 17, 18, 65, 66; loans of exactly $10,000, $50,000, $100,000
-
-✅ **Invalid values** — a missing field, or a badly formatted email
-
-✅ **The expected message** for each row, from the acceptance criteria
-
-=== "Autopilot in Studio"
-
-    !!! example "It's your turn now!"
-        1. Right-click one automated test case and add **test data**, with **Autopilot** as the source:
-
-            ```text
-            Generate 8 loan applications for UiBank: email, loan amount, loan term (1, 3, 5 or 10), yearly income, age, and the expected result message. Include ages 17, 18, 65 and 66, and loans of exactly 10000, 50000 and 100000.
-            ```
-
-        2. Fix any expected result that doesn't match the acceptance criteria.
-        3. Bind the columns to the test case's inputs, and **run** it.
-
-=== "Delegate + Data Fabric"
-
-    **Data Fabric** stores the rows in a shared **entity** that any test case in the tenant can use.
-
-    !!! warning "Check this first"
-        ✅ You have **permission to create Data Fabric entities**.
-
-    **A. Generate the data in Data Fabric**
-
-    1. Replace the placeholders and paste:
+    1. Replace **Submit Short-Term Request** with the name of the test case you generated, then paste in Delegate:
 
         ```text
-        Read the loan application requirement in Test Manager project <YOUR_PROJECT_KEY> and generate 12 rows of test data from its acceptance criteria: Scenario, Email, LoanAmount, LoanTerm (1, 3, 5 or 10), YearlyIncome, Age, and ExpectedResult (the exact message from the acceptance criteria). Cover the age and loan amount boundaries. Then create a Data Fabric entity named LoanTestData<YOUR_INITIALS> at tenant level and import the rows into it. Show me the schema and the rows before you create anything.
+        I've created test case Submit Short-Term Request using autopilot feature in Studio. Fix the Display names. Provide appropriate names.
         ```
 
-    2. Check the schema and rows, fix any wrong expected result, and approve.
+    2. Reload the test case in Studio and check the new names.
 
-    **Check it:** **Data Fabric** has **LoanTestData&lt;YOUR_INITIALS&gt;** with 12 records.
+## Generate test data
 
-    **B. Link the data to your test cases**
+TBD
 
-    ```text
-    In my Studio project (Documents\UiPath\UiBank Tests), install the Data Fabric entity LoanTestData<YOUR_INITIALS> and add it as test data to the test cases for <KEY_1> and <KEY_2>. Bind the entity's fields to each test case's inputs and expected result. Then build the project.
-    ```
+## Publish the test cases
 
-    Reload the project in Studio and run a test case. It runs once per record.
+```text
+Set the <your test case> test case in UiBank Tests as publishable and publish the project.
+```
 
-    !!! warning "Every linked test case gets every row"
-        There's no row filter, so each test case checks the row's **ExpectedResult**. For a subset of rows, ask Delegate for a **separate entity**.
-
-**Check it:** your test case runs once per variation, and each expected result matches the acceptance criteria.
-
-!!! question "Think about it"
-    Did the data expose an overlap in the rules — say, age 30, $60,000 over 10 years, income $150,000? Which rule applies?
-
-## Part 7 — Publish the test cases
-
-Publish your test cases to Orchestrator so Test Manager can run them. They're **drafts** until you set them as publishable.
-
-!!! warning "Before you publish"
-    Your **UiPath Assistant** (robot) must be connected to Orchestrator.
-
-!!! example "It's your turn now!"
-    1. In the **Project** panel, select your test cases, right-click, and choose **Set as publishable**.
-
-        ![Set as Publishable](../assets/images/Studio%20Set%20As%20Publishable.png)
-
-    2. Click **Publish** on the ribbon.
-
-        ![Publish Button](../assets/images/Studio%20Publish%20button.jpg)
-
-    3. Enter the project name and version, and confirm.
-
-        ![Publish Test Case Window](../assets/images/Studio%20Publish%20TC%20Window.png)
-
-**Check it:** in Test Manager, each automated test case shows a linked **automation**. Only these can run in step 8.
+**Check it:** in Orchestrator, each automated test case shows in **Test Cases**.
 
 ## Nice work!
 
-Your manual test cases are automated, data-driven, and published, ready to run from Test Manager.
+Your test cases are automated, data-driven, and published, ready to run from Test Manager.
 
 ---
 
