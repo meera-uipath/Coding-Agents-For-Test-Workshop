@@ -48,7 +48,7 @@ See <a href="https://docs.uipath.com/test-manager/automation-cloud/latest/user-g
 
 In this workshop, you'll use Delegate. It runs your test cases, builds new ones, and pushes every result to Test Manager.
 
-[Open Delegate](../module-0-prerequisites/01-installation-guide.md#step-2-meet-delegate) and start a **new session**.
+[Open Delegate](../module-0-prerequisites/01-installation-guide.md#step-2-meet-delegate).
 
 ### 1 — Run a test case
 

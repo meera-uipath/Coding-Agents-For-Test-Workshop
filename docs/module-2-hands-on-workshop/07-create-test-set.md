@@ -11,9 +11,9 @@ A **test set** groups test cases that run together. Either kind works for the wo
 ## Create it
 
 !!! example "It's your turn now!"
-    1. In Test Manager, go to **Planning → Test Sets → Create Test Set**.
+    1. In Test Manager, go to **Test Sets → Create Test Set**.
     2. Name it **Smoke Test Set** or **Regression Test Set**, and click **Create**.
-    3. Assign your **automated** test cases, including the data-driven one from [Generate test data](05-automate-with-studio-and-delegate.md#generate-test-data). Manual ones are skipped.
+    3. Assign your **automated** test cases
 
 **Check it:** the test set lists your automated test cases. Note its **exact name** for [08. Run and Report](08-run-and-report.md).
 

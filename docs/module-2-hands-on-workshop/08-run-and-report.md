@@ -12,7 +12,7 @@ It's release night, and the release manager wants to know: **can we ship?** Ask 
 ## Run it
 
 !!! example "It's your turn now!"
-    1. [Open Delegate](../module-0-prerequisites/01-installation-guide.md#step-2-meet-delegate) and start a **new session**.
+    1. [Open Delegate](../module-0-prerequisites/01-installation-guide.md#step-2-meet-delegate).
     2. Replace the placeholders, then paste:
 
         ```text
@@ -41,7 +41,26 @@ Open the PDF and compare it with **Execution** in Test Manager: the counts and f
     Delegate can be wrong. Check its numbers against Test Manager before you send the report to anyone.
 
 !!! question "Think about it"
-    Which failures were called *blocking*, and do you agree? How did it tell a new regression from a recurring failure?
+    Which failures were called *blocking*, and do you agree? How did it tell a new regression from a recurring failure? How long would this report take you to build by hand?
+
+## Schedule it as a routine
+
+A report you run once is useful. One that arrives every morning is better.
+
+!!! example "It's your turn now!"
+    1. Save the task as a routine:
+
+        ```text
+        Save this run-and-report task as a routine called <YOUR_PROJECT_KEY> Release Report.
+        ```
+
+    2. In Delegate's left panel, open **Scheduled routines**. Your routine is in the **Not scheduled** list.
+    3. Drop it onto a time slot, or set it to recur, for example weekdays at 8:00 AM.
+
+**Check it:** the calendar shows your routine. Switch to **Month** to see every future run.
+
+!!! warning "The machine must be on"
+    A scheduled routine runs only if your machine is on and signed in at that time.
 
 ## Go further
 
@@ -52,8 +71,6 @@ Stay in the same session — it remembers the run:
 ✅ *"Summarize the failures in three bullet points I can paste into Slack."*
 
 ✅ *"Add a section to the report with recommended next steps for the developers."*
-
-✅ *"Save this run-and-report task as a routine."* — rerun it at the next release with one prompt.
 
 More ideas in **[More Prompts to Try](../module-3-troubleshooting-and-next-steps/01-more-agent-prompts.md)**.
 
