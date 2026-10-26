@@ -27,8 +27,11 @@ See <a href="https://docs.uipath.com/test-manager/automation-cloud/latest/user-g
 
         ![Run Autonomously in the Manual Steps tab](../assets/images/TM%20Run%20autonomously.png)
 
-    2. On **Setup**, enter the app URL, for example `https://uibank.uipath.com`, and select an AI model.
+    2. On **Setup**, enter the app URL, for example `https://uibank.uipath.com`, and select an AI model. Turn on **Live Streaming** to watch Autopilot drive the browser, and take over if needed.
     3. Select **Run**.
+    4. When it finishes, open the execution:
+        - **Logs** — each step's result, expected behavior, and screenshots. Expand a step to see what Autopilot did.
+        - **Execution Log** — Autopilot's reasoning, such as how it found an element or compared a result.
 
     See <a href="https://docs.uipath.com/test-manager/automation-cloud/latest/user-guide/running-autonomous-test-execution" target="_blank">Running Autonomous Test Execution</a>.
 
@@ -36,7 +39,7 @@ See <a href="https://docs.uipath.com/test-manager/automation-cloud/latest/user-g
     **Autonomous Exploration** is exploratory testing with Autopilot: it learns the app, designs tests, and runs them within a time-box.
 
     1. Open a requirement → **+ Autonomous Exploration**.
-    2. Enter the app URL, set a **time-box**, and select an AI model.
+    2. Enter the app URL, set a **time-box**, and select an AI model. Turn on **Live Streaming** to watch it explore.
     3. Select **Start**. When it's **Completed**, select **Show report**.
 
     Needs a Windows robot in the project's default folder (set up in [06. Configure the Test Manager Folder](06-configure-tm-folder.md)), with the UiPath browser extension set to **Allow in Incognito**. See <a href="https://docs.uipath.com/test-manager/automation-cloud/latest/user-guide/running-autonomous-exploration" target="_blank">Running Autonomous Exploration</a>.
@@ -140,7 +143,7 @@ The business has documented a new process, **Loan lookup**, in a Process Design 
 
 **Check it:** a new **Loan lookup** requirement, with a linked test case that has manual steps and a result in **Execution**.
 
-!!! example "Not quite right? Talk to Delegate"
+??? example "Not quite right? Talk to Delegate"
     Open the new requirement and test case in Test Manager. Check the title, description, acceptance criteria, steps, and expected results.
 
     Then tell Delegate what to fix, in your own words, just as you'd tell a colleague. For example:
@@ -152,6 +155,28 @@ The business has documented a new process, **Loan lookup**, in a Process Design 
     ✅ *"add label 'Delegate' to this testcase and requirement"*
 
     Keep going until you're happy with both.
+
+!!! example "Go further — Organize test cases in bulk"
+    1. Add a label to your test cases:
+
+        ```text
+        Add the label "Delegate" to every test case you created or ran in this session.
+        ```
+
+    2. Create a **Test Tier** custom field and set it on the labeled test cases:
+
+        ```text
+        Create a custom field definition for test cases in project <YOUR_PROJECT_KEY>:
+        - Name: Test Tier
+        - Description: How often this test should run: every build, daily, or before release.
+        - Object type: Test Cases
+        - Data type: Label
+        - Possible values: Smoke, Core, Extended
+
+        Then, for every test case with the label "Delegate", set Test Tier to "Smoke".
+        ```
+
+    **Check it:** open a labeled test case. Its **Details** tab shows **Test Tier: Smoke**.
 
 ??? info "Beyond running tests — Delegate across the whole manual testing cycle"
     Ideas to try on your own project, in your own words:

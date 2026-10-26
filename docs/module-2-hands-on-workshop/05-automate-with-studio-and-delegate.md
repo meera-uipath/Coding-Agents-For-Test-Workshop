@@ -47,16 +47,20 @@ Install the latest stable UI Automation activities package in UiBank Tests.
 
 ## Link Studio to your Test Manager project
 
+Replace `<YOUR_PROJECT_KEY>` with your project key, then paste:
+
 ```text
-Connect this project to the Test Manager project we've worked with so far.
+Connect this project to my Test Manager project <YOUR_PROJECT_KEY>, then open Test Explorer to show its test cases.
 ```
 
-Delegate then opens **Test Explorer** to show the project's test cases.
+**Check it:** the connection icon is green, and **Test Explorer** lists your test cases.
 
-**Check it:** the connection icon is green, and **Test Explorer** lists your test cases from previous step.
 ## Build the Object Repository
 
-The **Object Repository** stores the app's screens and UI elements for every test case to reuse. Tell Delegate what to capture, and it builds the repository for you. To cover every screen and element the test cases need, use the prompt below.
+The **Object Repository** stores the app's screens and UI elements for every test case to reuse. 
+
+
+Building it by hand is usually one of the slowest parts of test automation: you capture every screen and element yourself. Tell Delegate what to capture, and it builds the repository for you. To cover every screen and element the test cases need, use the prompt below.
 
 
 !!! example "Continue in Delegate.."
