@@ -7,7 +7,7 @@ It's release night, and the release manager wants to know: **can we ship?** Ask 
 
     ✅ **Edge and Chrome are closed** — PDF rendering can fail if the browser is already running.
 
-    ✅ You know your **project key** and the exact **test set name** (step 7).
+    ✅ You know your **project key** and the exact **test set name** from [07. Create a Test Set](07-create-test-set.md).
 
 ## Run it
 

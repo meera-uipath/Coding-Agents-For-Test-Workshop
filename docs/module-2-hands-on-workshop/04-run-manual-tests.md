@@ -5,21 +5,25 @@ There are three ways to run a manual test case. Each records its results in Test
 | | Who runs the steps | Apps it can test | Setup needed |
 |---|---|---|---|
 | **Manual execution assistant** | You | Any | None |
-| **Run autonomously** | Autopilot, on a robot | Web apps | A robot in the project's default folder (step 6) |
+| **Run autonomously** | Autopilot, on a robot | Web apps | A robot in the project's default folder ([06. Configure the Test Manager Folder](06-configure-tm-folder.md)) |
 | **Delegate** | Delegate, on your machine | Web and desktop apps | None |
 
+See <a href="https://docs.uipath.com/test-manager/automation-cloud/latest/user-guide/executing-manual-tests" target="_blank">Executing manual tests</a>.
+
 ??? tip "Manual execution assistant"
-    1. Open a test set, select **Execute → Manually**. Allow pop-ups for Test Manager.
+    1. In the Test Manager, navigate to Test Cases. Open a test set, select **Execute → Manually**. (Allow pop-ups for Test Manager). The manual execution assistant opens in a new window.
     2. Perform each step, then select **Set Passed** or **Set Failed** (comment on failures). **Set Passed Until Here** passes several steps at once.
-    3. If there's a postcondition, select **Condition Met** when it holds.
-    4. Select **Next**, then **Done** after the last test case.
+    3. At any step, capture a screenshot or upload related files as attachments.
+    4. Check the postcondition, the state the app must be in after the test. Select **Condition Met** if it holds.
+    5. Select **Next**, then **Done** after the last test case.
+    6. Check the results in the project's **Execution** section.
 
     See <a href="https://docs.uipath.com/test-manager/automation-cloud/latest/user-guide/executing-test-sets-manually" target="_blank">Executing test sets manually</a>.
 
 ??? tip "Run autonomously"
     **Autonomous Test Execution** runs a manual test case with Autopilot, in one click, on a robot.
 
-    1. Open a manual test case → **Manual Steps** tab → **Run Autonomously**.
+    1. In the Test Manager, navigate to Test Cases. Open a manual test case → **Manual Steps** tab → **Run Autonomously**.
 
         ![Run Autonomously in the Manual Steps tab](../assets/images/TM%20Run%20autonomously.png)
 
@@ -35,15 +39,18 @@ There are three ways to run a manual test case. Each records its results in Test
     2. Enter the app URL, set a **time-box**, and select an AI model.
     3. Select **Start**. When it's **Completed**, select **Show report**.
 
-    Needs a Windows robot in the project's default folder (step 6), with the UiPath browser extension set to **Allow in Incognito**. See <a href="https://docs.uipath.com/test-manager/automation-cloud/latest/user-guide/running-autonomous-exploration" target="_blank">Running Autonomous Exploration</a>.
+    Needs a Windows robot in the project's default folder (set up in [06. Configure the Test Manager Folder](06-configure-tm-folder.md)), with the UiPath browser extension set to **Allow in Incognito**. See <a href="https://docs.uipath.com/test-manager/automation-cloud/latest/user-guide/running-autonomous-exploration" target="_blank">Running Autonomous Exploration</a>.
 
+## Run manual tests with Delegate
+
+In this workshop, you'll use Delegate. It runs your test cases, builds new ones, and pushes every result to Test Manager.
 
 [Open Delegate](../module-0-prerequisites/01-installation-guide.md#step-2-meet-delegate) and start a **new session**.
 
 ### 1 — Run a test case
 
 !!! example "It's your turn now!"
-    1. Replace `<YOUR_TEST_CASE_KEY>` with a test case from step 3, then paste:
+    1. Replace `<YOUR_TEST_CASE_KEY>` with a test case you created in [03. Generate Test Cases](03-generate-test-cases.md), then paste:
 
         ```text
         Run the manual test case <YOUR_TEST_CASE_KEY>. Open UiBank at https://uibank.uipath.com, follow the test case's manual steps in the browser, and check every expected result. Take a screenshot at the final validation step and upload it to the test case's assertions. Push the results to Test Manager. If any step failed, explain the reason.
@@ -52,7 +59,7 @@ There are three ways to run a manual test case. Each records its results in Test
     2. Approve when Delegate asks to push the result.
     3. For any failure, decide: **defect in UiBank**, or **problem with the test case**?
 
-!!! tip "Test data already used?"
+??? tip "Test data already used?"
     Tests like registering a new user fail if the data was used before. Ask Delegate:
 
     ```text
@@ -62,7 +69,7 @@ There are three ways to run a manual test case. Each records its results in Test
 **Check it:** **Execution** → open the new execution → select your test case key. It shows the result, with the screenshot under **Assertions**.
 
 !!! question "Think about it"
-    Did Delegate stumble on a step? Autopilot automates these same steps in step 5, so fix them now:
+    Did Delegate stumble on a step? Autopilot automates these same steps in [05. Automate Test Cases with Studio Desktop and Delegate](05-automate-with-studio-and-delegate.md), so fix them now:
 
     ```text
     Rewrite the steps of test case <YOUR_TEST_CASE_KEY> that were unclear during this run, so each one has a single clear action and expected result. Show me the changes before you save them to Test Manager.
@@ -112,14 +119,14 @@ Your project has a test case, **Request Loan**, with no steps.
 
 ### 3 — Create a new Requirement and Testcase
 
-The business has documented a new process, **Loan lookup**, that isn't in your requirements yet.
+The business has documented a new process, **Loan lookup**, in a Process Design Document (PDD). It isn't in your requirements yet.
 
 !!! example "It's your turn now!"
-    1. Download <a href="../../assets/Files/Loan%20lookup%20process%20to%20be%20tested.docx" target="_blank">Loan lookup process to be tested.docx</a>.
+    1. Download the PDD, <a href="../../assets/Files/Loan%20lookup%20process%20to%20be%20tested.docx" target="_blank">Loan lookup process to be tested.docx</a>.
     2. Attach it in Delegate, then paste:
 
         ```text
-        The attached Word document describes the UiBank loan lookup process. It isn't covered by any requirement in my Test Manager project yet.
+        The attached PDD describes the UiBank loan lookup process. It isn't covered by any requirement in my Test Manager project yet.
 
         1. Create a new requirement for this process.
         2. Create a manual test case from the steps and screenshots in the document, and link it to the new requirement.

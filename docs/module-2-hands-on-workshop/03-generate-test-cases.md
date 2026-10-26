@@ -26,7 +26,7 @@ The **Test Case Generation Agent** reads a requirement and proposes test cases w
 **Check it:** the requirement shows the new test cases as linked, each with manual steps.
 
 !!! tip "Keep one failing test case"
-    Your trainer may ask you to keep one test case whose expected result **doesn't** match the app, so the step 8 report has a real failure.
+    Your trainer may ask you to keep one test case whose expected result **doesn't** match the app, so the report in [08. Run and Report](08-run-and-report.md) has a real failure.
 
 ## Nice work!
 
