@@ -32,7 +32,7 @@ AI agents built into Test Manager and Studio. Today you'll use:
 
 ✅ **Autopilot for Testers in Studio** — turns a manual test case into an automated one, low-code or coded (C#)
 
-![Agent Type OOTB](../assets/images/Agent%20type%20OOTB.png)
+![Built-in agent type](../assets/images/Agent%20type%20OOTB.png)
 
 ## Delegate for Test
 

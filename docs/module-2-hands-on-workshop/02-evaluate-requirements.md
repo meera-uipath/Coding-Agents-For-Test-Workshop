@@ -5,7 +5,7 @@ Vague or incomplete requirements lead to gaps in testing. The **Evaluation Agent
 ## Evaluate it with UiPath Agent
 
 1. Open **Requirements** → Submit loan request.
-2. Use **UiPath OOTB Agent - Evaluate Requirement** to evaluate the quality of the requirement.
+2. Use the **Evaluate Requirement** built-in agent to evaluate the quality of the requirement.
 3. In **Provide additional context → Add documents**, select these project documents (marked **P**), so the agent checks the requirement against their rules:
 
     ✅ **UiBank Glossary of Terms.txt** — undefined banking terms
