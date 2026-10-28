@@ -7,19 +7,18 @@ Automate your manual test cases in Studio with Delegate. Each automation stays *
 
 ## What you'll do
 
-This page has **two parts**, each with a different tool doing the work:
+You switch between **two tools** on this page. Each step is labelled with the one it uses:
 
-| | Part 1: Set up with Delegate | Part 2: Automate in Studio Desktop |
-|---|---|---|
-| **Who does the work** | Delegate builds it in Studio for you | You work in Studio Desktop, with Autopilot |
-| **What you do** | Paste each prompt in Delegate, then wait and watch | Click through Studio yourself |
-| **Result** | A project linked to Test Manager, with an Object Repository | Automated, published test cases |
+| Tool | What you do |
+|---|---|
+| <span class="tool-badge tool-badge--delegate">Delegate</span> | Paste the prompt in Delegate, then wait and watch it build in Studio |
+| <span class="tool-badge tool-badge--studio">Studio Desktop</span> | Work in Studio Desktop yourself, with **Autopilot for Testers** |
 
 Click a step to jump to it.
 
 <div class="flow">
-  <div class="flow-part flow-part--delegate">
-    <span class="flow-part-label">Part 1: Delegate</span>
+  <div class="flow-part flow-part--delegate" style="--steps: 4">
+    <span class="flow-part-label">Delegate</span>
     <div class="flow-part-steps">
       <a class="flow-step" href="#create-a-test-automation-project">Create a Test Automation project</a>
       <span class="flow-arrow"></span>
@@ -31,23 +30,26 @@ Click a step to jump to it.
     </div>
   </div>
   <span class="flow-arrow"></span>
-  <div class="flow-part flow-part--studio">
-    <span class="flow-part-label">Part 2: Studio Desktop</span>
+  <div class="flow-part flow-part--studio" style="--steps: 2">
+    <span class="flow-part-label">Studio Desktop</span>
     <div class="flow-part-steps">
       <a class="flow-step" href="#automate-the-test-cases-with-studio-desktop">Automate the test cases</a>
       <span class="flow-arrow"></span>
       <a class="flow-step" href="#generate-test-data">Generate test data</a>
-      <span class="flow-arrow"></span>
+    </div>
+  </div>
+  <span class="flow-arrow"></span>
+  <div class="flow-part flow-part--delegate" style="--steps: 1">
+    <span class="flow-part-label">Delegate</span>
+    <div class="flow-part-steps">
       <a class="flow-step" href="#publish-the-test-cases">Publish the test cases</a>
     </div>
   </div>
 </div>
 
-## Part 1: Set up with Delegate
+## Create a Test Automation project
 
-In this part, **Delegate does the work**. Paste each prompt in Delegate, then wait and watch it build the project in Studio.
-
-### Create a Test Automation project
+<span class="tool-badge tool-badge--delegate">Delegate</span>
 
 ```text
 Create a Studio Test Automation project named UiBank Tests.
@@ -55,7 +57,9 @@ Create a Studio Test Automation project named UiBank Tests.
 
 **Check it:** **UiBank Tests** opens in Studio, in `Documents\UiPath\UiBank Tests`.
 
-### Install the UI Automation package
+## Install the UI Automation package
+
+<span class="tool-badge tool-badge--delegate">Delegate</span>
 
 ```text
 Install the latest stable UI Automation activities package in UiBank Tests.
@@ -63,7 +67,9 @@ Install the latest stable UI Automation activities package in UiBank Tests.
 
 **Check it:** **Manage Packages → Project Dependencies** lists **UiPath.UIAutomation.Activities**.
 
-### Link Studio to your Test Manager project
+## Link Studio to your Test Manager project
+
+<span class="tool-badge tool-badge--delegate">Delegate</span>
 
 Replace `<YOUR_PROJECT_KEY>` with your project key, then paste:
 
@@ -73,7 +79,9 @@ Connect this project to my Test Manager project <YOUR_PROJECT_KEY>, then open Te
 
 **Check it:** the connection icon is green, and **Test Explorer** lists your test cases.
 
-### Build the Object Repository
+## Build the Object Repository
+
+<span class="tool-badge tool-badge--delegate">Delegate</span>
 
 The **Object Repository** stores the app's screens and UI elements for every test case to reuse. 
 
@@ -159,15 +167,15 @@ Building it by hand is usually one of the slowest parts of test automation: you 
 
 If an element doesn't highlight, ask Delegate to recapture it.
 
-!!! warning "Complete Part 1 before you continue"
-    **Autopilot for Testers** builds your test cases from the Object Repository elements. Without them, it can't automate the test cases in Part 2.
+!!! warning "Complete this step before you continue"
+    **Autopilot for Testers** builds your test cases from the Object Repository elements. Without them, it can't automate the test cases in the next step.
 
-## Part 2: Automate in Studio Desktop
+!!! info "Switch to Studio Desktop"
+    Delegate has set up the project and built the Object Repository. For the next two steps, **you work directly in Studio Desktop**, using **Autopilot for Testers** to turn your manual test cases into automations.
 
-!!! info "Switch from Delegate to Studio Desktop"
-    Part 1 is done: Delegate set up the project and built the Object Repository. From here on, **you work directly in Studio Desktop**, using **Autopilot for Testers** to turn your manual test cases into automations. You only go back to Delegate when a step says so.
+## Automate the test cases with Studio Desktop
 
-### Automate the test cases with Studio Desktop
+<span class="tool-badge tool-badge--studio">Studio Desktop</span>
 
 !!! example "It's your turn now!"
     1. In **Test Explorer**, right-click a manual test case → **Generate Test Case with Autopilot**.
@@ -193,13 +201,20 @@ If an element doesn't highlight, ask Delegate to recapture it.
 
     2. Reload the test case in Studio and check the new names.
 
-### Generate test data
+## Generate test data
+
+<span class="tool-badge tool-badge--studio">Studio Desktop</span>
 
 TBD
 
-### Publish the test cases
+## Publish the test cases
 
-Go back to Delegate, and paste:
+<span class="tool-badge tool-badge--delegate">Delegate</span>
+
+!!! info "Switch back to Delegate"
+    Your test cases are automated. Go back to Delegate to publish them.
+
+Paste:
 
 ```text
 Set the <your test case> test case in UiBank Tests as publishable and publish the project.

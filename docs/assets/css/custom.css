@@ -692,19 +692,13 @@ th {
 }
 
 /* Optional grouping: div.flow-part wraps a labelled run of steps in
-   div.flow-part-steps. --delegate keeps orange, --studio switches to blue. */
+   div.flow-part-steps. Set --steps to the group's step count so steps keep
+   an even width. --delegate keeps orange, --studio switches to blue. */
 .md-typeset .flow-part {
+  flex: var(--steps, 1) 1 0;
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
-}
-
-.md-typeset .flow-part--delegate {
-  flex: 4 1 0;
-}
-
-.md-typeset .flow-part--studio {
-  flex: 3 1 0;
 }
 
 .md-typeset .flow-part-steps {
@@ -750,6 +744,31 @@ th {
 }
 
 [data-md-color-scheme="dark"] .md-typeset .flow-part--studio .flow-part-label {
+  background: #1F6FC5;
+}
+
+/* Tool badge: span.tool-badge--delegate or --studio, matching the flow parts */
+.md-typeset .tool-badge {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  border-radius: 2px;
+  color: #FFFFFF;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.md-typeset .tool-badge--delegate {
+  background: #C2410C;
+}
+
+.md-typeset .tool-badge--studio {
+  background: var(--primary-blue);
+}
+
+[data-md-color-scheme="dark"] .md-typeset .tool-badge--studio {
   background: #1F6FC5;
 }
 
