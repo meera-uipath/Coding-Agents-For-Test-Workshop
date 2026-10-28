@@ -6,7 +6,7 @@ Vague or incomplete requirements lead to gaps in testing. The **Evaluation Agent
 
 1. Open **Requirements** → Submit loan request.
 2. Use **UiPath OOTB Agent - Evaluate Requirement** to evaluate the quality of the requirement.
-3. In **Provide additional context → Add documents**, select these project documents (marked **P**), so Autopilot checks the requirement against their rules:
+3. In **Provide additional context → Add documents**, select these project documents (marked **P**), so the agent checks the requirement against their rules:
 
     ✅ **UiBank Glossary of Terms.txt** — undefined banking terms
 
@@ -24,7 +24,7 @@ Vague or incomplete requirements lead to gaps in testing. The **Evaluation Agent
 4. Apply the suggestions you agree with, and update the requirement.
 
 !!! question "Think about it"
-    Can you spot gaps in the acceptance criteria — an applicant who is exactly 18 or 65, or a loan amount that matches two approval rules? Did Autopilot find them?
+    Can you spot gaps in the acceptance criteria — an applicant who is exactly 18 or 65, or a loan amount that matches two approval rules? Did the agent find them?
 
 ## Nice work!
 

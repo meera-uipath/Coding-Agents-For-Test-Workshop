@@ -2,41 +2,17 @@
 
 ## Git Workflow
 
-### Branching Strategy
-This project follows a branching workflow to ensure code quality and organized development:
-
-- **main**: Production-ready code only. No direct commits.
-- **dev**: Integration branch for features and fixes.
-- **feature/*, bugfix/*, enhancement/*, hotfix/*** branches: All changes (enhancements, hot fixes, new features) branch off from `dev`.
+Single developer. `main` is the live site: every push to `main` deploys to GitHub Pages via `.github/workflows/deploy.yml`.
 
 ### How to Work
-
-1. **Always create a new branch from `dev`** for any changes:
-   ```bash
-   git checkout dev
-   git pull origin dev
-   git checkout -b feature/your-feature-name
-   ```
-
-2. **Make your changes** on your feature branch (never directly on `main` or `dev`)
-
-3. **Create a Pull Request** from your feature branch to `dev` for review
-
-4. **After review and approval**, merge to `dev`
-
-5. **Release to main** only when `dev` is stable and ready for production:
-   ```bash
-   git checkout main
-   git pull origin main
-   git merge dev
-   git push origin main
-   ```
+- **Small fixes** (typos, wording, a broken link): commit directly to `main` and push.
+- **Bigger changes** (new pages, restructuring, multi-page edits): use a short-lived `feature/*` branch off `main`, preview with `mkdocs serve`, then merge to `main`. A PR is optional.
 
 ### Key Rules
-- ❌ Never commit directly to `main`
-- ❌ Never commit directly to `dev` 
-- ✅ Always use feature/bugfix/enhancement/hotfix branches off `dev`
-- ✅ Use pull requests for code review before merging
+- ✅ `main` must always build and be fit for learners to see
+- ✅ Preview multi-page changes with `mkdocs serve` before pushing to `main`
+- ✅ Delete feature branches after merging
+- ❌ No `dev` branch: don't branch from or target `dev`
 
 ## Content Review Standards
 
