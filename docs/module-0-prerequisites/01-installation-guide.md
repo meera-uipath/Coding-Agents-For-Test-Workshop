@@ -29,7 +29,7 @@
 Try it:
 
 ```text
-List the Test Manager projects in the workshop tenant.
+List the tenant I am connected to.
 ```
 
 !!! warning "Delegate acts on your behalf"
