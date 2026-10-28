@@ -20,7 +20,7 @@ Remember - Paste the prompts in Delegate, wait and watch Delegate build it in St
   <span class="flow-arrow"></span>
   <a class="flow-step" href="#build-the-object-repository">Build the Object Repository</a>
   <span class="flow-arrow"></span>
-  <a class="flow-step" href="#automate-the-test-cases">Automate the test cases</a>
+  <a class="flow-step" href="#automate-the-test-cases-with-studio-desktop">Automate the test cases</a>
   <span class="flow-arrow"></span>
   <a class="flow-step" href="#generate-test-data">Generate test data</a>
   <span class="flow-arrow"></span>
@@ -145,7 +145,7 @@ If an element doesn't highlight, ask Delegate to recapture it.
     **Autopilot for Testers** builds your test cases from the Object Repository elements. Without them, it can't automate the test cases in the next step.
 
 
-## Automate the test cases
+## Automate the test cases with Studio Desktop
 
 !!! example "It's your turn now!"
     1. In **Test Explorer**, right-click a manual test case → **Generate Test Case with Autopilot**.
