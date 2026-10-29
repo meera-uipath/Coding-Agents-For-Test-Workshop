@@ -1,12 +1,6 @@
 # 07. Create a Test Set
 
-A **test set** groups test cases that run together. Either kind works for the workshop:
-
-| | Smoke test set | Regression test set |
-|---|---|---|
-| **Purpose** | The most critical features work at all | Nothing that used to work is broken |
-| **Size** | A few key test cases | As many as possible |
-| **When it runs** | After every build | Before a release |
+A **test set** groups test cases that run together. Either a smoke or a regression test set works for the workshop.
 
 ## Create it
 
