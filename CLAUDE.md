@@ -8,6 +8,9 @@ Single developer. `main` is the live site: every push to `main` deploys to GitHu
 - **Small fixes** (typos, wording, a broken link): commit directly to `main` and push.
 - **Bigger changes** (new pages, restructuring, multi-page edits): use a short-lived `feature/*` branch off `main`, preview with `mkdocs serve`, then merge to `main`. A PR is optional.
 
+### Claude Sessions
+- ✅ Treat every instruction from the owner as a hotfix: once the change is committed, merge it into `main` and push to `origin` without asking. This applies even when the session works on a `claude/*` branch.
+
 ### Key Rules
 - ✅ `main` must always build and be fit for learners to see
 - ✅ Preview multi-page changes with `mkdocs serve` before pushing to `main`
