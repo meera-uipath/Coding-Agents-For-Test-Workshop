@@ -6,7 +6,7 @@
 
 An MkDocs (Material) site for the hands-on **Coding Agents for Test** workshop. Its theme and conventions are copied from <a href="https://meera-uipath.github.io/software-testing-ilt-guide/" target="_blank">software-testing-ilt-guide</a>. See [CLAUDE.md](CLAUDE.md) for the content standards.
 
-- **Publishes to:** `https://meera-uipath.github.io/Coding-Agents-For-Test-Workshop/`, through `.github/workflows/deploy.yml` on every push to `main`
+- **Publishes to:** `https://meera-uipath.github.io/Coding-Agents-For-Test-Workshop/` and `https://uipath-practice.github.io/CodingAgentsTestingWorkshop/`, through `.github/workflows/deploy.yml` on every push to `main`. Push every change to both remotes: `origin` (meera-uipath) and `practice` (uipath-practice).
 - **Preview locally:** `start-guide.bat` (uses `.venv`, which has `mkdocs-material` installed), then open http://127.0.0.1:8000
 
 ## Structure
