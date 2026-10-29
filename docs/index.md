@@ -1,4 +1,4 @@
-# Welcome to the Coding Agents for Test Workshop
+# Welcome to the <span style="color: #E53935;">Coding Agents for Test</span> Workshop
 
 ![Get robots that execute tests](assets/images/Get%20robots%20that%20execute%20tests.png)
 

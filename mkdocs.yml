@@ -24,6 +24,9 @@ theme:
 extra:
   generator: false
 
+hooks:
+  - hooks/cache_bust.py
+
 extra_css:
   - assets/css/custom.css
 

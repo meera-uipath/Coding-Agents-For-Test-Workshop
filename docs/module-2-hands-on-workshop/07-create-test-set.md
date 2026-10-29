@@ -1,6 +1,6 @@
 # 07. Create a Test Set
 
-A **test set** groups test cases that run together. You'll create a **regression** test set: it checks that nothing that used to work is broken, and it runs before a release.
+A **test set** groups test cases that run together.
 
 ## Create it
 

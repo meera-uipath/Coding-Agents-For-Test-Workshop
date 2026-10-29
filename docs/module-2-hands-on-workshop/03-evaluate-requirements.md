@@ -6,7 +6,12 @@ Vague or incomplete requirements lead to gaps in testing. The **Evaluate Require
 
 1. Open **Requirements** → **Submit Loan Request**.
 2. Run the **Evaluate Requirement Quality** built-in agent on it.
-3. In **Provide additional context → Add documents**, select these project documents (marked **P**), so the agent checks the requirement against their rules:
+3. Choose one of the built-in prompts to tell the agent how to evaluate the requirement.
+
+    ??? info "Editing prompts and adding your own"
+        The built-in prompts are editable, and you can add custom prompts of your own. Manage them in the **Prompt Library**, under **Project Settings**.
+
+4. In **Provide additional context → Add documents**, select these project documents (marked **P**), so the agent checks the requirement against their rules:
 
     ✅ **UiBank Glossary of Terms.txt** — undefined banking terms
 
@@ -21,7 +26,7 @@ Vague or incomplete requirements lead to gaps in testing. The **Evaluate Require
 
         ![Attachments tab of the Test Manager project](../assets/images/Attachments%20in%20TM.png){ .img-equal }
 
-4. Apply the suggestions you agree with, and update the requirement.
+5. Apply the suggestions you agree with, and update the requirement.
 
 !!! question "Think about it"
     Can you spot gaps in the acceptance criteria — an applicant who is exactly 18 or 65, or a loan amount that matches two approval rules? Did the agent find them?

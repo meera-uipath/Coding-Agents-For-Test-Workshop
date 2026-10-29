@@ -6,7 +6,12 @@ The **Generate Test Cases** built-in agent reads a requirement and proposes test
 
 1. Open the **Submit Loan Request** requirement.
 2. Run the **Generate Test Cases** built-in agent on it.
-3. In **Provide additional context → Add documents**, select:
+3. Choose one of the built-in prompts to tell the agent how to generate the test cases.
+
+    ??? info "Editing prompts and adding your own"
+        The built-in prompts are editable, and you can add custom prompts of your own. Manage them in the **Prompt Library**, under **Project Settings**.
+
+4. In **Provide additional context → Add documents**, select:
 
     ✅ **UiBank Regression Tests.xlsx** — matches the existing step style, avoids duplicates
 
@@ -17,11 +22,11 @@ The **Generate Test Cases** built-in agent reads a requirement and proposes test
     ??? tip "Add documents or Leverage RAG?"
         | | Add documents | Leverage RAG |
         |---|---|---|
-        | **What Autopilot reads** | The documents you select, **in full** | Only the **relevant passages** from a Context Grounding index |
+        | **What the agent reads** | The documents you select, **in full** | Only the **relevant passages** from a Context Grounding index |
         | **Best for** | A few specific documents | Large document sets |
 
-4. Optionally, add instructions, for example *"Focus on the age and income rules in the acceptance criteria, and apply the security guidelines."*
-5. Review the proposals, keep **3 or 4**, and create them.
+5. Optionally, add instructions, for example *"Focus on the age and income rules in the acceptance criteria, and apply the security guidelines."*
+6. Review the proposals, keep **3 or 4**, and create them.
 
 **Check it:** the requirement shows the new test cases as linked, each with manual steps.
 
