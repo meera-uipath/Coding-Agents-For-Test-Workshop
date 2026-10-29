@@ -1,11 +1,11 @@
 # 02. Configure the Test Manager Folder
 
-To run tests automatically, your project needs an **Orchestrator folder** with a **machine and App Test Robot**, linked to the project.
+To run tests automatically, your project needs an **Orchestrator folder** with a **machine** that has an **App Testing** runtime, linked to the project.
 
 ## Part 1 — Set up your folder and robot
 
 !!! example "Exercise 1 — Create your folder"
-    1. Create your own folder under the workshop folder.
+    1. Create a personal folder, as your trainer guides you. You'll assign your machine to it.
     2. Enable your user for **Personal Automation + Personal workspace**, with the **Automation Developer** role.
     3. In the Enterprise setup, use **Custom Windows credentials**: your `domain\username`, no password.
     4. Add your user to your folder.
@@ -27,8 +27,9 @@ To run tests automatically, your project needs an **Orchestrator folder** with a
       </div>
     </div>
 
-!!! example "Exercise 2 — Add a machine with an App Test Robot license"
-    Add an **App Test Robot** license to your machine, then add the machine to your folder.
+!!! example "Exercise 2 — Give your machine an App Testing runtime"
+    1. Edit your machine template. Under **Runtime details**, set **App Testing** to **1**, and save.
+    2. In your folder, open **Machines → Manage Machines in Folder**, and add the machine.
 
     <div class="carousel">
       <input type="radio" name="oc-exercise2-carousel" id="carousel-slide-3" checked>
@@ -50,7 +51,7 @@ To run tests automatically, your project needs an **Orchestrator folder** with a
 ## Part 2 — Link the project to the folder
 
 !!! example "It's your turn now!"
-    In your Test Manager **project settings**, set your folder as the **default execution folder**, and save.
+    In your Test Manager project, go to **Project Settings**, open the **Automation** tab, set **Default Folder** to the folder you created in Part 1, and click **Save**.
 
 !!! failure "Skipped this step?"
     Runs fail with `HTTP 400: Please assign folder to project level before executing testcases.`

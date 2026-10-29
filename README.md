@@ -21,7 +21,7 @@ By the end, learners have:
 
 ✅ Turned manual test cases into automations with **Autopilot for Testers** in Studio
 
-**Delegate** is the main agent throughout. An optional section shows how to run the same steps with your own coding agent, such as Claude Code or OpenAI Codex, through the `uip` CLI and the `uipath-test` skill.
+**Delegate** is the agent throughout.
 
 ## Trainer setup
 
@@ -43,7 +43,7 @@ Learners complete their own [Prerequisites](docs/module-0-prerequisites/index.md
 ### Licenses and runtimes
 
 - [ ] Assign an **App Test Developer** user license to the group or to each learner. Learners need it to create and publish Test Automation projects in Studio (step 6).
-- [ ] Allocate enough **App Test Robot** runtimes to the tenant: at least one per learner machine (step 2).
+- [ ] Allocate enough **App Testing** runtimes to the tenant: at least one per learner machine (step 2).
 - [ ] For **Run autonomously** and **Autonomous Exploration**, make sure a supported, non-serverless robot is available in each project's default folder. The robot machine must run Windows, and its UiPath browser extension must have **Allow in Incognito** turned on.
 
 ### Test Manager
@@ -53,8 +53,8 @@ Learners complete their own [Prerequisites](docs/module-0-prerequisites/index.md
 
 ### Orchestrator
 
-- [ ] Create a parent **workshop folder**. In step 2, each learner creates their own subfolder under it.
-- [ ] Give the group the roles it needs in step 2. At tenant level, learners must be able to set up their own user: **Personal Automation + Personal workspace**, the **Automation Developer** role, and **Custom Windows credentials**. On the workshop folder, they need **Folder Administrator** rights, to create subfolders and add machines and users. If you'd rather not grant these, do this part of step 2 for each learner before the session.
+- [ ] In step 2, guide each learner to create a **personal folder**. Their machine is assigned to it, and it becomes their project's default folder.
+- [ ] Give the group the roles it needs in step 2. At tenant level, learners must be able to set up their own user: **Personal Automation + Personal workspace**, the **Automation Developer** role, and **Custom Windows credentials**. They also need rights to create their own folder and add machines and users to it. If you'd rather not grant these, do this part of step 2 for each learner before the session.
 - [ ] If learners use credential assets in test cases, give them the **View** permission on **Assets**.
 
 ### Data Fabric
@@ -64,13 +64,13 @@ Learners complete their own [Prerequisites](docs/module-0-prerequisites/index.md
 
 ### Learner machines and network
 
-- [ ] Learners need **local admin rights** to install the Studio STS installer (about 760 MB) and the UiPath browser extension for Edge or Chrome.
+- [ ] Learners need **local admin rights** to install the Studio STS installer and the UiPath browser extension for Edge or Chrome.
 - [ ] Learners can reach `cloud.uipath.com` and the UiBank app at `https://uibank.uipath.com`, without a proxy or firewall blocking them.
-- [ ] For the optional [Use Your Own Coding Agent](docs/optional-coding-agents/index.md) section, learners also need to install npm packages and sign in to their coding agent.
 
 ### On the day
 
-- [ ] Share the **organization name**, **tenant name**, and **workshop folder name** with learners.
+- [ ] Share the **organization name** and **tenant name** with learners.
+- [ ] Check that loan ID `6adae567758a48004816b1cc` still opens on UiBank's **Loan Lookup** page. Every learner uses it in step 5.
 - [ ] Do a dry run of steps 1, 2, 5, 6, and 8 with a test user in the learner group. These are the steps that depend most on permissions.
 
 ### After the workshop
@@ -85,7 +85,6 @@ Learners complete their own [Prerequisites](docs/module-0-prerequisites/index.md
 | [`docs/module-1-introduction/`](docs/module-1-introduction/) | A short tour of Test Cloud, Test Manager, and the agents |
 | [`docs/module-2-hands-on-workshop/`](docs/module-2-hands-on-workshop/) | The eight hands-on steps |
 | [`docs/module-3-troubleshooting-and-next-steps/`](docs/module-3-troubleshooting-and-next-steps/) | More prompts to try, and fixes for common problems |
-| [`docs/optional-coding-agents/`](docs/optional-coding-agents/) | Setting up your own coding agent instead of Delegate |
 | [`docs/assets/`](docs/assets/) | Images, CSS, scripts, and downloadable files |
 
 The navigation is defined in [`mkdocs.yml`](mkdocs.yml).
@@ -109,5 +108,5 @@ Every push to `main` publishes the site to GitHub Pages through [`.github/workfl
 
 ## Contributing
 
-- **Branches:** never commit directly to `main` or `dev`. Create a `feature/*`, `bugfix/*`, `enhancement/*`, or `hotfix/*` branch from `dev`, and open a pull request to `dev`. `dev` is merged to `main` when it's stable.
+- **Branches:** `main` is the live site, and every push deploys it. Commit small fixes (typos, wording, a broken link) straight to `main`. For bigger changes, use a short-lived `feature/*` branch off `main`, preview it with `mkdocs serve`, then merge it to `main`. There's no `dev` branch.
 - **Content standards:** every page is reviewed against the standards in [`CLAUDE.md`](CLAUDE.md): completeness, accuracy, styling, learning flow, clarity, and compliance, scored out of 15.

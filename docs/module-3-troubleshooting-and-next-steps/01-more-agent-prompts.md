@@ -1,6 +1,6 @@
 # More Prompts to Try
 
-Replace `<YOUR_PROJECT_KEY>` and `<YOUR_TEST_SET_NAME>`, then try these in Delegate. Ask for outcomes, not commands.
+Replace `<YOUR_PROJECT_KEY>`, then try these in Delegate. Ask for outcomes, not commands.
 
 ## Morning standup brief
 
@@ -17,13 +17,13 @@ In project <YOUR_PROJECT_KEY>, what percentage of requirements are covered by te
 ## Triggering a targeted test set
 
 ```text
-Run the <YOUR_TEST_SET_NAME> test set in project <YOUR_PROJECT_KEY> and let me know when it's done.
+Run the Regression Test Set in project <YOUR_PROJECT_KEY> and let me know when it's done.
 ```
 
 ## Flaky or recurring failures
 
 ```text
-For the failed test cases in the latest run of the <YOUR_TEST_SET_NAME> test set in project <YOUR_PROJECT_KEY>, look at their last 10 results and tell me which ones are new regressions and which keep failing.
+For the failed test cases in the latest run of the Regression Test Set in project <YOUR_PROJECT_KEY>, look at their last 10 results and tell me which ones are new regressions and which keep failing.
 ```
 
 ## Read-only exploration
@@ -33,13 +33,7 @@ List the test sets in project <YOUR_PROJECT_KEY> and the test cases in each one.
 ```
 
 !!! warning "Prompts that write"
-    Triggering runs, creating defects, or updating test cases changes Test Manager. Read each approval request before you approve it.
-
-## Send feedback
-
-```text
-Send UiPath feedback: <describe the issue or improvement>
-```
+    Triggering runs or updating test cases changes Test Manager. Read each approval request before you approve it.
 
 ---
 

@@ -10,7 +10,7 @@ Confirm that you can:
 
 ✅ Open **Test Manager** and **Orchestrator** in that tenant
 
-✅ See a **machine with an App Test Robot runtime** (you'll add it to your folder in [02. Configure the Test Manager Folder](../module-2-hands-on-workshop/02-configure-tm-folder.md))
+✅ Have an **App Testing** runtime available for your machine (you'll add it to your folder in [02. Configure the Test Manager Folder](../module-2-hands-on-workshop/02-configure-tm-folder.md))
 
 ✅ Use an **App Test Developer** license, to create Test Automation projects
 

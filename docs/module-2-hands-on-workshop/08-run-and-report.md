@@ -5,40 +5,50 @@ It's release night, and the release manager wants to know: **can we ship?** Ask 
 !!! info "Check these first"
     ✅ **Your robot is available** — connected and not busy, in your Orchestrator folder.
 
-    ✅ **Edge and Chrome are closed** — PDF rendering can fail if the browser is already running.
-
-    ✅ You know your **project key** and the exact **test set name** from [07. Create a Test Set](07-create-test-set.md).
+    ✅ You know your **project key**, and **Regression Test Set** from [07. Create a Test Set](07-create-test-set.md) has your automated test cases.
 
 ## Run it
 
 !!! example "It's your turn now!"
     1. [Open Delegate](../module-0-prerequisites/01-installation-guide.md#step-2-meet-delegate).
-    2. Replace the placeholders, then paste:
+    2. Replace `<YOUR_PROJECT_KEY>`, then paste:
 
         ```text
-        Trigger the <YOUR_TEST_SET_NAME> test set of project <YOUR_PROJECT_KEY> in Test Manager and wait for it to finish. Once finished, create a release manager report in PDF for that test set, and save it in Documents\UiPath\Reports. I need a go/no-go summary before tonight's sign-off meeting. Highlight the failures blocking the release.
+        Trigger the Regression Test Set of project <YOUR_PROJECT_KEY> in Test Manager and wait for it to finish. Once finished, create a release manager report in PDF for that test set, and save it in Documents\UiPath\Reports. I need a go/no-go summary before tonight's sign-off meeting. Highlight the failures blocking the release.
         ```
 
     3. Approve the run when Delegate asks. It's the only action that changes anything — a **real execution** on your robot.
-    4. Wait a few minutes while it runs the set, pulls the results, and checks past runs of each failure.
+    4. Wait a few minutes while it runs the set, fetches the results, counts them, and finds the top failing test cases.
+    5. If Delegate asks where to save the report, select **Other folder path** and enter `Documents\UiPath\Reports`, then select **Next**. Keep the default file name, and select **Submit**.
 
 ??? tip "Run a single test case instead"
     ```text
-    Run test case <KEY_1> in project <YOUR_PROJECT_KEY> in Test Manager, wait for it to finish, and tell me whether it passed. If it failed, explain why.
+    Run test case <YOUR_TEST_CASE_KEY> in project <YOUR_PROJECT_KEY> in Test Manager, wait for it to finish, and tell me whether it passed. If it failed, explain why.
     ```
 
 ## Check the report
 
-Open the PDF and compare it with **Execution** in Test Manager: the counts and failing keys should match. The report includes:
+Delegate gives the path to the saved report and summarizes the key numbers in the chat. Compare them with **Execution** in Test Manager. The report shows:
 
-✅ A **GO / NO-GO** recommendation, and KPI tiles
+✅ **Scope** — the executions it covers
 
-✅ **Failures blocking the release**, with run history
+✅ **Totals** — passed, failed, none, and restricted
 
-✅ All results, a **risk assessment**, and **conditions to reach GO**
+✅ **Success rate**
+
+✅ **Top failing test cases**
+
+✅ **Recommendation** — GO or NO-GO, and why
+
+??? tip "Saved as .md instead of PDF?"
+    Ask Delegate:
+
+    ```text
+    Create a PDF of the report and copy to my Downloads folder
+    ```
 
 !!! question "Think about it"
-    Which failures were called *blocking*, and do you agree? How did it tell a new regression from a recurring failure? How long would this report take you to build by hand?
+    Does the recommendation match what you'd decide? What else would a release manager want to see? How long would this report take you to build by hand?
 
 ## Schedule it as a routine
 
@@ -46,16 +56,10 @@ A report you run once is useful. One that arrives every morning is better. You d
 
 **Save it as a routine.** Once Delegate has run a task, you can ask it to save the task as a reusable routine. For example: *"Save this run-and-report task as a routine called `<YOUR_PROJECT_KEY>` Release Report."* The routine appears under **Routines** in Delegate's left panel, ready to run again on demand.
 
-**Put it on a schedule.** Under **Scheduled routines**, a Day / Week / Month calendar shows every routine with a time slot. New routines wait in the **Not scheduled** list below it. Drop one onto a time slot or set it to recur, for example weekdays at 8:00 AM. You can also ask Delegate to schedule it for you.
+**Put it on a schedule.** Under **Scheduled routines**, a Day / Week / Month calendar shows every routine with a time slot. New routines wait in the **Not scheduled** list below it. Drop one onto a time slot or set it to recur, for example weekdays at 8:00 AM.
 
-!!! warning "What a scheduled routine needs"
-    At the scheduled time:
-
-    ✅ Your machine is on and Delegate is running
-
-    ✅ You're still signed in to UiPath Cloud
-
-    ✅ No step waits for your approval. A prompt that asks for confirmation stops the run
+!!! warning "The machine must be on"
+    A scheduled routine runs only if the machine it runs on is powered on and signed in at the scheduled time.
 
 ## Go further
 

@@ -25,8 +25,8 @@ The **Generate Test Cases** built-in agent reads a requirement and proposes test
 
 **Check it:** the requirement shows the new test cases as linked, each with manual steps.
 
-!!! tip "A real failure for the report"
-    Your trainer provides an automated test case that's known to fail, so the report in [08. Run and Report](08-run-and-report.md) has a real failure to show.
+!!! tip "Create one test case that fails"
+    Your trainer guides you to create a test case that's meant to fail. You'll automate it in [06. Automate Test Cases with Studio Desktop and Delegate](06-automate-with-studio-and-delegate.md) and add it to the test set in [07. Create a Test Set](07-create-test-set.md), so the report in [08. Run and Report](08-run-and-report.md) has a real failure to show.
 
 ## Nice work!
 

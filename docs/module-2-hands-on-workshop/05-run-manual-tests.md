@@ -23,15 +23,16 @@ See <a href="https://docs.uipath.com/test-manager/automation-cloud/latest/user-g
 ??? tip "Run autonomously"
     **Autonomous Test Execution** runs a manual test case with Autopilot, in one click, on a robot.
 
-    1. In the Test Manager, navigate to Test Cases. Open a manual test case → **Manual Steps** tab → **Run Autonomously**.
+    1. Go to **Test Cases**, open a manual test case, and go to the **Manual Steps** tab. In the right-hand panel, select **Run Autonomously**.
 
         ![Run Autonomously in the Manual Steps tab](../assets/images/TM%20Run%20autonomously.png)
 
-    2. On **Setup**, enter the app URL, for example `https://uibank.uipath.com`, and select an AI model. Turn on **Live Streaming** to watch Autopilot drive the browser, and take over if needed.
+    2. Confirm the **Target Application URL**, for example `https://uibank.uipath.com`. Turn on **Live Streaming** to watch Autopilot drive the browser, and take over if needed. Leave **AI Model** as it is.
     3. Select **Run**.
     4. When it finishes, open the execution:
-        - **Logs** — each step's result, expected behavior, and screenshots. Expand a step to see what Autopilot did.
-        - **Execution Log** — Autopilot's reasoning, such as how it found an element or compared a result.
+        ✅ **Logs** — each step's result, expected behavior, and screenshots. Expand a step to see what Autopilot did.
+
+        ✅ **Execution Log** — Autopilot's reasoning, such as how it found an element or compared a result.
 
     See <a href="https://docs.uipath.com/test-manager/automation-cloud/latest/user-guide/running-autonomous-test-execution" target="_blank">Running Autonomous Test Execution</a>.
 
@@ -120,7 +121,7 @@ Your project has a test case, **Request Loan**, with no steps.
 
 **Check it:** **Request Loan** has manual steps, is linked to the requirement, and has a new result in **Execution**.
 
-### 3 — Create a new Requirement and Testcase
+### 3 — Create a new requirement and test case
 
 The business has documented a new process, **Loan lookup**, in a Process Design Document (PDD). It isn't in your requirements yet.
 
@@ -133,7 +134,7 @@ The business has documented a new process, **Loan lookup**, in a Process Design 
 
         1. Create a new requirement for this process.
         2. Create a manual test case from the steps and screenshots in the document, and link it to the new requirement.
-        3. Use loan ID 6adae567758a48004816b1cc.
+        3. Use loan ID 6adae567758a48004816b1cc as test data
         4. The document ends at Retrieve Loan Details. Add a final step that checks the loan details page shows the same loan ID, along with the rest of the loan's details.
 
         Show me the requirement and the test case before you save them to Test Manager.
@@ -148,11 +149,11 @@ The business has documented a new process, **Loan lookup**, in a Process Design 
 
     Then tell Delegate what to fix, in your own words, just as you'd tell a colleague. For example:
 
-    ✅ *"The testcase must verify if loan ID is same and also if associated data is displayed"*
+    ✅ *"The test case must check that the loan ID is the same, and that the loan's other details are displayed"*
 
-    ✅ *"Don't use the data from PDD in the testcase"*
+    ✅ *"Don't use the data from the PDD in the test case"*
 
-    ✅ *"add label 'Delegate' to this testcase and requirement"*
+    ✅ *"Add the label 'Delegate' to this test case and requirement"*
 
     Keep going until you're happy with both.
 

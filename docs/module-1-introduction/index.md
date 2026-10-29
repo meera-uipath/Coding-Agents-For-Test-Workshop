@@ -36,11 +36,11 @@ AI agents built into Test Manager and Studio. Today you'll use:
 
 ## Delegate for Test
 
-Through the `uip tm` CLI and the `uipath-testcloud` skill, **Delegate** — or a coding agent such as Claude Code, Codex, Cursor, or GitHub Copilot, with the `uipath-test` skill — can:
+Through the `uip tm` CLI and the `uipath-testcloud` skill, **Delegate** can:
 
 ✅ **Read** test cases, results, and requirement coverage from Test Manager
 
-✅ **Write** results, defects, and test case updates
+✅ **Write** results and test case updates
 
 ✅ **Trigger** test sets and monitor them
 

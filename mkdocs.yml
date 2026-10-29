@@ -73,6 +73,3 @@ nav:
     - Overview: module-3-troubleshooting-and-next-steps/index.md
     - More Prompts to Try: module-3-troubleshooting-and-next-steps/01-more-agent-prompts.md
     - Troubleshooting: module-3-troubleshooting-and-next-steps/02-troubleshooting.md
-  - "Optional: Your Own Coding Agent":
-    - Overview: optional-coding-agents/index.md
-    - Setup: optional-coding-agents/01-setup.md

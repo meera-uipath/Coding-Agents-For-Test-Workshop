@@ -9,7 +9,7 @@ Automate your manual test cases in Studio with Delegate. Each automation stays *
 
 Seven steps take you from an empty Studio project to automated test cases, published and ready to run. Click a step to jump to it.
 
-Remember - Paste the prompts in Delegate, wait and watch Delegate build it in Studio
+Paste each prompt in Delegate, then watch it build in Studio.
 
 <div class="flow">
   <a class="flow-step" href="#create-a-test-automation-project">Create a Test Automation project</a>
@@ -63,7 +63,7 @@ The **Object Repository** stores the app's screens and UI elements for every tes
 Building it by hand is usually one of the slowest parts of test automation: you capture every screen and element yourself. Tell Delegate what to capture, and it builds the repository for you. To cover every screen and element the test cases need, use the prompt below.
 
 
-!!! example "Continue in Delegate.."
+!!! example "Continue in Delegate"
     1. Paste:
 
         ```text
@@ -151,14 +151,17 @@ If an element doesn't highlight, ask Delegate to recapture it.
     1. In **Test Explorer**, right-click a manual test case → **Generate Test Case with Autopilot**.
     2. Check it uses **Object Repository** elements and the expected results. If not, ask Delegate to fix it.
     3. Check the **Use Application/Browser** cards. The data-driven test in the next section must open and close the app once per row, and your requirement and test case may not say so.
-        - **First card:** set **Open** to **Always**.
-        - **Last card:** set **Close** to **Always**.
-        - **Cards in between:** keep **Open** and **Close** as **Never**.
+
+        ✅ **First card:** set **Open** to **Always**.
+
+        ✅ **Last card:** set **Close** to **Always**.
+
+        ✅ **Cards in between:** keep **Open** and **Close** as **Never**.
     4. **Run** it locally.
 
 ![Test Explorer](../assets/images/testExplorer.png)
 
-**Check it:** at least **2** automated test cases pass locally.
+**Check it:** at least **2** automated test cases pass locally, and the test case meant to fail, from [04. Generate Test Cases](04-generate-test-cases.md), fails.
 
 ??? example "Optional: Fix the activity display names"
     Autopilot names each activity after its manual step, including the test data, which makes long, hard-to-read display names.
@@ -178,7 +181,7 @@ TBD
 ## Publish the test cases
 
 ```text
-Set the <your test case> test case in UiBank Tests as publishable and publish the project.
+Set the <YOUR_TEST_CASE_NAMES> test cases in UiBank Tests as publishable and publish the project.
 ```
 
 **Check it:** in Orchestrator, each automated test case shows in **Test Cases**.

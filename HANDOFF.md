@@ -1,6 +1,6 @@
 # Handoff: Coding Agents for Test Workshop Guide
 
-**Owner:** Meera Kannan · **Last updated:** 2026-10-14 · **Status:** First draft built. Not yet committed or published.
+**Owner:** Meera Kannan · **Last updated:** 2026-10-29 · **Status:** Review fixes on branch `feature/move-folder-setup`, not yet merged to `main`.
 
 ## What this is
 
@@ -11,45 +11,44 @@ An MkDocs (Material) site for the hands-on **Coding Agents for Test** workshop. 
 
 ## Structure
 
-| Module | Pages | Source |
-|---|---|---|
-| Home | `docs/index.md` | Old guide's home page |
-| 0 - Prerequisites | Overview, Installation Guide | <a href="https://uipath-practice.github.io/AgenticCodingAgents/prerequisites/installation-guides/" target="_blank">AgenticCodingAgents</a> + `raw-content/coding-agent-test-reporting-demo.md` |
-| 1 - Introduction | Test Cloud & Test Manager | Old guide pages 00, 01 and 02 + the Public Preview announcement |
-| 2 - Hands-On Workshop | 01 Import → 02 Evaluate → 03 Generate → 04 Connect Studio → 05 Object Repository → 06 Automate → 07 Test data → 08 Publish → 09 Folder → 10 Test set → 11 Run and report, You Did It! | Old guide pages 01, 02, 06, 07, 09, 10 and 11 + `raw-content/coding-agent-test-reporting-demo.md` |
-| 3 - Troubleshooting & Next Steps | Overview, More Agent Prompts, Troubleshooting | Announcement's example workflows + `raw-content/coding-agent-test-reporting-demo.md` |
+| Module | Pages |
+|---|---|
+| Home | `docs/index.md` |
+| 0 - Prerequisites | Overview, Installation Guide (Studio STS + Delegate) |
+| 1 - Introduction | Test Cloud & Test Manager |
+| 2 - Hands-On Workshop | 01 Import → 02 Configure the folder → 03 Evaluate → 04 Generate → 05 Run manual tests → 06 Automate with Studio and Delegate → 07 Test set → 08 Run and report, You did it! |
+| 3 - Troubleshooting & Next Steps | Overview, More Prompts to Try, Troubleshooting |
+
+## Sources
+
+- **Trusted:** the UiPath FUSION 2026 workshop PDF, *Agentic Testing: Exploring the Dark Testing Factory* (kept outside the repo). Follow it when the guide disagrees, and don't add details that it, UiPath docs or a product screenshot don't confirm.
+- **Corrections to the PDF:** Delegate is in UiPath Assistant's top ribbon, and **+ New** is in Delegate's left panel. Delegate doesn't need the PDF's `uip login status` check.
+- `docs/assets/Files/UiPath Delegate  - CFD.pptx` is useful for positioning and routines, but its security setting names are out of date.
 
 ## Decisions
 
-- The trainer provides the org and tenant. Nothing is hardcoded; commands use `<ORGANIZATION>` / `<TENANT>`.
-- **Delegate for every agent step:** steps 4, 6, 8 and 12 (and More Prompts) use **Delegate** only — no agent tabs. Delegate needs no third-party AI license and no setup: it ships with the **latest Studio STS** version, with the `uip` CLI and UiPath skills built in, and uses the Studio sign-in. The only install prerequisite is the latest Studio STS (plus the browser extension). Pages say "open Delegate" and link to *Open Delegate* in Prerequisites.
-- **Claude Code and Codex are optional**, in a separate nav section at the end (`docs/optional-coding-agents/`): concepts, UiPath plugin and skills, the `uip` CLI, install steps (Node.js, Git, Studio STS Terminal tab, agent, CLI, skills, tools, login), how to open the agent, and their troubleshooting. Main pages only point there from Prerequisites, Home and Troubleshooting.
-- **Python and the .NET 8 SDK are left out of the prerequisites.** In step 8, the coding agent generates test data, uploads it to a **Data Fabric** entity (`uip df`), and links it to several test cases (`uip rpa test-data add-entity`). A Python coded agent and a low-code test data agent were both considered and dropped.
-- The trainer grants participants **Data Fabric permissions** to create entities (step 8).
-- **Test cases are automated only with Autopilot for Testers in Studio (step 7).** Coding agents are never shown creating test cases; they build the Object Repository (step 6), generate test data (step 8), and run and report (step 12). Participants automate **at least 2** test cases.
-- Step 8 offers two paths in tabs: **Autopilot in Studio** or **Delegate + Data Fabric**.
-- Step 10 lets participants name the test set **Smoke** or **Regression**; prompts use `<YOUR_TEST_SET_NAME>`.
-- **UiPath Delegate** runs on the Test Cloud license (AppTestDeveloper / AppTesters). Install follows <a href="https://docs.uipath.com/delegate/standalone/latest/user-guide/installation" target="_blank">Delegate installation</a>.
-- **Step 5 creates a new Test Automation project** in Studio; there's no starter project. `docs/assets/Files/Application Testing ILT - Students.zip` is no longer linked from any page.
+- **The trainer provides a dedicated, new tenant and the group permissions.** That includes Project Owner rights, which learners need to import the `.tmh` and to create the custom field in step 5.
+- **Each learner creates a personal folder in step 2**, as the trainer guides them, and assigns their machine (with an **App Testing** runtime) to it. It's set as the project's **Default Folder** (Project Settings → Automation tab). Which folder Studio publishes to doesn't matter.
+- **Delegate is the only agent.** It ships with the latest Studio STS, with the `uip` CLI and the `uipath-testcloud` skill built in. Its consumption is included in the UiPath user license. The Claude Code / Codex section was removed on 2026-10-29; it's in git history before that date.
+- **Delegate setup (Installation Guide step 2):** open it from the top ribbon, set **Work profile** to **QA / Testing** (Settings → Behavior preferences), then **+ New**. Approval mode is in **Settings → Security**: Cautious / Adaptive (recommended, with a Smart approvals toggle) / Full access.
+- **Built-in agents** are named **Evaluate Requirement Quality** (step 3) and **Generate Test Cases** (step 4). The requirement is **Submit Loan Request**.
+- **The project file** is `docs/assets/Files/Agentic Testing Workshop - Sample Test Manager Project.zip` (project "UiPath Autopilot Playground", prefix `UAP`). Learners rename the project and prefix with their own name.
+- **Test cases are automated only with Autopilot for Testers in Studio (step 6).** Delegate builds the Object Repository. Learners automate **at least 2** test cases. Step 6 creates a new Test Automation project; there's no starter project.
+- **The trainer guides each learner to create a test case meant to fail** (step 4). Learners automate it (step 6) and add it to Regression Test Set (step 7), so the step 8 report has a real failure.
+- **Step 7:** learners create **Regression Test Set**, and assign test cases statically or dynamically (by label).
+- **Step 8:** the report content, save questions and PDF follow-up come from the Fusion PDF. Routines are a read-through, not hands-on.
+- Python and the .NET 8 SDK are left out of the prerequisites.
 
 ## Open items
 
-- [x] **Add the `.tmh` project file:** step 1 links `docs/assets/Files/Agentic Testing Workshop - Sample Test Manager Project.zip`
-- [ ] **Check the UI wording** against the current product, and add screenshots, for:
-  - step 2 (Autopilot "evaluate quality")
-  - step 3 (Autopilot "generate test cases")
-  - step 10 Part 2 (where the project's default folder is set in Test Manager)
-  - step 8 (adding test data in Studio and choosing Autopilot as the source)
-- [ ] **Rehearse step 8 (Delegate + Data Fabric):** entity create + records import, then link the entity to Autopilot-generated low-code and coded test cases. Confirm a linked test case runs once per record
-- [ ] **Codex screenshots:** test Codex in Studio's Terminal panel, then add its start screenshot to the OpenAI Codex tab in *Use Your Own Coding Agent → Open your coding agent*
-- [ ] **Rehearse step 6:** Delegate captures UiBank elements into a new low-code Test Automation project's Object Repository, and Autopilot in step 7 uses them
-- [ ] Confirm the single test case run prompt in step 12 works with Delegate
-- [ ] **Confirm Delegate UI details not covered by the CFD deck:** opening it (Assistant switcher next to the UiPath logo), **Ctrl+N** for a new task, where the security setting (Maximum / Smart / Unrestricted) is changed, and how Delegate signs in to the tenant
-- [ ] Rehearse the new prompts: "save as a routine" (step 12 Go further) and the new step 4 (Delegate runs manual test cases and pushes results to Test Manager) — confirm the result upload and what the Execution page shows
-- [ ] **Rehearse steps 6, 8 and 12 with Delegate:** Object Repository capture, Data Fabric test data, and run and report. Delegate's docs list only the `uipath-testcloud` skill in its Test Cloud plugin, so confirm it handles steps 6 and 8
-- [ ] Check the Studio **New Project → Test Automation** and **Manage Packages → Save** wording (step 5)
-- [x] Root `README.md` replaced with a guide README (what the workshop covers, trainer setup, preview, contributing)
-- [ ] Commit and push to `main` to publish, and enable GitHub Pages (`gh-pages` branch) in the repo settings after the first deploy
+- [ ] **Generate test data (step 6) is still "TBD".** Prerequisites (Data Fabric), the Home map, step 6's Nice work and *You did it* still mention test data.
+- [ ] **Rehearse step 8's prompt:** trigger the test set *and* write the report in one prompt, saved as a PDF in `Documents\UiPath\Reports`. The PDF only shows reporting on past executions. Also check whether Delegate still asks before triggering the run with **Adaptive** and **Smart approvals** on, and try the single test case prompt.
+- [ ] **Rehearse step 5 with Delegate:** the manual run (result and screenshot pushed to Test Manager), Request Loan, the loan lookup PDD, and the Test Tier custom field.
+- [ ] **Rehearse step 6:** Delegate captures UiBank elements into the Object Repository, and Autopilot uses them. Check the Studio **New Project → Test Automation** and **Manage Packages** wording.
+- [ ] **Check step 2, Exercise 1** against the product: Personal Automation + Personal workspace, the Automation Developer role, and Custom Windows credentials with no password have no source.
+- [ ] **Confirm how Delegate signs in to the tenant.** Prerequisites still says "Connect UiPath Assistant to your Cloud account".
+- [ ] **Add screenshots** for steps 3 and 4 (the built-in agents).
+- [ ] Merge `feature/move-folder-setup` to `main` to publish, and enable GitHub Pages (`gh-pages` branch) in the repo settings after the first deploy.
 
 ## Log
 
@@ -70,3 +69,5 @@ An MkDocs (Material) site for the hands-on **Coding Agents for Test** workshop. 
 | 2026-10-15 | Delegate facts aligned with `docs/assets/Files/UiPath Delegate  - CFD.pptx`: security settings Maximum / Smart (recommended) / Unrestricted replace "Adaptive"; licensing is "included with your UiPath user license" (not tied to App Test Developer / App Tester); Delegate described as a productivity agent on the real machine, fully integrated with Test Manager. Removed the unverified "uses your Studio sign-in" claim. Added routines (step 11) and running a manual test locally (More Prompts). |
 | 2026-10-15 | New step 04 Run Manual Tests with Delegate (runs manual test cases autonomously, pushes results to TM); old steps 04–11 renamed and renumbered to 05–12. Home map Phase 1 is now "Plan & test". The manual-run prompt moved from More Prompts into step 4. |
 | 2026-10-29 | Configure the Test Manager Folder moved from step 06 to step 02, right after the import, so the folder and robot exist before Run autonomously (step 5) and publishing (step 6). Old steps 02–05 renumbered to 03–06; Home map phases regrouped (Set up / Plan & test / Build / Run & report). Removed the "Published before creating the folder?" tip. |
+| 2026-10-29 | Removed the optional *Use Your Own Coding Agent* section (overview and setup pages, nav entry, its two screenshots, and the links from Home, Installation Guide, Introduction, Troubleshooting and README). |
+| 2026-10-29 | Review pass against the Fusion PDF: Delegate setup (top ribbon, + New, QA / Testing work profile, approval mode names), `uipath-testcloud` skill, built-in agent names, Submit Loan Request, App Testing runtime, personal folder and Default Folder path, static / dynamic test set assignment, step 8 report content, routines as a read-through. Removed defect creation, the Edge/Chrome tip, "Send feedback", the 760 MB size, and the coding-agent Learn more links. Decisions and Open items rewritten. |
