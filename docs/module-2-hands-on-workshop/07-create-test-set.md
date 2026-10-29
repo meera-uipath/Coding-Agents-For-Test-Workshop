@@ -1,6 +1,6 @@
 # 07. Create a Test Set
 
-A **test set** groups test cases that run together. Either a smoke or a regression test set works for the workshop.
+A **test set** groups test cases that run together.
 
 ## Create it
 
