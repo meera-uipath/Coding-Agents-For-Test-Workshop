@@ -37,9 +37,6 @@ Open the PDF and compare it with **Execution** in Test Manager: the counts and f
 
 ✅ All results, a **risk assessment**, and **conditions to reach GO**
 
-!!! warning "Review before you share"
-    Delegate can be wrong. Check its numbers against Test Manager before you send the report to anyone.
-
 !!! question "Think about it"
     Which failures were called *blocking*, and do you agree? How did it tell a new regression from a recurring failure? How long would this report take you to build by hand?
 
