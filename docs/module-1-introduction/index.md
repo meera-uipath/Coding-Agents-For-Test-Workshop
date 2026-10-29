@@ -26,9 +26,9 @@
 
 AI agents built into Test Manager and Studio. Today you'll use:
 
-✅ **Evaluation Agent** — checks requirements for clarity, completeness, and testability
+✅ **Evaluate Requirement Quality** — checks requirements for clarity, completeness, and testability
 
-✅ **Test Case Generation Agent** — generates test cases from requirements
+✅ **Generate Test Cases** — generates test cases from requirements
 
 ✅ **Autopilot for Testers in Studio** — turns a manual test case into an automated one, low-code or coded (C#)
 
@@ -36,7 +36,7 @@ AI agents built into Test Manager and Studio. Today you'll use:
 
 ## Delegate for Test
 
-Through the `uip tm` CLI and the `uipath-test` skill, **Delegate** — or a coding agent such as Claude Code, Codex, Cursor, or GitHub Copilot — can:
+Through the `uip tm` CLI and the `uipath-testcloud` skill, **Delegate** — or a coding agent such as Claude Code, Codex, Cursor, or GitHub Copilot, with the `uipath-test` skill — can:
 
 ✅ **Read** test cases, results, and requirement coverage from Test Manager
 

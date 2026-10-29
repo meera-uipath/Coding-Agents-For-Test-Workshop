@@ -10,11 +10,11 @@ Confirm that you can:
 
 ✅ Open **Test Manager** and **Orchestrator** in that tenant
 
-✅ See a **machine with an App Test Robot runtime** (you'll add it to your folder in [06. Configure the Test Manager Folder](../module-2-hands-on-workshop/06-configure-tm-folder.md))
+✅ See a **machine with an App Test Robot runtime** (you'll add it to your folder in [02. Configure the Test Manager Folder](../module-2-hands-on-workshop/02-configure-tm-folder.md))
 
 ✅ Use an **App Test Developer** license, to create Test Automation projects
 
-✅ **Create Data Fabric entities**, for test data in [05. Automate Test Cases with Studio Desktop and Delegate](../module-2-hands-on-workshop/05-automate-with-studio-and-delegate.md)
+✅ **Create Data Fabric entities**, for test data in [06. Automate Test Cases with Studio Desktop and Delegate](../module-2-hands-on-workshop/06-automate-with-studio-and-delegate.md)
 
 ✅ Connect **UiPath Assistant** to your Cloud account
 

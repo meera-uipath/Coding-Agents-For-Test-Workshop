@@ -61,11 +61,11 @@ nav:
     - Test Cloud & Test Manager: module-1-introduction/index.md
   - Hands-On Workshop:
     - Import the Test Manager Project: module-2-hands-on-workshop/01-import-tm-project.md
-    - Evaluate Requirements: module-2-hands-on-workshop/02-evaluate-requirements.md
-    - Generate Test Cases: module-2-hands-on-workshop/03-generate-test-cases.md
-    - Run Manual Tests: module-2-hands-on-workshop/04-run-manual-tests.md
-    - Automate Test Cases with Studio Desktop and Delegate: module-2-hands-on-workshop/05-automate-with-studio-and-delegate.md
-    - Configure the Test Manager Folder: module-2-hands-on-workshop/06-configure-tm-folder.md
+    - Configure the Test Manager Folder: module-2-hands-on-workshop/02-configure-tm-folder.md
+    - Evaluate Requirements: module-2-hands-on-workshop/03-evaluate-requirements.md
+    - Generate Test Cases: module-2-hands-on-workshop/04-generate-test-cases.md
+    - Run Manual Tests: module-2-hands-on-workshop/05-run-manual-tests.md
+    - Automate Test Cases with Studio Desktop and Delegate: module-2-hands-on-workshop/06-automate-with-studio-and-delegate.md
     - Create a Test Set: module-2-hands-on-workshop/07-create-test-set.md
     - Run and Report: module-2-hands-on-workshop/08-run-and-report.md
     - You did it!: module-2-hands-on-workshop/you-did-it.md

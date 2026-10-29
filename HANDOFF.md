@@ -34,7 +34,7 @@ An MkDocs (Material) site for the hands-on **Coding Agents for Test** workshop. 
 
 ## Open items
 
-- [ ] **Add the `.tmh` project file:** put it in `docs/assets/Files/` and replace the placeholder block in `docs/module-2-hands-on-workshop/01-import-tm-project.md`
+- [x] **Add the `.tmh` project file:** step 1 links `docs/assets/Files/Agentic Testing Workshop - Sample Test Manager Project.zip`
 - [ ] **Check the UI wording** against the current product, and add screenshots, for:
   - step 2 (Autopilot "evaluate quality")
   - step 3 (Autopilot "generate test cases")
@@ -69,3 +69,4 @@ An MkDocs (Material) site for the hands-on **Coding Agents for Test** workshop. 
 | 2026-10-15 | Delegate ships with the latest Studio STS (CLI and skills built in): Installation Guide is now one install + a Delegate warm-up. Removed the UiPath Platform installer, QA/Testing profile and Test Cloud plugin steps; tenant checks in steps 5, 7, 11 now point to the Studio sign-in. |
 | 2026-10-15 | Delegate facts aligned with `docs/assets/Files/UiPath Delegate  - CFD.pptx`: security settings Maximum / Smart (recommended) / Unrestricted replace "Adaptive"; licensing is "included with your UiPath user license" (not tied to App Test Developer / App Tester); Delegate described as a productivity agent on the real machine, fully integrated with Test Manager. Removed the unverified "uses your Studio sign-in" claim. Added routines (step 11) and running a manual test locally (More Prompts). |
 | 2026-10-15 | New step 04 Run Manual Tests with Delegate (runs manual test cases autonomously, pushes results to TM); old steps 04–11 renamed and renumbered to 05–12. Home map Phase 1 is now "Plan & test". The manual-run prompt moved from More Prompts into step 4. |
+| 2026-10-29 | Configure the Test Manager Folder moved from step 06 to step 02, right after the import, so the folder and robot exist before Run autonomously (step 5) and publishing (step 6). Old steps 02–05 renumbered to 03–06; Home map phases regrouped (Set up / Plan & test / Build / Run & report). Removed the "Published before creating the folder?" tip. |

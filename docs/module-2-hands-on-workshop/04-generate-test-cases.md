@@ -1,11 +1,11 @@
-# 03. Generate Test Cases
+# 04. Generate Test Cases
 
-The **Test Case Generation Agent** reads a requirement and proposes test cases with manual steps. You review them before they're saved.
+The **Generate Test Cases** built-in agent reads a requirement and proposes test cases with manual steps. You review them before they're saved.
 
-## Generate them with UiPath Agent
+## Generate them with a built-in agent
 
-1. Open the loan application requirement.
-2. Use **Autopilot** to **generate test cases** for it.
+1. Open the **Submit Loan Request** requirement.
+2. Run the **Generate Test Cases** built-in agent on it.
 3. In **Provide additional context → Add documents**, select:
 
     ✅ **UiBank Regression Tests.xlsx** — matches the existing step style, avoids duplicates
@@ -25,8 +25,8 @@ The **Test Case Generation Agent** reads a requirement and proposes test cases w
 
 **Check it:** the requirement shows the new test cases as linked, each with manual steps.
 
-!!! tip "Keep one failing test case"
-    Your trainer may ask you to keep one test case whose expected result **doesn't** match the app, so the report in [08. Run and Report](08-run-and-report.md) has a real failure.
+!!! tip "A real failure for the report"
+    Your trainer provides an automated test case that's known to fail, so the report in [08. Run and Report](08-run-and-report.md) has a real failure to show.
 
 ## Nice work!
 
@@ -34,6 +34,6 @@ You've gone from a requirement to reviewed, linked test cases in minutes.
 
 ---
 
-[Next → 04. Run Manual Tests](04-run-manual-tests.md){: .md-button .md-button--primary}
+[Next → 05. Run Manual Tests](05-run-manual-tests.md){: .md-button .md-button--primary}
 
 ---

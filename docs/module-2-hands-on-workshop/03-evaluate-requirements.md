@@ -1,11 +1,11 @@
-# 02. Evaluate Requirements
+# 03. Evaluate Requirements
 
-Vague or incomplete requirements lead to gaps in testing. The **Evaluation Agent** checks a requirement for clarity, completeness, and consistency, and suggests fixes.
+Vague or incomplete requirements lead to gaps in testing. The **Evaluate Requirement Quality** built-in agent checks a requirement for clarity, completeness, and consistency, and suggests fixes.
 
-## Evaluate it with UiPath Agent
+## Evaluate it with a built-in agent
 
-1. Open **Requirements** → Submit loan request.
-2. Use the **Evaluate Requirement** built-in agent to evaluate the quality of the requirement.
+1. Open **Requirements** → **Submit Loan Request**.
+2. Run the **Evaluate Requirement Quality** built-in agent on it.
 3. In **Provide additional context → Add documents**, select these project documents (marked **P**), so the agent checks the requirement against their rules:
 
     ✅ **UiBank Glossary of Terms.txt** — undefined banking terms
@@ -32,6 +32,6 @@ Your requirement is clearer and more testable — ready for generating test case
 
 ---
 
-[Next → 03. Generate Test Cases](03-generate-test-cases.md){: .md-button .md-button--primary}
+[Next → 04. Generate Test Cases](04-generate-test-cases.md){: .md-button .md-button--primary}
 
 ---

@@ -15,8 +15,8 @@
 
 **UiPath Delegate** is UiPath's agent, with the UiPath CLI and skills built in. Describe a task in plain English, and it does it on your machine, in your real browser and apps.
 
-1. Open **UiPath Assistant**, and use the switcher next to the UiPath logo to open **Delegate**.
-2. Press **Ctrl+N** to start a new task.
+1. Open **UiPath Assistant**, and select **Delegate** in the top ribbon.
+2. Click **+ New** in the left panel to start a new task.
 
 ### Choose how much Delegate does on its own
 

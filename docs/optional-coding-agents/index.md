@@ -130,7 +130,7 @@ Whenever a workshop step says **open Delegate**, do this instead:
 
 ## Before each agent step
 
-A coding agent works through **your** `uip login` session, not through UiPath Assistant. Before steps 4, 5, and 8, check you're still logged in to the workshop tenant — login tokens expire:
+A coding agent works through **your** `uip login` session, not through UiPath Assistant. Before steps 5, 6, and 8, check you're still logged in to the workshop tenant — login tokens expire:
 
 ```powershell
 uip login status --output json

@@ -1,4 +1,4 @@
-# 05. Automate Test Cases with Studio Desktop and Delegate
+# 06. Automate Test Cases with Studio Desktop and Delegate
 
 Automate your manual test cases in Studio with Delegate. Each automation stays **linked** to its test case in Test Manager.
 
@@ -189,6 +189,6 @@ Your test cases are automated, data-driven, and published, ready to run from Tes
 
 ---
 
-[Next → 06. Configure the Test Manager Folder](06-configure-tm-folder.md){: .md-button .md-button--primary}
+[Next → 07. Create a Test Set](07-create-test-set.md){: .md-button .md-button--primary}
 
 ---

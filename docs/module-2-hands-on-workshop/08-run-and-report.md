@@ -37,30 +37,25 @@ Open the PDF and compare it with **Execution** in Test Manager: the counts and f
 
 ✅ All results, a **risk assessment**, and **conditions to reach GO**
 
-!!! warning "Review before you share"
-    Delegate can be wrong. Check its numbers against Test Manager before you send the report to anyone.
-
 !!! question "Think about it"
     Which failures were called *blocking*, and do you agree? How did it tell a new regression from a recurring failure? How long would this report take you to build by hand?
 
 ## Schedule it as a routine
 
-A report you run once is useful. One that arrives every morning is better.
+A report you run once is useful. One that arrives every morning is better. You don't need to set this up today, but here's how it works.
 
-!!! example "It's your turn now!"
-    1. Save the task as a routine:
+**Save it as a routine.** Once Delegate has run a task, you can ask it to save the task as a reusable routine. For example: *"Save this run-and-report task as a routine called `<YOUR_PROJECT_KEY>` Release Report."* The routine appears under **Routines** in Delegate's left panel, ready to run again on demand.
 
-        ```text
-        Save this run-and-report task as a routine called <YOUR_PROJECT_KEY> Release Report.
-        ```
+**Put it on a schedule.** Under **Scheduled routines**, a Day / Week / Month calendar shows every routine with a time slot. New routines wait in the **Not scheduled** list below it. Drop one onto a time slot or set it to recur, for example weekdays at 8:00 AM. You can also ask Delegate to schedule it for you.
 
-    2. In Delegate's left panel, open **Scheduled routines**. Your routine is in the **Not scheduled** list.
-    3. Drop it onto a time slot, or set it to recur, for example weekdays at 8:00 AM.
+!!! warning "What a scheduled routine needs"
+    At the scheduled time:
 
-**Check it:** the calendar shows your routine. Switch to **Month** to see every future run.
+    ✅ Your machine is on and Delegate is running
 
-!!! warning "The machine must be on"
-    A scheduled routine runs only if your machine is on and signed in at that time.
+    ✅ You're still signed in to UiPath Cloud
+
+    ✅ No step waits for your approval. A prompt that asks for confirmation stops the run
 
 ## Go further
 

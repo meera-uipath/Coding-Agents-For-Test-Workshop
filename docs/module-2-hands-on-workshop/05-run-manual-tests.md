@@ -1,17 +1,17 @@
-# 04. Run Manual Tests
+# 05. Run Manual Tests
 
 There are three ways to run a manual test case. Each records its results in Test Manager.
 
 | | Who runs the steps | Apps it can test | Setup needed |
 |---|---|---|---|
 | **Manual execution assistant** | You | Any | None |
-| **Run autonomously** | Autopilot, on a robot | Web apps | A robot in the project's default folder ([06. Configure the Test Manager Folder](06-configure-tm-folder.md)) |
+| **Run autonomously** | Autopilot, on a robot | Web apps | A robot in the project's default folder ([02. Configure the Test Manager Folder](02-configure-tm-folder.md)) |
 | **Delegate** | Delegate, on your machine | Web and desktop apps | None |
 
 See <a href="https://docs.uipath.com/test-manager/automation-cloud/latest/user-guide/executing-manual-tests" target="_blank">Executing manual tests</a>.
 
 ??? tip "Manual execution assistant"
-    1. In the Test Manager, navigate to Test Cases. Open a test set, select **Execute → Manually**. (Allow pop-ups for Test Manager). The manual execution assistant opens in a new window.
+    1. Go to **Test Sets**, open a test set, and select **Execute → Manually**. Allow pop-ups for Test Manager. The manual execution assistant opens in a new window.
     2. Perform each step, then select **Set Passed** or **Set Failed** (comment on failures). **Set Passed Until Here** passes several steps at once.
     3. At any step, capture a screenshot or upload related files as attachments.
     4. Check the postcondition, the state the app must be in after the test. Select **Condition Met** if it holds.
@@ -42,7 +42,7 @@ See <a href="https://docs.uipath.com/test-manager/automation-cloud/latest/user-g
     2. Enter the app URL, set a **time-box**, and select an AI model. Turn on **Live Streaming** to watch it explore.
     3. Select **Start**. When it's **Completed**, select **Show report**.
 
-    Needs a Windows robot in the project's default folder (set up in [06. Configure the Test Manager Folder](06-configure-tm-folder.md)), with the UiPath browser extension set to **Allow in Incognito**. See <a href="https://docs.uipath.com/test-manager/automation-cloud/latest/user-guide/running-autonomous-exploration" target="_blank">Running Autonomous Exploration</a>.
+    Needs a Windows robot in the project's default folder (set up in [02. Configure the Test Manager Folder](02-configure-tm-folder.md)), with the UiPath browser extension set to **Allow in Incognito**. See <a href="https://docs.uipath.com/test-manager/automation-cloud/latest/user-guide/running-autonomous-exploration" target="_blank">Running Autonomous Exploration</a>.
 
 ## Run manual tests with Delegate
 
@@ -53,7 +53,7 @@ In this workshop, you'll use Delegate. It runs your test cases, builds new ones,
 ### 1 — Run a test case
 
 !!! example "It's your turn now!"
-    1. Replace `<YOUR_TEST_CASE_KEY>` with a test case you created in [03. Generate Test Cases](03-generate-test-cases.md), then paste:
+    1. Replace `<YOUR_TEST_CASE_KEY>` with a test case you created in [04. Generate Test Cases](04-generate-test-cases.md), then paste:
 
         ```text
         Run the manual test case <YOUR_TEST_CASE_KEY>. Open UiBank at https://uibank.uipath.com, follow the test case's manual steps in the browser, and check every expected result. Take a screenshot at the final validation step and upload it to the test case's assertions. Push the results to Test Manager. If any step failed, explain the reason.
@@ -72,7 +72,7 @@ In this workshop, you'll use Delegate. It runs your test cases, builds new ones,
 **Check it:** **Execution** → open the new execution → select your test case key. It shows the result, with the screenshot under **Assertions**.
 
 !!! question "Think about it"
-    Did Delegate stumble on a step? Autopilot automates these same steps in [05. Automate Test Cases with Studio Desktop and Delegate](05-automate-with-studio-and-delegate.md), so fix them now:
+    Did Delegate stumble on a step? Autopilot automates these same steps in [06. Automate Test Cases with Studio Desktop and Delegate](06-automate-with-studio-and-delegate.md), so fix them now:
 
     ```text
     Rewrite the steps of test case <YOUR_TEST_CASE_KEY> that were unclear during this run, so each one has a single clear action and expected result. Show me the changes before you save them to Test Manager.
@@ -112,7 +112,7 @@ Your project has a test case, **Request Loan**, with no steps.
         ```
 
     2. Then follow Delegate:
-        1. **No requirement linked** — ask it to link the loan application requirement it suggests.
+        1. **No requirement linked** — ask it to link the **Submit Loan Request** requirement.
         2. **Test data** — choose the **approval path**.
         3. **Open questions** — answer them.
         4. **Save the steps** — give permission.
@@ -195,6 +195,6 @@ Your test cases are proven against the real application, with results in Test Ma
 
 ---
 
-[Next → 05. Automate Test Cases with Studio Desktop and Delegate](05-automate-with-studio-and-delegate.md){: .md-button .md-button--primary}
+[Next → 06. Automate Test Cases with Studio Desktop and Delegate](06-automate-with-studio-and-delegate.md){: .md-button .md-button--primary}
 
 ---

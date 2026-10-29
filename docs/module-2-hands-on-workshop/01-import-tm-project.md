@@ -4,13 +4,8 @@ You start from a ready-made **UiBank** project: requirements, test cases, test s
 
 ## Download the project file
 
-!!! warning "Placeholder — project file coming soon"
-    The workshop's Test Manager project file (`.tmh`) will be added here.
-
-    :material-file-download: **`<PROJECT_FILE>.tmh`** — project import file for Test Manager
-
-    <!-- TODO: add the .tmh file to docs/assets/Files/ and replace this block with a download link, e.g.
-    [**Project.tmh**](../assets/Files/Project.tmh) -->
+1. Download <a href="../../assets/Files/Agentic%20Testing%20Workshop%20-%20Sample%20Test%20Manager%20Project.zip" target="_blank">Agentic Testing Workshop - Sample Test Manager Project.zip</a>.
+2. Unzip it. You'll import the `.tmh` file inside.
 
 ## Import it into Test Manager
 
@@ -43,6 +38,6 @@ Pick one test case in project <YOUR_PROJECT_KEY> and show me its manual steps an
 
 ---
 
-[Next → 02. Evaluate Requirements](02-evaluate-requirements.md){: .md-button .md-button--primary}
+[Next → 02. Configure the Test Manager Folder](02-configure-tm-folder.md){: .md-button .md-button--primary}
 
 ---

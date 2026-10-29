@@ -8,10 +8,10 @@ Learners work on a ready-made **UiBank** Test Manager project. In eight hands-on
 
 | Phase | Steps | What learners do | Tools |
 |---|---|---|---|
-| **1 · Plan & test** | 1–4 | Import the project, evaluate the requirement, generate test cases, and run them manually | Test Manager, Autopilot for Testers, Delegate |
-| **2 · Build** | 5–9 | Connect Studio, build the Object Repository, automate the test cases, generate test data, and publish | Studio, Autopilot, Delegate, Data Fabric |
-| **3 · Prepare** | 10–11 | Configure the Orchestrator folder and robot, and create a test set | Orchestrator, Test Manager |
-| **4 · Run & report** | 12 | Trigger the test set and get a go/no-go PDF in one prompt | Delegate |
+| **1 · Set up** | 1–2 | Import the project, and configure the Orchestrator folder and robot | Test Manager, Orchestrator |
+| **2 · Plan & test** | 3–5 | Evaluate the requirement, generate test cases, and run them manually | Test Manager, Autopilot for Testers, Delegate |
+| **3 · Build** | 6 | Connect Studio, build the Object Repository, automate the test cases, generate test data, and publish | Studio, Autopilot, Delegate, Data Fabric |
+| **4 · Run & report** | 7–8 | Create a test set, trigger it, and get a go/no-go PDF in one prompt | Test Manager, Delegate |
 
 By the end, learners have:
 
@@ -29,7 +29,7 @@ Learners complete their own [Prerequisites](docs/module-0-prerequisites/index.md
 
 ### Organization and tenant
 
-- [ ] Create the workshop **tenant** in an organization delivered through **Test Cloud**. Autonomous Test Execution and Autonomous Exploration (step 4) are only available in Test Cloud.
+- [ ] Create the workshop **tenant** in an organization delivered through **Test Cloud**. Autonomous Test Execution and Autonomous Exploration (step 5) are only available in Test Cloud.
 - [ ] Make sure the tenant has **Test Manager**, **Orchestrator**, and **Data Fabric** enabled.
 - [ ] Make sure **Autopilot for Testers** is allowed for the tenant, in Test Manager and in Studio. Check that no AI Trust Layer or governance policy blocks it.
 - [ ] Make sure learners can use **Delegate** in the organization.
@@ -42,24 +42,24 @@ Learners complete their own [Prerequisites](docs/module-0-prerequisites/index.md
 
 ### Licenses and runtimes
 
-- [ ] Assign an **App Test Developer** user license to the group or to each learner. Learners need it to create and publish Test Automation projects in Studio (step 5).
-- [ ] Allocate enough **App Test Robot** runtimes to the tenant: at least one per learner machine (step 6).
+- [ ] Assign an **App Test Developer** user license to the group or to each learner. Learners need it to create and publish Test Automation projects in Studio (step 6).
+- [ ] Allocate enough **App Test Robot** runtimes to the tenant: at least one per learner machine (step 2).
 - [ ] For **Run autonomously** and **Autonomous Exploration**, make sure a supported, non-serverless robot is available in each project's default folder. The robot machine must run Windows, and its UiPath browser extension must have **Allow in Incognito** turned on.
 
 ### Test Manager
 
 - [ ] Give the group a Test Manager role that can **import projects**, **edit requirements and test cases**, and **execute tests**. Autopilot's requirement evaluation needs requirement create and edit permissions, and Autonomous Exploration needs **Execute Automated Tests**.
-- [ ] Share the **project file** (`.tmh`) that learners import in step 1. Step 1 still has a placeholder for it.
+- [ ] Learners download the **project file** (`.tmh`) from step 1. Check it imports into the workshop tenant.
 
 ### Orchestrator
 
-- [ ] Create a parent **workshop folder**. In step 6, each learner creates their own subfolder under it.
-- [ ] Give the group the roles it needs in step 6. At tenant level, learners must be able to set up their own user: **Personal Automation + Personal workspace**, the **Automation Developer** role, and **Custom Windows credentials**. On the workshop folder, they need **Folder Administrator** rights, to create subfolders and add machines and users. If you'd rather not grant these, do this part of step 6 for each learner before the session.
+- [ ] Create a parent **workshop folder**. In step 2, each learner creates their own subfolder under it.
+- [ ] Give the group the roles it needs in step 2. At tenant level, learners must be able to set up their own user: **Personal Automation + Personal workspace**, the **Automation Developer** role, and **Custom Windows credentials**. On the workshop folder, they need **Folder Administrator** rights, to create subfolders and add machines and users. If you'd rather not grant these, do this part of step 2 for each learner before the session.
 - [ ] If learners use credential assets in test cases, give them the **View** permission on **Assets**.
 
 ### Data Fabric
 
-- [ ] Give the group **read-write access** to Data Fabric at **tenant level**: permission to **create entities**, and to create, read, and update **records** (step 5).
+- [ ] Give the group **read-write access** to Data Fabric at **tenant level**: permission to **create entities**, and to create, read, and update **records** (step 6).
 - [ ] Learners name their entity `LoanTestData<INITIALS>`, so names don't clash on the shared tenant.
 
 ### Learner machines and network
@@ -71,7 +71,7 @@ Learners complete their own [Prerequisites](docs/module-0-prerequisites/index.md
 ### On the day
 
 - [ ] Share the **organization name**, **tenant name**, and **workshop folder name** with learners.
-- [ ] Do a dry run of steps 1, 4, 5, and 8 with a test user in the learner group. These are the steps that depend most on permissions.
+- [ ] Do a dry run of steps 1, 2, 5, 6, and 8 with a test user in the learner group. These are the steps that depend most on permissions.
 
 ### After the workshop
 

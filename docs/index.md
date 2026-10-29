@@ -18,50 +18,50 @@ You'll walk through the full testing lifecycle in UiPath Test Cloud, with AI at 
 <div class="wf-map">
   <div class="wf-phase">
     <div class="wf-phase-head">
-      <span class="wf-phase-kicker">Phase 1 · Plan &amp; test</span>
-      <span class="wf-phase-title">Test Manager</span>
+      <span class="wf-phase-kicker">Phase 1 · Set up</span>
+      <span class="wf-phase-title">Orchestrator + TM</span>
     </div>
     <div class="wf-steps">
       <a class="wf-step" href="module-2-hands-on-workshop/01-import-tm-project/"><span class="wf-num">1</span>Import the project</a>
-      <a class="wf-step" href="module-2-hands-on-workshop/02-evaluate-requirements/"><span class="wf-num">2</span>Evaluate requirements</a>
-      <a class="wf-step" href="module-2-hands-on-workshop/03-generate-test-cases/"><span class="wf-num">3</span>Generate test cases</a>
-      <a class="wf-step" href="module-2-hands-on-workshop/04-run-manual-tests/"><span class="wf-num">4</span>Run manual tests</a>
+      <a class="wf-step" href="module-2-hands-on-workshop/02-configure-tm-folder/"><span class="wf-num">2</span>Configure the folder</a>
+    </div>
+    <div class="wf-phase-foot">Project, folder, and robot</div>
+  </div>
+  <div class="wf-arrow" aria-hidden="true"></div>
+  <div class="wf-phase">
+    <div class="wf-phase-head">
+      <span class="wf-phase-kicker">Phase 2 · Plan &amp; test</span>
+      <span class="wf-phase-title">Test Manager</span>
+    </div>
+    <div class="wf-steps">
+      <a class="wf-step" href="module-2-hands-on-workshop/03-evaluate-requirements/"><span class="wf-num">3</span>Evaluate requirements</a>
+      <a class="wf-step" href="module-2-hands-on-workshop/04-generate-test-cases/"><span class="wf-num">4</span>Generate test cases</a>
+      <a class="wf-step" href="module-2-hands-on-workshop/05-run-manual-tests/"><span class="wf-num">5</span>Run manual tests</a>
     </div>
     <div class="wf-phase-foot"><strong>Autopilot for Testers</strong>, plus <strong>Delegate</strong> for manual runs</div>
   </div>
   <div class="wf-arrow" aria-hidden="true"></div>
   <div class="wf-phase">
     <div class="wf-phase-head">
-      <span class="wf-phase-kicker">Phase 2 · Build</span>
+      <span class="wf-phase-kicker">Phase 3 · Build</span>
       <span class="wf-phase-title">Studio + Delegate</span>
     </div>
     <div class="wf-steps">
-      <a class="wf-step" href="module-2-hands-on-workshop/05-automate-with-studio-and-delegate/"><span class="wf-num">5</span>Automate test cases</a>
+      <a class="wf-step" href="module-2-hands-on-workshop/06-automate-with-studio-and-delegate/"><span class="wf-num">6</span>Automate test cases</a>
     </div>
     <div class="wf-phase-foot">Project, Object Repository, automation, test data, and publishing</div>
-  </div>
-  <div class="wf-arrow" aria-hidden="true"></div>
-  <div class="wf-phase">
-    <div class="wf-phase-head">
-      <span class="wf-phase-kicker">Phase 3 · Prepare</span>
-      <span class="wf-phase-title">Orchestrator + TM</span>
-    </div>
-    <div class="wf-steps">
-      <a class="wf-step" href="module-2-hands-on-workshop/06-configure-tm-folder/"><span class="wf-num">6</span>Configure the folder</a>
-      <a class="wf-step" href="module-2-hands-on-workshop/07-create-test-set/"><span class="wf-num">7</span>Create a test set</a>
-    </div>
-    <div class="wf-phase-foot">Folder, robot, and a <strong>smoke or regression</strong> set</div>
   </div>
   <div class="wf-arrow" aria-hidden="true"></div>
   <div class="wf-phase wf-phase--outcome">
     <div class="wf-phase-head">
       <span class="wf-phase-kicker">Phase 4 · Run &amp; report</span>
-      <span class="wf-phase-title">Delegate</span>
+      <span class="wf-phase-title">TM + Delegate</span>
     </div>
     <div class="wf-steps">
+      <a class="wf-step" href="module-2-hands-on-workshop/07-create-test-set/"><span class="wf-num">7</span>Create a test set</a>
       <a class="wf-step" href="module-2-hands-on-workshop/08-run-and-report/"><span class="wf-num">8</span>Run and report</a>
     </div>
-    <div class="wf-phase-foot">Run the test set → <strong>go/no-go PDF</strong></div>
+    <div class="wf-phase-foot">A <strong>smoke or regression</strong> set → <strong>go/no-go PDF</strong></div>
   </div>
 </div>
 

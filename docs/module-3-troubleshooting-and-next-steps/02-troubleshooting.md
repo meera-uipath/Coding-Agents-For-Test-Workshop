@@ -4,8 +4,8 @@
 
 | Symptom | Likely cause / fix |
 |---|---|
-| Delegate isn't in the UiPath Assistant switcher | Your Studio version may be too old. Install the latest STS version from the [Installation Guide](../module-0-prerequisites/01-installation-guide.md), and ask your trainer to confirm your access. |
-| Delegate can't find your project | Delegate is signed in to the wrong tenant. Sign in again with the organization and tenant from your trainer, then start a new task with **Ctrl+N**. |
+| Delegate isn't in UiPath Assistant's top ribbon | Your Studio version may be too old. Install the latest STS version from the [Installation Guide](../module-0-prerequisites/01-installation-guide.md), and ask your trainer to confirm your access. |
+| Delegate can't find your project | Delegate is signed in to the wrong tenant. Sign in again with the organization and tenant from your trainer, then click **+ New** to start a new task. |
 | Delegate asks for approval on every step | The security setting is **Maximum**. Switch it to **Smart**. |
 
 Using Claude Code or Codex instead? See the troubleshooting table in [Set Up Your Coding Agent](../optional-coding-agents/01-setup.md#troubleshooting).
@@ -14,8 +14,8 @@ Using Claude Code or Codex instead? See the troubleshooting table in [Set Up You
 
 | Symptom | Likely cause / fix |
 |---|---|
-| `HTTP 400: Please assign folder to project level before executing testcases.` | The project has no default folder. Complete [06. Configure the Test Manager Folder, Part 2](../module-2-hands-on-workshop/06-configure-tm-folder.md#part-2-link-the-project-to-the-folder). The `uipath-test` skill also knows how to recover from this error. |
-| Test cases are skipped with no result | They're manual — not linked to a published automation. Complete [Publish the test cases](../module-2-hands-on-workshop/05-automate-with-studio-and-delegate.md#publish-the-test-cases) and check each test case shows an automation. |
+| `HTTP 400: Please assign folder to project level before executing testcases.` | The project has no default folder. Complete [02. Configure the Test Manager Folder, Part 2](../module-2-hands-on-workshop/02-configure-tm-folder.md#part-2-link-the-project-to-the-folder). The `uipath-testcloud` skill also knows how to recover from this error. |
+| Test cases are skipped with no result | They're manual — not linked to a published automation. Complete [Publish the test cases](../module-2-hands-on-workshop/06-automate-with-studio-and-delegate.md#publish-the-test-cases) and check each test case shows an automation. |
 | The run stays pending or hangs | The robot is busy or disconnected. In Orchestrator, check the machine in your folder is connected and has an **App Test Robot** runtime. |
 | Tests fail with "Cannot communicate with the browser" | A robot-side problem with the UiPath browser extension, not a product defect. Check the extension is installed and enabled on the robot machine. |
 
