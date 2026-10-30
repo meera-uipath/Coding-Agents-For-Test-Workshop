@@ -118,6 +118,7 @@ Your project has a test case, **Request Loan**, with no steps.
         3. **Open questions** — answer them.
         4. **Save the steps** — give permission.
         5. **Run it** — say yes.
+        6. **Note the loan ID** — the approval screen shows it. You'll use it in part 3. Missed it? Ask Delegate: *"What loan ID did the approval screen show?"*
 
 **Check it:** **Request Loan** has manual steps, is linked to the requirement, and has a new result in **Execution**.
 
@@ -127,20 +128,20 @@ The business has documented a new process, **Loan lookup**, in a Process Design 
 
 !!! example "It's your turn now!"
     1. Download the PDD, <a href="../../assets/Files/Loan%20lookup%20process%20to%20be%20tested.docx" target="_blank">Loan lookup process to be tested.docx</a>.
-    2. Attach it in Delegate, then paste:
+    2. Attach it in Delegate. Replace `<YOUR_LOAN_ID>` with the loan ID from your **Request Loan** run in part 2, then paste:
 
         ```text
         The attached PDD describes the UiBank loan lookup process. It isn't covered by any requirement in my Test Manager project yet.
 
         1. Create a new requirement for this process.
         2. Create a manual test case from the steps and screenshots in the document, and link it to the new requirement.
-        3. Use loan ID 6adae567758a48004816b1cc as test data
+        3. Use loan ID <YOUR_LOAN_ID> as test data.
         4. The document ends at Retrieve Loan Details. Add a final step that checks the loan details page shows the same loan ID, along with the rest of the loan's details.
 
         Show me the requirement and the test case before you save them to Test Manager.
         ```
 
-    3. Review, give permission to save, and ask Delegate to run it with loan ID `6adae567758a48004816b1cc`.
+    3. Review, give permission to save, and ask Delegate to run it with your loan ID.
 
 **Check it:** a new **Loan lookup** requirement, with a linked test case that has manual steps and a result in **Execution**.
 
