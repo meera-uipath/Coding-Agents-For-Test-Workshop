@@ -1,0 +1,1366 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="UiPath Test Cloud & Coding Agents for Test - Instructor-Led Workshop">
+      
+      
+      
+      
+        <link rel="prev" href="../05-run-manual-tests/">
+      
+      
+        <link rel="next" href="../07-create-test-set/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Automate Test Cases with Studio Desktop and Delegate - Coding Agents for Test - Hands-On Workshop Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/css/custom.css?v=1f9ed6c5">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="light" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#06-automate-test-cases-with-studio-desktop-and-delegate" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Coding Agents for Test - Hands-On Workshop Guide" class="md-header__button md-logo" aria-label="Coding Agents for Test - Hands-On Workshop Guide" data-md-component="logo">
+      
+  <img src="../../assets/images/partner-success-logo-header.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Coding Agents for Test - Hands-On Workshop Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Automate Test Cases with Studio Desktop and Delegate
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="light" data-md-color-primary="blue" data-md-color-accent="blue"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="dark" data-md-color-primary="blue" data-md-color-accent="blue"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Coding Agents for Test - Hands-On Workshop Guide" class="md-nav__button md-logo" aria-label="Coding Agents for Test - Hands-On Workshop Guide" data-md-component="logo">
+      
+  <img src="../../assets/images/partner-success-logo-header.png" alt="logo">
+
+    </a>
+    Coding Agents for Test - Hands-On Workshop Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prerequisites
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Prerequisites
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module-0-prerequisites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module-0-prerequisites/01-installation-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Introduction
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module-1-introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test Cloud & Test Manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hands-On Workshop
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hands-On Workshop
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-import-tm-project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Import the Test Manager Project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-configure-tm-folder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configure the Test Manager Folder
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-evaluate-requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Evaluate Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-generate-test-cases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generate Test Cases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-run-manual-tests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Run Manual Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automate Test Cases with Studio Desktop and Delegate
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automate Test Cases with Studio Desktop and Delegate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you'll do
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-test-automation-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a Test Automation project
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-the-ui-automation-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install the UI Automation package
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#link-studio-to-your-test-manager-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Link Studio to your Test Manager project
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-the-object-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build the Object Repository
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automate-the-test-cases-with-studio-desktop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automate the test cases with Studio Desktop
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-test-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generate test data
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#publish-the-test-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Publish the test cases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nice-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nice work!
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-create-test-set/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Create a Test Set
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-run-and-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Run and Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../you-did-it/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    You did it!
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting & Next Steps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Troubleshooting & Next Steps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module-3-troubleshooting-and-next-steps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module-3-troubleshooting-and-next-steps/01-more-agent-prompts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    More Prompts to Try
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module-3-troubleshooting-and-next-steps/02-troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="06-automate-test-cases-with-studio-desktop-and-delegate">06. Automate Test Cases with Studio Desktop and Delegate<a class="headerlink" href="#06-automate-test-cases-with-studio-desktop-and-delegate" title="Permanent link">&para;</a></h1>
+<p>Automate your manual test cases in Studio with Delegate. Each automation stays <strong>linked</strong> to its test case in Test Manager.</p>
+<div class="admonition warning">
+<p class="admonition-title">Access required</p>
+<p>You need an <strong>App Test Developer</strong> license to create and publish Test Automation projects.</p>
+</div>
+<h2 id="what-youll-do">What you'll do<a class="headerlink" href="#what-youll-do" title="Permanent link">&para;</a></h2>
+<p>You switch between <strong>two tools</strong> on this page. Each step is labelled with the one it uses:</p>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>What you do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="tool-badge tool-badge--delegate">Delegate</span></td>
+<td>Paste the prompt in Delegate, then wait and watch it build in Studio</td>
+</tr>
+<tr>
+<td><span class="tool-badge tool-badge--studio">Studio Desktop</span></td>
+<td>Work in Studio Desktop yourself, with <strong>Autopilot for Testers</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Click a step to jump to it.</p>
+<div class="flow">
+  <div class="flow-part flow-part--delegate" style="--steps: 4">
+    <span class="flow-part-label">Delegate</span>
+    <div class="flow-part-steps">
+      <a class="flow-step" href="#create-a-test-automation-project">Create a Test Automation project</a>
+      <span class="flow-arrow"></span>
+      <a class="flow-step" href="#install-the-ui-automation-package">Install the UI Automation package</a>
+      <span class="flow-arrow"></span>
+      <a class="flow-step" href="#link-studio-to-your-test-manager-project">Link Studio to your Test Manager project</a>
+      <span class="flow-arrow"></span>
+      <a class="flow-step" href="#build-the-object-repository">Build the Object Repository</a>
+    </div>
+  </div>
+  <span class="flow-arrow"></span>
+  <div class="flow-part flow-part--studio" style="--steps: 2">
+    <span class="flow-part-label">Studio Desktop</span>
+    <div class="flow-part-steps">
+      <a class="flow-step" href="#automate-the-test-cases-with-studio-desktop">Automate the test cases</a>
+      <span class="flow-arrow"></span>
+      <a class="flow-step" href="#generate-test-data">Generate test data</a>
+    </div>
+  </div>
+  <span class="flow-arrow"></span>
+  <div class="flow-part flow-part--delegate" style="--steps: 1">
+    <span class="flow-part-label">Delegate</span>
+    <div class="flow-part-steps">
+      <a class="flow-step" href="#publish-the-test-cases">Publish the test cases</a>
+    </div>
+  </div>
+</div>
+
+<h2 id="create-a-test-automation-project">Create a Test Automation project<a class="headerlink" href="#create-a-test-automation-project" title="Permanent link">&para;</a></h2>
+<p><span class="tool-badge tool-badge--delegate">Delegate</span></p>
+<div class="highlight"><pre><span></span><code>Create a Studio Test Automation project named UiBank Tests.
+</code></pre></div>
+<p><strong>Check it:</strong> <strong>UiBank Tests</strong> opens in Studio, in <code>Documents\UiPath\UiBank Tests</code>.</p>
+<h2 id="install-the-ui-automation-package">Install the UI Automation package<a class="headerlink" href="#install-the-ui-automation-package" title="Permanent link">&para;</a></h2>
+<p><span class="tool-badge tool-badge--delegate">Delegate</span></p>
+<div class="highlight"><pre><span></span><code>Install the latest stable UI Automation activities package in UiBank Tests.
+</code></pre></div>
+<p><strong>Check it:</strong> <strong>Manage Packages → Project Dependencies</strong> lists <strong>UiPath.UIAutomation.Activities</strong>.</p>
+<h2 id="link-studio-to-your-test-manager-project">Link Studio to your Test Manager project<a class="headerlink" href="#link-studio-to-your-test-manager-project" title="Permanent link">&para;</a></h2>
+<p><span class="tool-badge tool-badge--delegate">Delegate</span></p>
+<p>Replace <code>&lt;YOUR_PROJECT_KEY&gt;</code> with your project key, then paste:</p>
+<div class="highlight"><pre><span></span><code>Connect this project to my Test Manager project &lt;YOUR_PROJECT_KEY&gt;, then open Test Explorer to show its test cases.
+</code></pre></div>
+<p><strong>Check it:</strong> the connection icon is green, and <strong>Test Explorer</strong> lists your test cases.</p>
+<h2 id="build-the-object-repository">Build the Object Repository<a class="headerlink" href="#build-the-object-repository" title="Permanent link">&para;</a></h2>
+<p><span class="tool-badge tool-badge--delegate">Delegate</span></p>
+<p>The <strong>Object Repository</strong> stores the app's screens and UI elements for every test case to reuse. </p>
+<p>Building it by hand is usually one of the slowest parts of test automation: you capture every screen and element yourself. Tell Delegate what to capture, and it builds the repository for you. To cover every screen and element the test cases need, use the prompt below.</p>
+<div class="admonition example">
+<p class="admonition-title">Continue in Delegate</p>
+<ol>
+<li>
+<p>Paste:</p>
+<div class="highlight"><pre><span></span><code>Create an Object Repository in UiPath Studio Desktop for the UiBank web app running in Chrome.
+
+Application
+- Name: UiBankORForChrome
+- Browser: Chrome
+- Capture each element live in the browser
+- Prefer stable selectors (id, name, aria-label, visible text) over index-based ones
+- Avoid dynamic values in selectors
+- Name each element exactly as listed below
+
+Screens and elements
+
+1. Screen: Welcome (https://uibank.uipath.com/welcome)
+   - Username (input)
+   - Password (input)
+   - Sign In (button)
+   - Products (dropdown menu)
+   - Loans (menu item in the Products dropdown; open Products first so Loans is visible when you capture it)
+
+2. Screen: Loans (https://uibank.uipath.com/loans)
+   - Apply For Loan (button)
+   - Already Have A Loan (button)
+
+3. Screen: Loan Application (https://uibank.uipath.com/loans/apply)
+   - Email Address of Requester (input)
+   - Loan Amount Requested (input)
+   - Loan Term (dropdown)
+   - Current Yearly Income Before Taxes (input)
+   - Age (input)
+   - Submit Loan Application (button)
+
+4. Screen: Loan Result (the results view shown after you submit the loan application)
+   - Result Text: the full text block of the response
+   - Rate: only the number shown below "With a fantastic rate of:", without the "%" sign
+   - Loan ID: the value shown below "Your new loan ID is:"
+   Anchor these elements to their label text, not to the changing values, so the selectors work for any result.
+   To reach this screen, submit the form with sample valid values. Save the Loan ID for screen 6.
+
+5. Screen: Loan Lookup (https://uibank.uipath.com/loans/lookup)
+   - Loan ID (input)
+   - Retrieve Loan Details (button)
+
+6. Screen: Loan Lookup Result (the results view shown after you look up a Loan ID)
+   - Result Text: the full text block of the response
+   - Loan ID: the value shown beside its label, anchored to the label text
+   To reach this screen, look up the Loan ID you saved from screen 4.
+
+Acceptance criteria
+- All 6 screens and 20 elements exist under UiBankORForChrome, named as above
+- Every selector validates (highlights the correct element) on its live screen
+- Report any element you could not capture reliably, and why
+</code></pre></div>
+</li>
+<li>
+<p>Don't use your desktop or browser while it captures.</p>
+</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Write your own Object Repository prompt</p>
+<p>Describe what you need in plain language, such as the app, its screens, and the elements to capture. Delegate can also review and fine-tune your prompt, or fix it when something's missed.</p>
+</div>
+<p><strong>Check it:</strong></p>
+<ol>
+<li>
+<p>In Studio's <strong>Object Repository</strong> panel, expand <strong>UiBankORForChrome</strong>. It lists all 6 screens and their elements. If it's empty, reload the project.</p>
+<p><img alt="Object Repository panel" src="../../assets/images/Object%20Repo.png" width="300" /></p>
+</li>
+<li>
+<p>Open UiBank in Chrome on the Welcome screen. Right-click an element, such as <strong>Username</strong>, and select <strong>Highlight</strong>.</p>
+<p><img alt="Highlight an element" src="../../assets/images/Studio%20OR%20Highlight.png" width="300" /></p>
+</li>
+<li>
+<p>In the browser, the element is outlined in <strong>green</strong>, and its label anchor in <strong>blue</strong>. Repeat for a few elements on each screen.</p>
+<p><img alt="Highlighted element in UiBank" src="../../assets/images/UiBank%20Highlight.png" /></p>
+</li>
+</ol>
+<p>If an element doesn't highlight, ask Delegate to recapture it.</p>
+<div class="admonition warning">
+<p class="admonition-title">Complete this step before you continue</p>
+<p><strong>Autopilot for Testers</strong> builds your test cases from the Object Repository elements. Without them, it can't automate the test cases in the next step.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Switch to Studio Desktop</p>
+<p>Delegate has set up the project and built the Object Repository. For the next two steps, <strong>you work directly in Studio Desktop</strong>, using <strong>Autopilot for Testers</strong> to turn your manual test cases into automations.</p>
+</div>
+<h2 id="automate-the-test-cases-with-studio-desktop">Automate the test cases with Studio Desktop<a class="headerlink" href="#automate-the-test-cases-with-studio-desktop" title="Permanent link">&para;</a></h2>
+<p><span class="tool-badge tool-badge--studio">Studio Desktop</span></p>
+<div class="admonition example">
+<p class="admonition-title">It's your turn now!</p>
+<ol>
+<li>In <strong>Test Explorer</strong>, right-click a manual test case → <strong>Generate Test Case with Autopilot</strong>.</li>
+<li>Check it uses <strong>Object Repository</strong> elements and the expected results. If not, ask Delegate to fix it.</li>
+<li>
+<p>Check the <strong>Use Application/Browser</strong> cards. The data-driven test in the next section must open and close the app once per row, and your requirement and test case may not say so.</p>
+<p>✅ <strong>First card:</strong> set <strong>Open</strong> to <strong>Always</strong>.</p>
+<p>✅ <strong>Last card:</strong> set <strong>Close</strong> to <strong>Always</strong>.</p>
+<p>✅ <strong>Cards in between:</strong> keep <strong>Open</strong> and <strong>Close</strong> as <strong>Never</strong>.</p>
+</li>
+<li>
+<p><strong>Run</strong> it locally.</p>
+</li>
+</ol>
+</div>
+<p><img alt="Test Explorer" src="../../assets/images/testExplorer.png" /></p>
+<p><strong>Check it:</strong> at least <strong>2</strong> automated test cases pass locally, and the test case meant to fail, from <a href="../04-generate-test-cases/">04. Generate Test Cases</a>, fails.</p>
+<details class="example">
+<summary>Optional: Fix the activity display names</summary>
+<p>Autopilot names each activity after its manual step, including the test data, which makes long, hard-to-read display names.</p>
+<ol>
+<li>
+<p>Replace <strong>Submit Short-Term Request</strong> with the name of the test case you generated, then paste in Delegate:</p>
+<div class="highlight"><pre><span></span><code>I've created test case Submit Short-Term Request using autopilot feature in Studio. Fix the Display names. Provide appropriate names.
+</code></pre></div>
+</li>
+<li>
+<p>Reload the test case in Studio and check the new names.</p>
+</li>
+</ol>
+</details>
+<h2 id="generate-test-data">Generate test data<a class="headerlink" href="#generate-test-data" title="Permanent link">&para;</a></h2>
+<p><span class="tool-badge tool-badge--studio">Studio Desktop</span></p>
+<p>TBD</p>
+<h2 id="publish-the-test-cases">Publish the test cases<a class="headerlink" href="#publish-the-test-cases" title="Permanent link">&para;</a></h2>
+<p><span class="tool-badge tool-badge--delegate">Delegate</span></p>
+<div class="admonition info">
+<p class="admonition-title">Switch back to Delegate</p>
+<p>Your test cases are automated. Go back to Delegate to publish them.</p>
+</div>
+<p>Paste:</p>
+<div class="highlight"><pre><span></span><code>Set the &lt;YOUR_TEST_CASE_NAMES&gt; test cases in UiBank Tests as publishable and publish the project.
+</code></pre></div>
+<p><strong>Check it:</strong> in Orchestrator, each automated test case shows in <strong>Test Cases</strong>.</p>
+<h2 id="nice-work">Nice work!<a class="headerlink" href="#nice-work" title="Permanent link">&para;</a></h2>
+<p>Your test cases are automated, data-driven, and published, ready to run from Test Manager.</p>
+<hr />
+<p><a class="md-button md-button--primary" href="../07-create-test-set/">Next → 07. Create a Test Set</a></p>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "toc.integrate", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+        <script src="../../assets/js/mermaid.min.js?v=faba385a"></script>
+      
+        <script src="../../assets/js/mermaid-init.js?v=c8a258c4"></script>
+      
+        <script src="../../assets/js/sidebar-toggle.js?v=7be908d6"></script>
+      
+    
+  </body>
+</html>
